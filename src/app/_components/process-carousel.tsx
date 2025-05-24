@@ -222,10 +222,10 @@ export default function ProcessCarousel() {
       {/* Current Step Summary */}
       <div className="mt-8 text-center">
         <div className="inline-flex items-center space-x-3 bg-neutral-50/10 backdrop-blur-sm rounded-full px-6 py-3 border border-neutral-50/20">
-          <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${processSteps[currentStep]?.gradient || 'from-primary-400 to-primary-600'}`}></div>
+          <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${processSteps[currentStep]?.gradient ?? 'from-primary-400 to-primary-600'}`}></div>
           <p className="text-neutral-300 text-sm font-medium">
-            <span className="font-mono text-primary-300">{processSteps[currentStep]?.subtitle || ''}</span>
-            {" "}→ {processSteps[currentStep]?.title || ''}
+            <span className="font-mono text-primary-300">{processSteps[currentStep]?.subtitle ?? ''}</span>
+            {" "}→ {processSteps[currentStep]?.title ?? ''}
           </p>
         </div>
       </div>

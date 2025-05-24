@@ -35,7 +35,7 @@ export default function HeroSection() {
           <div className="mt-8 mb-12">
             <div className="inline-flex items-center bg-primary-50 rounded-full px-6 py-3 border border-primary-200">
               <span className="text-primary-700 font-medium">
-                <span className="font-mono text-sm mr-2">//</span>
+                <span className="font-mono text-sm mr-2">{/* */}</span>
                 Tecnologie emergenti applicate ai problemi reali del tuo business
               </span>
             </div>

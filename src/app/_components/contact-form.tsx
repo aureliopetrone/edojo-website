@@ -54,7 +54,7 @@ export default function ContactForm() {
           message: "",
         });
       } else {
-        const errorData = await response.json();
+        const errorData = await response.json() as { userMessage?: string; details?: string };
         
         if (response.status === 400 && errorData.userMessage) {
           setSubmitStatus({
@@ -64,11 +64,11 @@ export default function ContactForm() {
         } else {
           setSubmitStatus({
             type: "error",
-            message: errorData.details || "Errore nell'invio del messaggio. Riprova più tardi.",
+            message: errorData.details ?? "Errore nell'invio del messaggio. Riprova più tardi.",
           });
         }
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: "error",
         message: "Errore di connessione. Controlla la tua connessione internet e riprova.",

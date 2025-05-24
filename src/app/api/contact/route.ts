@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 import { z } from "zod";
 import { Resend } from "resend";
 import { 
@@ -34,7 +35,7 @@ export async function POST(request: NextRequest) {
   try {
     console.log("=== INIZIO RICHIESTA CONTACT API ===");
     
-    const body = await request.json();
+    const body = await request.json() as unknown;
     console.log("Body ricevuto:", JSON.stringify(body, null, 2));
     
     // Validazione dei dati
@@ -147,7 +148,7 @@ async function sendContactEmail(data: {
             <h3 style="margin-top: 0; color: #374151;">Dettagli del contatto:</h3>
             <p><strong>Nome:</strong> ${data.name}</p>
             <p><strong>Email:</strong> ${data.email}</p>
-            <p><strong>Telefono:</strong> ${data.phone || "Non fornito"}</p>
+            <p><strong>Telefono:</strong> ${data.phone ?? "Non fornito"}</p>
             <p><strong>Soggetto:</strong> ${data.subject}</p>
           </div>
           
@@ -205,8 +206,8 @@ async function sendContactEmail(data: {
     console.log("Email al cliente inviata:", emailToClient);
 
     console.log("Email inviate con successo:", { 
-      emailToYou: emailToYou.data?.id || emailToYou, 
-      emailToClient: emailToClient.data?.id || emailToClient 
+      emailToYou: emailToYou.data?.id ?? emailToYou, 
+      emailToClient: emailToClient.data?.id ?? emailToClient 
     });
     
   } catch (error) {

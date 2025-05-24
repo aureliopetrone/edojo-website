@@ -7,7 +7,7 @@ export default function InCorsaSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl mb-6">
             <span className="block text-lg font-normal text-neutral-600 mb-2 font-mono">
-              // Progetti esistenti
+              {/* Progetti esistenti */}
             </span>
             Prendiamo il testimone
             <span className="block text-lg font-normal text-neutral-600 mt-2">
@@ -25,7 +25,7 @@ export default function InCorsaSection() {
           <div>
             <div className="bg-neutral-50 rounded-xl p-8 border border-neutral-200">
               <h3 className="text-xl font-bold text-neutral-900 mb-6">
-                <span className="text-red-600 font-mono text-sm block mb-1">// Situazioni che riconosciamo</span>
+                <span className="text-red-600 font-mono text-sm block mb-1">{/* Situazioni che riconosciamo */}</span>
                 Ti suona familiare?
               </h3>
               
@@ -35,7 +35,7 @@ export default function InCorsaSection() {
                     <span className="text-red-600 font-bold text-xs">!</span>
                   </div>
                   <div>
-                    <p className="text-neutral-800 font-semibold">Il developer se n'è andato</p>
+                    <p className="text-neutral-800 font-semibold">Il developer se n&apos;è andato</p>
                     <p className="text-neutral-600 text-sm">E nessuno sa più come funziona il sistema</p>
                   </div>
                 </div>
@@ -74,7 +74,7 @@ export default function InCorsaSection() {
               <div className="mt-6 p-4 bg-red-50 rounded-lg border border-red-200">
                 <p className="text-red-800 text-sm font-medium">
                   <span className="font-mono text-red-600">console.error(</span>
-                  "Non possiamo più gestirlo internamente"
+                  &ldquo;Non possiamo più gestirlo internamente&rdquo;
                   <span className="font-mono text-red-600">)</span>
                 </p>
               </div>
@@ -85,7 +85,7 @@ export default function InCorsaSection() {
           <div>
             <div className="bg-primary-600 rounded-xl p-8 text-white">
               <h3 className="text-xl font-bold mb-6">
-                <span className="text-primary-200 font-mono text-sm block mb-1">// La nostra soluzione</span>
+                <span className="text-primary-200 font-mono text-sm block mb-1">{/* La nostra soluzione */}</span>
                 Rescue & Maintain
               </h3>
               
@@ -135,15 +135,15 @@ export default function InCorsaSection() {
                 <p className="text-primary-100 text-sm font-mono">
                   <span className="text-emerald-300">function</span> <span className="text-blue-200">rescueProject</span>() {"{"}
                   <br />
-                  &nbsp;&nbsp;<span className="text-gray-300">// Da caos a sistema stabile</span>
+                  &nbsp;&nbsp;<span className="text-gray-300">{/* Da caos a sistema stabile */}</span>
                   <br />
                   &nbsp;&nbsp;<span className="text-emerald-300">return</span> {"{"}
                   <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-yellow-200">stability</span>: <span className="text-green-300">"✓"</span>,
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-yellow-200">stability</span>: <span className="text-green-300">&ldquo;✓&rdquo;</span>,
                   <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-yellow-200">documentation</span>: <span className="text-green-300">"✓"</span>,
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-yellow-200">documentation</span>: <span className="text-green-300">&ldquo;✓&rdquo;</span>,
                   <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-yellow-200">peace_of_mind</span>: <span className="text-green-300">"✓"</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-yellow-200">peace_of_mind</span>: <span className="text-green-300">&ldquo;✓&rdquo;</span>
                   <br />
                   &nbsp;&nbsp;{"}"};
                   <br />
@@ -158,7 +158,7 @@ export default function InCorsaSection() {
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-neutral-50 to-primary-50 rounded-xl p-8 border border-neutral-200">
             <h3 className="text-2xl font-bold text-neutral-900 mb-4">
-              <span className="font-mono text-primary-600 text-sm block mb-1">// Ready to rescue?</span>
+              <span className="font-mono text-primary-600 text-sm block mb-1">{/* Ready to rescue? */}</span>
               Hai un progetto che ti sta dando problemi?
             </h3>
             <p className="text-neutral-600 text-lg mb-6 max-w-2xl mx-auto">
@@ -176,7 +176,7 @@ export default function InCorsaSection() {
                 <span className="font-mono text-sm ml-2">)</span>
               </OrigamiLink>
               <p className="text-neutral-500 text-sm">
-                <span className="font-mono">// </span>Gratuito e senza impegno
+                <span className="font-mono">{/* */} </span>Gratuito e senza impegno
               </p>
             </div>
           </div>

@@ -5,7 +5,7 @@ export default function AboutSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl mb-6">
             <span className="block text-lg font-normal text-neutral-300 mb-2">
-              // Chi siamo
+              {/* Chi siamo */}
             </span>
             Codice, Logica & Risultati
           </h2>
@@ -34,7 +34,7 @@ export default function AboutSection() {
               </p>
               <p className="text-neutral-100 text-lg">
                 <span className="text-neutral-50 font-semibold">Il nostro motto?</span> 
-                "Se non migliora il tuo business, non lo facciamo."
+                &ldquo;Se non migliora il tuo business, non lo facciamo.&rdquo;
               </p>
             </div>
           </div>
@@ -102,11 +102,11 @@ export default function AboutSection() {
                 <p className="text-neutral-300 text-sm font-mono">
                   <span className="text-emerald-400">return</span> {"{"}
                   <br />
-                  &nbsp;&nbsp;<span className="text-blue-300">efficiency</span>: <span className="text-yellow-300">"+300%"</span>,
+                  &nbsp;&nbsp;<span className="text-blue-300">efficiency</span>: <span className="text-yellow-300">&ldquo;+300%&rdquo;</span>,
                   <br />
-                  &nbsp;&nbsp;<span className="text-blue-300">costs</span>: <span className="text-yellow-300">"-50%"</span>,
+                  &nbsp;&nbsp;<span className="text-blue-300">costs</span>: <span className="text-yellow-300">&ldquo;-50%&rdquo;</span>,
                   <br />
-                  &nbsp;&nbsp;<span className="text-blue-300">headaches</span>: <span className="text-yellow-300">"0"</span>
+                  &nbsp;&nbsp;<span className="text-blue-300">headaches</span>: <span className="text-yellow-300">&ldquo;0&rdquo;</span>
                   <br />
                   {"}"}
                 </p>

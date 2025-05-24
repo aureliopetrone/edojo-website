@@ -8,7 +8,7 @@ export default function ContactSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
             <span className="block text-lg font-normal text-neutral-600 mb-2 font-mono">
-              // Iniziamo a lavorare insieme
+              {/* Iniziamo a lavorare insieme */}
             </span>
             Hai un progetto in mente?
           </h2>

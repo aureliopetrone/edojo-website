@@ -7,7 +7,7 @@ export default function ProcessSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl mb-6">
             <span className="block text-lg font-normal text-neutral-400 mb-2 font-mono">
-              // Come lavoriamo
+              {/* Come lavoriamo */}
             </span>
             Da Idea a Deploy
             <span className="block text-lg font-normal text-neutral-400 mt-2">
@@ -58,7 +58,7 @@ export default function ProcessSection() {
             </div>
             <p className="text-neutral-300 leading-relaxed">
               <span className="font-mono text-primary-300">return success;</span> Ogni progetto ha obiettivi chiari 
-              e metriche di successo definite fin dall'inizio.
+              e metriche di successo definite fin dall&apos;inizio.
             </p>
           </div>
         </div>
@@ -78,11 +78,11 @@ export default function ProcessSection() {
               <div className="text-neutral-300">
                 <span className="text-purple-400">const</span> <span className="text-blue-300">yourProject</span> = <span className="text-yellow-300">{`{`}</span>
                 <br />
-                &nbsp;&nbsp;<span className="text-green-300">idea</span>: <span className="text-orange-300">"Voglio automatizzare tutto"</span>,
+                &nbsp;&nbsp;<span className="text-green-300">idea</span>: <span className="text-orange-300">&ldquo;Voglio automatizzare tutto&rdquo;</span>,
                 <br />
-                &nbsp;&nbsp;<span className="text-green-300">budget</span>: <span className="text-orange-300">"Ragionevole"</span>,
+                &nbsp;&nbsp;<span className="text-green-300">budget</span>: <span className="text-orange-300">&ldquo;Ragionevole&rdquo;</span>,
                 <br />
-                &nbsp;&nbsp;<span className="text-green-300">timeline</span>: <span className="text-orange-300">"Ieri"</span>
+                &nbsp;&nbsp;<span className="text-green-300">timeline</span>: <span className="text-orange-300">&ldquo;Ieri&rdquo;</span>
                 <br />
                 <span className="text-yellow-300">{`}`}</span>;
                 <br />
@@ -90,7 +90,7 @@ export default function ProcessSection() {
                 <span className="text-purple-400">const</span> <span className="text-blue-300">result</span> = <span className="text-blue-300">eDojo</span>.<span className="text-yellow-300">process</span>(<span className="text-blue-300">yourProject</span>);
                 <br />
                 <br />
-                <span className="text-gray-500">// Output:</span>
+                <span className="text-gray-500">{/* Output: */}</span>
                 <br />
                 <span className="text-green-400">✓ Software che funziona</span>
                 <br />
