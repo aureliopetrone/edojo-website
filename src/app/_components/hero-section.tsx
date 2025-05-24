@@ -4,12 +4,12 @@ import TypewriterText from "./typewriter-text";
 
 export default function HeroSection() {
   const headlines = [
-    { first: "Integriamo", second: "AI nel tuo business" },
-    { first: "Migriamo", second: "al cloud" },
-    { first: "Sviluppiamo", second: "sistemi IoT" },
-    { first: "Creiamo", second: "webapp moderne" },
-    { first: "Automatizziamo", second: "con la robotica" },
-    { first: "Innoviamo", second: "la tua azienda" }
+    { first: "<AI>", second: "integrata nel business", third: "</AI>" },
+    { first: "await", second: "migrateToCloud()" },
+    { first: "const iot =", second: "new IoTSystem()" },
+    { first: "function", second: "createModernWebApp()" },
+    { first: "robot.automate(", second: "yourProcess", third: ")" },
+    { first: "innovation.transform(", second: "yourCompany", third: ")" }
   ];
 
   return (

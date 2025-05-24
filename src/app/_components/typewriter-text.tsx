@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 interface TypewriterTextProps {
-  phrases: { first: string; second: string }[];
+  phrases: { first: string; second: string; third?: string }[];
   className?: string;
   typingSpeed?: number;
   deletingSpeed?: number;
@@ -22,6 +22,7 @@ export default function TypewriterText({
   const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [isSecondPart, setIsSecondPart] = useState(false);
+  const [isThirdPart, setIsThirdPart] = useState(false);
 
   useEffect(() => {
     if (phrases.length === 0) return;
@@ -29,8 +30,9 @@ export default function TypewriterText({
     const currentPhrase = phrases[currentPhraseIndex];
     if (!currentPhrase) return;
 
-    const fullText = currentPhrase.first + " " + currentPhrase.second;
+    const fullText = currentPhrase.first + " " + currentPhrase.second + (currentPhrase.third ? " " + currentPhrase.third : "");
     const firstPartLength = currentPhrase.first.length;
+    const secondPartLength = currentPhrase.second.length;
 
     const timeout = setTimeout(() => {
       if (isPaused) {
@@ -44,6 +46,10 @@ export default function TypewriterText({
         if (currentText.length > 0) {
           const newText = currentText.slice(0, -1);
           setCurrentText(newText);
+          // Controlla se siamo tornati alla seconda parte
+          if (currentPhrase.third && newText.length <= firstPartLength + 1 + secondPartLength) {
+            setIsThirdPart(false);
+          }
           // Controlla se siamo tornati alla prima parte
           if (newText.length <= firstPartLength) {
             setIsSecondPart(false);
@@ -52,6 +58,7 @@ export default function TypewriterText({
           // Finito di cancellare, passa alla frase successiva
           setIsDeleting(false);
           setIsSecondPart(false);
+          setIsThirdPart(false);
           setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
         }
       } else {
@@ -59,6 +66,10 @@ export default function TypewriterText({
         if (currentText.length < fullText.length) {
           const newText = fullText.slice(0, currentText.length + 1);
           setCurrentText(newText);
+          // Controlla se siamo passati alla terza parte
+          if (currentPhrase.third && newText.length > firstPartLength + 1 + secondPartLength) {
+            setIsThirdPart(true);
+          }
           // Controlla se siamo passati alla seconda parte
           if (newText.length > firstPartLength) {
             setIsSecondPart(true);
@@ -77,6 +88,7 @@ export default function TypewriterText({
     isDeleting,
     isPaused,
     isSecondPart,
+    isThirdPart,
     phrases,
     typingSpeed,
     deletingSpeed,
@@ -89,25 +101,39 @@ export default function TypewriterText({
   if (!currentPhrase) return null;
   
   const firstPartLength = currentPhrase.first.length;
+  const secondPartLength = currentPhrase.second.length;
   
-  // Dividi il testo corrente in due parti
+  // Dividi il testo corrente in tre parti
   const firstPart = currentText.slice(0, Math.min(currentText.length, firstPartLength));
-  const secondPart = currentText.length > firstPartLength ? currentText.slice(firstPartLength + 1) : "";
+  const secondPart = currentText.length > firstPartLength ? 
+    currentText.slice(firstPartLength + 1, Math.min(currentText.length, firstPartLength + 1 + secondPartLength)) : "";
+  const thirdPart = currentPhrase.third && currentText.length > firstPartLength + 1 + secondPartLength ? 
+    currentText.slice(firstPartLength + 1 + secondPartLength + 1) : "";
 
   return (
-    <span className={className}>
+    <div className={className}>
       <span className="text-neutral-900">
         {firstPart}
-        {!secondPart && <span className="animate-pulse text-neutral-900">|</span>}
+        {!secondPart && !thirdPart && <span className="animate-pulse text-neutral-900">|</span>}
       </span>
-      <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-700 min-h-[1.2em]">
-        {secondPart && (
-          <>
+      {secondPart && (
+        <>
+          <span> </span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-700">
             {secondPart}
-            <span className="animate-pulse text-primary-600">|</span>
-          </>
-        )}
-      </span>
-    </span>
+            {!thirdPart && <span className="animate-pulse text-primary-600">|</span>}
+          </span>
+        </>
+      )}
+      {currentPhrase.third && thirdPart && (
+        <>
+          <span> </span>
+          <span className="text-neutral-900">
+            {thirdPart}
+            <span className="animate-pulse text-neutral-900">|</span>
+          </span>
+        </>
+      )}
+    </div>
   );
 } 
