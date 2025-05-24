@@ -7,6 +7,7 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
+    // Auth & Database
     AUTH_SECRET:
       process.env.NODE_ENV === "production"
         ? z.string()
@@ -17,6 +18,29 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
+    
+    // NextAuth
+    NEXTAUTH_SECRET: z.string().optional(),
+    NEXTAUTH_URL: z.string().url().optional(),
+    
+    // Email Service
+    RESEND_API_KEY: z.string(),
+    
+    // Company Contact Information
+    CONTACT_EMAIL: z.string().email(),
+    CONTACT_PHONE: z.string(),
+    CONTACT_PHONE_DISPLAY: z.string(),
+    
+    // Company Information
+    COMPANY_NAME: z.string(),
+    COMPANY_ADDRESS_LINE1: z.string(),
+    COMPANY_ADDRESS_LINE2: z.string(),
+    COMPANY_VAT: z.string(),
+    
+    // Email Configuration
+    EMAIL_FROM_NAME: z.string(),
+    EMAIL_FROM_ADDRESS: z.string().email(),
+    EMAIL_REPLY_TO: z.string().email(),
   },
 
   /**
@@ -33,11 +57,35 @@ export const env = createEnv({
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
+    // Auth & Database
     AUTH_SECRET: process.env.AUTH_SECRET,
     AUTH_DISCORD_ID: process.env.AUTH_DISCORD_ID,
     AUTH_DISCORD_SECRET: process.env.AUTH_DISCORD_SECRET,
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
+    
+    // NextAuth
+    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    
+    // Email Service
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
+    
+    // Company Contact Information
+    CONTACT_EMAIL: process.env.CONTACT_EMAIL,
+    CONTACT_PHONE: process.env.CONTACT_PHONE,
+    CONTACT_PHONE_DISPLAY: process.env.CONTACT_PHONE_DISPLAY,
+    
+    // Company Information
+    COMPANY_NAME: process.env.COMPANY_NAME,
+    COMPANY_ADDRESS_LINE1: process.env.COMPANY_ADDRESS_LINE1,
+    COMPANY_ADDRESS_LINE2: process.env.COMPANY_ADDRESS_LINE2,
+    COMPANY_VAT: process.env.COMPANY_VAT,
+    
+    // Email Configuration
+    EMAIL_FROM_NAME: process.env.EMAIL_FROM_NAME,
+    EMAIL_FROM_ADDRESS: process.env.EMAIL_FROM_ADDRESS,
+    EMAIL_REPLY_TO: process.env.EMAIL_REPLY_TO,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

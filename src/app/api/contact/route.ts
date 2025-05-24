@@ -11,6 +11,7 @@ import {
   CONTACT_PHONE_DISPLAY,
   COMPANY_ADDRESS_LINE1,
   COMPANY_ADDRESS_LINE2,
+  RESEND_API_KEY,
   validateEnv 
 } from "~/lib/env";
 
@@ -18,7 +19,7 @@ import {
 validateEnv();
 
 // Inizializza Resend con la tua API key
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(RESEND_API_KEY);
 
 // Schema per validare i dati del form di contatto
 const contactSchema = z.object({
@@ -127,7 +128,7 @@ async function sendContactEmail(data: {
 }) {
   try {
     // Verifica che l'API key sia configurata
-    if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === "re_your_api_key_here") {
+    if (!RESEND_API_KEY || RESEND_API_KEY === "re_your_api_key_here") {
       throw new Error("RESEND_API_KEY non configurata. Controlla il file .env.local");
     }
 
