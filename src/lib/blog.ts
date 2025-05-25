@@ -45,7 +45,7 @@ export function getAllPosts(): BlogPost[] {
 export function getPostBySlug(slug: string): BlogPost | null {
   try {
     const posts = getAllPosts();
-    return posts.find(post => post.slug === slug) || null;
+    return posts.find(post => post.slug === slug) ?? null;
   } catch (error) {
     console.error('Error getting post by slug:', error);
     return null;
@@ -53,7 +53,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
 }
 
 // Funzione per ottenere gli ultimi N post
-export function getLatestPosts(count: number = 3): BlogPost[] {
+export function getLatestPosts(count = 3): BlogPost[] {
   const allPosts = getAllPosts();
   return allPosts.slice(0, count);
 }

@@ -9,13 +9,13 @@ export default function InCorsaSection() {
             <span className="block text-lg font-normal text-neutral-600 mb-2 font-mono">
               {/* Collaborative Innovation */}
             </span>
-            Insieme Realizziamo l'Impossibile
+            Insieme Realizziamo l&apos;Impossibile
             <span className="block text-lg font-normal text-neutral-600 mt-2">
               (quando la collaborazione supera le limitazioni individuali)
             </span>
           </h2>
           <p className="text-neutral-600 text-lg max-w-3xl mx-auto">
-            <span className="font-semibold text-neutral-800">La tua azienda ha un'idea rivoluzionaria ma mancano competenze o risorse?</span> 
+            <span className="font-semibold text-neutral-800">La tua azienda ha un&apos;idea rivoluzionaria ma mancano competenze o risorse?</span> 
             Creiamo ecosistemi collaborativi dove aziende diverse si uniscono per realizzare progetti breakthrough.
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function InCorsaSection() {
                   </div>
                   <div>
                     <p className="text-neutral-800 font-semibold">Progetto visionario, risorse limitate</p>
-                    <p className="text-neutral-600 text-sm">Hai l'idea ma ti servono competenze tecniche avanzate o co-investitori</p>
+                    <p className="text-neutral-600 text-sm">Hai l&apos;idea ma ti servono competenze tecniche avanzate o co-investitori</p>
                   </div>
                 </div>
                 
@@ -163,7 +163,7 @@ export default function InCorsaSection() {
             </h3>
             <p className="text-neutral-600 text-lg mb-6 max-w-2xl mx-auto">
               Condividi la tua visione con noi. Valutiamo insieme la fattibilità e identifichiamo 
-              i partner strategici per trasformare l'impossibile in realtà.
+              i partner strategici per trasformare l&apos;impossibile in realtà.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <OrigamiLink

@@ -71,7 +71,7 @@ export default function AboutSection() {
                   </div>
                   <div>
                     <p className="text-neutral-50 font-semibold">Impossible Projects</p>
-                    <p className="text-neutral-300 text-sm">Realizziamo progetti che le aziende considerano "impossibili" da gestire internamente</p>
+                    <p className="text-neutral-300 text-sm">Realizziamo progetti che le aziende considerano &ldquo;impossibili&rdquo; da gestire internamente</p>
                   </div>
                 </div>
 
@@ -182,7 +182,7 @@ export default function AboutSection() {
               </p>
               <p className="text-neutral-300 text-sm leading-relaxed mb-4">
                 Architetto delle esperienze collaborative. 
-                <span className="text-neutral-50 font-semibold">Progetta interfacce che abilitano l'innovazione</span>.
+                <span className="text-neutral-50 font-semibold">Progetta interfacce che abilitano l&apos;innovazione</span>.
               </p>
             </div>
           </div>
