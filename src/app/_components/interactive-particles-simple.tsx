@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo } from "react";
 
 interface Particle {
   x: number;
@@ -18,8 +18,8 @@ export default function InteractiveParticlesSimple() {
   const particlesRef = useRef<Particle[]>([]);
   const mouseRef = useRef({ x: 0, y: 0 });
 
-  const codeSymbols = ['{', '}', '<', '>', '(', ')', '[', ']', ';', '=', '+', '-', '*', '/', '&', '|'];
-  const colors = ['#10b981', '#06b6d4', '#8b5cf6', '#f59e0b', '#ef4444', '#6366f1'];
+  const codeSymbols = useMemo(() => ['{', '}', '<', '>', '(', ')', '[', ']', ';', '=', '+', '-', '*', '/', '&', '|'], []);
+  const colors = useMemo(() => ['#10b981', '#06b6d4', '#8b5cf6', '#f59e0b', '#ef4444', '#6366f1'], []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -41,10 +41,10 @@ export default function InteractiveParticlesSimple() {
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 3,
         vy: (Math.random() - 0.5) * 3,
-        symbol: codeSymbols[Math.floor(Math.random() * codeSymbols.length)] || '{',
+        symbol: codeSymbols[Math.floor(Math.random() * codeSymbols.length)] ?? '{',
         size: Math.random() * 16 + 12,
         opacity: Math.random() * 0.7 + 0.3,
-        color: colors[Math.floor(Math.random() * colors.length)] || '#10b981',
+        color: colors[Math.floor(Math.random() * colors.length)] ?? '#10b981',
       }));
       
       console.log(`Canvas initialized: ${canvas.width}x${canvas.height}, ${particleCount} particles`);
@@ -144,7 +144,7 @@ export default function InteractiveParticlesSimple() {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, []);
+  }, [codeSymbols, colors]);
 
   return (
     <canvas

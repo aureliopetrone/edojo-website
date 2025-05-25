@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useMemo } from "react";
 
 interface Particle {
   x: number;
@@ -17,12 +17,12 @@ interface Particle {
 
 export default function InteractiveParticles() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
   const particlesRef = useRef<Particle[]>([]);
   const mouseRef = useRef({ x: 0, y: 0 });
 
-  const codeSymbols = ['{', '}', '<', '>', '(', ')', '[', ']', ';', '=', '+', '-', '*', '/', '&', '|', '!', '?'];
-  const colors = ['#10b981', '#06b6d4', '#8b5cf6', '#f59e0b', '#ef4444', '#6366f1'];
+  const codeSymbols = useMemo(() => ['{', '}', '<', '>', '(', ')', '[', ']', ';', '=', '+', '-', '*', '/', '&', '|', '!', '?'], []);
+  const colors = useMemo(() => ['#10b981', '#06b6d4', '#8b5cf6', '#f59e0b', '#ef4444', '#6366f1'], []);
 
   const createParticle = useCallback((width: number, height: number): Particle => {
     return {
@@ -30,10 +30,10 @@ export default function InteractiveParticles() {
       y: Math.random() * height,
       vx: (Math.random() - 0.5) * 0.5,
       vy: (Math.random() - 0.5) * 0.5,
-      symbol: codeSymbols[Math.floor(Math.random() * codeSymbols.length)] || '{',
+      symbol: codeSymbols[Math.floor(Math.random() * codeSymbols.length)] ?? '{',
       size: Math.random() * 20 + 16,
       opacity: Math.random() * 0.6 + 0.4,
-      color: colors[Math.floor(Math.random() * colors.length)] || '#10b981',
+      color: colors[Math.floor(Math.random() * colors.length)] ?? '#10b981',
       originalX: 0,
       originalY: 0,
     };
