@@ -18,8 +18,24 @@ export default function InteractiveParticlesSimple() {
   const particlesRef = useRef<Particle[]>([]);
   const mouseRef = useRef({ x: 0, y: 0 });
 
-  const codeSymbols = useMemo(() => ['{', '}', '<', '>', '(', ')', '[', ']', ';', '=', '+', '-', '*', '/', '&', '|'], []);
-  const colors = useMemo(() => ['#10b981', '#06b6d4', '#8b5cf6', '#f59e0b', '#ef4444', '#6366f1'], []);
+  const codeSymbols = useMemo(() => [
+    // Tech/Code symbols
+    '{', '}', '<', '>', '(', ')', '[', ']', ';', '=', '+', '-', '*', '/', '&', '|',
+    // Minimal geometric symbols (Japanese-inspired aesthetic)
+    '◯', '◾', '◽', '▪', '▫', '●', '○', '■', '□', '▲', '△', '▼', '▽', '◆', '◇', '✦'
+  ], []);
+  const colors = useMemo(() => [
+    // Traditional Japanese colors
+    '#dc2626', // Rosso tradizionale
+    '#1f2937', // Nero carbone
+    '#f59e0b', // Oro
+    '#1e40af', // Indaco profondo
+    '#059669', // Verde smeraldo
+    '#7c3aed', // Viola imperiale
+    // Modern tech accent
+    '#06b6d4', // Cyan tech
+    '#ef4444'  // Rosso moderno
+  ], []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -123,11 +139,21 @@ export default function InteractiveParticlesSimple() {
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         
-        // Add shadow for better visibility
+        // Japanese-inspired subtle glow effect
         ctx.shadowColor = particle.color;
-        ctx.shadowBlur = 5;
+        ctx.shadowBlur = 8;
+        ctx.shadowOffsetX = 1;
+        ctx.shadowOffsetY = 1;
         
         ctx.fillText(particle.symbol, particle.x, particle.y);
+        
+        // Add a subtle outer glow for geometric symbols
+        if (['◯', '◾', '◽', '▪', '▫', '●', '○', '■', '□', '▲', '△', '▼', '▽', '◆', '◇', '✦'].includes(particle.symbol)) {
+          ctx.globalAlpha = particle.opacity * 0.3;
+          ctx.shadowBlur = 15;
+          ctx.fillText(particle.symbol, particle.x, particle.y);
+        }
+        
         ctx.restore();
       });
 
