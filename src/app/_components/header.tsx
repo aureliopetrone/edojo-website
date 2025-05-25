@@ -3,12 +3,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const pathname = usePathname();
+
+  // Check if we're on the homepage
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
+    // Only run scroll detection on homepage
+    if (!isHomePage) return;
+
     // Improved scroll detection with better section boundary calculation
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -121,14 +129,15 @@ export default function Header() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, [activeSection]);
+  }, [activeSection, isHomePage]);
 
   const getLinkClasses = (section: string) => {
     const baseClasses = "px-3 py-2 text-sm font-medium transition-colors duration-200";
     const activeClasses = "text-neutral-50 bg-primary-700/40 rounded-md";
     const inactiveClasses = "text-neutral-300 hover:text-neutral-50";
     
-    const isActive = activeSection === section;
+    // Only show active state on homepage
+    const isActive = isHomePage && activeSection === section;
     
     return `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
   };
@@ -138,9 +147,19 @@ export default function Header() {
     const activeClasses = "text-neutral-50 bg-primary-800/60 rounded-md";
     const inactiveClasses = "text-neutral-300 hover:text-neutral-50";
     
-    const isActive = activeSection === section;
+    // Only show active state on homepage
+    const isActive = isHomePage && activeSection === section;
     
     return `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
+  };
+
+  // Function to get correct href for navigation links
+  const getNavHref = (section: string) => {
+    if (isHomePage) {
+      return `#${section}`;
+    } else {
+      return `/#${section}`;
+    }
   };
 
   return (
@@ -149,7 +168,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="#home" className="flex items-center space-x-3">
+            <Link href="/" className="flex items-center space-x-3">
               <Image
                 src="/logo-nobg.png"
                 alt="eDojo Logo"
@@ -167,19 +186,19 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-8">
             <div className="flex items-baseline space-x-6">
               <Link
-                href="#home"
+                href={getNavHref("home")}
                 className={getLinkClasses("home")}
               >
                 Home
               </Link>
               <Link
-                href="#chi-siamo"
+                href={getNavHref("chi-siamo")}
                 className={getLinkClasses("chi-siamo")}
               >
                 Chi Siamo
               </Link>
               <Link
-                href="#in-corsa"
+                href={getNavHref("in-corsa")}
                 className={getLinkClasses("in-corsa")}
               >
                 Cosa Facciamo
@@ -191,7 +210,7 @@ export default function Header() {
                 Blog
               </Link>
               <Link
-                href="#contatti"
+                href={getNavHref("contatti")}
                 className={getLinkClasses("contatti")}
               >
                 Contatti
@@ -200,7 +219,7 @@ export default function Header() {
             
             {/* CTA Button */}
             <Link
-              href="#contatti"
+              href={getNavHref("contatti")}
               className="relative bg-black text-white hover:bg-neutral-900 px-6 py-2 text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl origami-button"
               style={{
                 clipPath: 'polygon(0% 0%, calc(100% - 12px) 0%, 100% 100%, 12px 100%)',
@@ -243,21 +262,21 @@ export default function Header() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-primary-700/80 rounded-lg mt-2">
               <Link
-                href="#home"
+                href={getNavHref("home")}
                 className={getMobileLinkClasses("home")}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
-                href="#chi-siamo"
+                href={getNavHref("chi-siamo")}
                 className={getMobileLinkClasses("chi-siamo")}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Chi Siamo
               </Link>
               <Link
-                href="#in-corsa"
+                href={getNavHref("in-corsa")}
                 className={getMobileLinkClasses("in-corsa")}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -271,7 +290,7 @@ export default function Header() {
                 Blog
               </Link>
               <Link
-                href="#contatti"
+                href={getNavHref("contatti")}
                 className={getMobileLinkClasses("contatti")}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -281,7 +300,7 @@ export default function Header() {
               {/* Mobile CTA Button */}
               <div className="pt-2">
                 <Link
-                  href="#contatti"
+                  href={getNavHref("contatti")}
                   className="relative bg-black text-white hover:bg-neutral-900 px-6 py-2 text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl origami-button"
                   style={{
                     clipPath: 'polygon(0% 0%, calc(100% - 12px) 0%, 100% 100%, 12px 100%)',

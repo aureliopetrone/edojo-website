@@ -4,6 +4,8 @@ import { type Metadata } from "next";
 import { Nunito } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import CookieBanner from "~/app/_components/cookie-banner";
+import GoogleAnalyticsWrapper from "~/app/_components/google-analytics";
 
 export const metadata: Metadata = {
   title: "eDojo - Cultura Digitale per il Business",
@@ -39,7 +41,11 @@ export default function RootLayout({
   return (
     <html lang="it" className={`${nunito.variable}`}>
       <body className="font-sans">
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          {children}
+          <CookieBanner />
+          <GoogleAnalyticsWrapper />
+        </TRPCReactProvider>
       </body>
     </html>
   );

@@ -49,7 +49,7 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    // NEXT_PUBLIC_CLIENTVAR: z.string(),
+    NEXT_PUBLIC_GA_ID: z.string().optional(),
   },
 
   /**
@@ -86,6 +86,9 @@ export const env = createEnv({
     EMAIL_FROM_NAME: process.env.EMAIL_FROM_NAME,
     EMAIL_FROM_ADDRESS: process.env.EMAIL_FROM_ADDRESS,
     EMAIL_REPLY_TO: process.env.EMAIL_REPLY_TO,
+    
+    // Analytics
+    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
