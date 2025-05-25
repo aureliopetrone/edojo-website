@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <HydrateClient>
       <Header />
-      <main id="home" className="min-h-screen">
+      <main className="min-h-screen">
         <HeroSection />
         <AboutSection />
         <ProcessSection />

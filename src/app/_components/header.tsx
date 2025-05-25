@@ -9,33 +9,89 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    // Improved scroll detection
+    // Improved scroll detection with better section boundary calculation
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200; // Increased offset for better detection
+      const scrollPosition = window.scrollY;
+      const headerHeight = 64; // 16 * 4 = 64px (h-16)
+      const viewportHeight = window.innerHeight;
+      const threshold = headerHeight + 50; // More precise threshold
       
       const homeElement = document.getElementById("home");
       const chiSiamoElement = document.getElementById("chi-siamo");
-      const inCorsaElement = document.getElementById("in-corsa");
       const processoElement = document.getElementById("processo");
+      const inCorsaElement = document.getElementById("in-corsa");
       const contattiElement = document.getElementById("contatti");
       
-      // Get all sections with their positions
-      const sections = [
-        { id: "home", element: homeElement, top: 0 },
-        ...(chiSiamoElement ? [{ id: "chi-siamo", element: chiSiamoElement, top: chiSiamoElement.offsetTop }] : []),
-        ...(processoElement ? [{ id: "processo", element: processoElement, top: processoElement.offsetTop }] : []),
-        ...(inCorsaElement ? [{ id: "in-corsa", element: inCorsaElement, top: inCorsaElement.offsetTop }] : []),
-        ...(contattiElement ? [{ id: "contatti", element: contattiElement, top: contattiElement.offsetTop }] : []),
-      ].filter(section => section.element); // Only include existing sections
-
-      // Find the current section based on scroll position
-      let currentSection = "home";
+      // Build sections array with proper boundaries
+      const sections = [];
       
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && scrollPosition >= section.top) {
+      if (homeElement) {
+        sections.push({
+          id: "home",
+          element: homeElement,
+          top: homeElement.offsetTop,
+          bottom: homeElement.offsetTop + homeElement.offsetHeight
+        });
+      }
+      
+      if (chiSiamoElement) {
+        sections.push({
+          id: "chi-siamo",
+          element: chiSiamoElement,
+          top: chiSiamoElement.offsetTop,
+          bottom: chiSiamoElement.offsetTop + chiSiamoElement.offsetHeight
+        });
+      }
+      
+      if (processoElement) {
+        sections.push({
+          id: "processo",
+          element: processoElement,
+          top: processoElement.offsetTop,
+          bottom: processoElement.offsetTop + processoElement.offsetHeight
+        });
+      }
+      
+      if (inCorsaElement) {
+        sections.push({
+          id: "in-corsa",
+          element: inCorsaElement,
+          top: inCorsaElement.offsetTop,
+          bottom: inCorsaElement.offsetTop + inCorsaElement.offsetHeight
+        });
+      }
+      
+      if (contattiElement) {
+        sections.push({
+          id: "contatti",
+          element: contattiElement,
+          top: contattiElement.offsetTop,
+          bottom: contattiElement.offsetTop + contattiElement.offsetHeight
+        });
+      }
+
+      // Find the current section
+      let currentSection = "home";
+      const currentScrollWithThreshold = scrollPosition + threshold;
+      
+      // Check each section to see which one is currently in view
+      for (const section of sections) {
+        if (currentScrollWithThreshold >= section.top && currentScrollWithThreshold < section.bottom) {
           currentSection = section.id;
           break;
+        }
+      }
+      
+      // Special case: if we're at the very top, always show home
+      if (scrollPosition < 50) {
+        currentSection = "home";
+      }
+      
+      // Special case: if we're near the bottom, check if we should show the last section
+      if (scrollPosition + viewportHeight >= document.body.scrollHeight - 100) {
+        const lastSection = sections[sections.length - 1];
+        if (lastSection) {
+          currentSection = lastSection.id;
         }
       }
       
@@ -45,11 +101,25 @@ export default function Header() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Debounce the scroll handler for better performance
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
     handleScroll(); // Call once to set initial state
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
     };
   }, [activeSection]);
 
@@ -109,8 +179,8 @@ export default function Header() {
                 Chi Siamo
               </Link>
               <Link
-                href="#processo"
-                className={getLinkClasses("processo")}
+                href="#in-corsa"
+                className={getLinkClasses("in-corsa")}
               >
                 Cosa Facciamo
               </Link>
@@ -187,8 +257,8 @@ export default function Header() {
                 Chi Siamo
               </Link>
               <Link
-                href="#processo"
-                className={getMobileLinkClasses("processo")}
+                href="#in-corsa"
+                className={getMobileLinkClasses("in-corsa")}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Cosa Facciamo

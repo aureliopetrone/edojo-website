@@ -16,7 +16,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <div className="relative overflow-hidden pt-16 min-h-screen section-white">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Modern Background Effects */}
       <ModernBackground 
         variant="mixed" 
@@ -29,16 +29,16 @@ export default function HeroSection() {
       <InteractiveParticlesSimple />
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full min-h-screen flex items-center" style={{ zIndex: 2 }}>
-        <div className="text-center w-full py-12">
+        <div className="text-center w-full py-8 sm:py-12">
           {/* Linea decorativa superiore */}
           <FadeInUp delay={200}>
-            <JapaneseLine variant="thin" className="max-w-32 mx-auto mb-8" />
+            <JapaneseLine variant="thin" className="max-w-24 sm:max-w-32 mx-auto mb-6 sm:mb-8" />
           </FadeInUp>
 
           {/* Main Title */}
           <div className="mb-6">
             <ScaleIn delay={400}>
-              <h1 className="text-5xl font-bold tracking-tight sm:text-7xl leading-tight mb-4 min-h-[120px] sm:min-h-[160px] flex items-center justify-center">
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl leading-tight mb-4 min-h-[100px] sm:min-h-[120px] lg:min-h-[160px] flex items-center justify-center">
                 <TypewriterText 
                   phrases={headlines}
                   typingSpeed={80}
@@ -48,7 +48,7 @@ export default function HeroSection() {
               </h1>
             </ScaleIn>
             <FadeInUp delay={600}>
-              <p className="text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed px-4">
                 Tech Lab per progetti innovativi. Sviluppo software e collaborazioni aziendali.
               </p>
             </FadeInUp>
@@ -56,11 +56,12 @@ export default function HeroSection() {
 
           {/* Value Proposition */}
           <FadeInUp delay={800}>
-            <div className="mt-6 mb-8">
-              <div className="inline-flex items-center bg-primary-50 rounded-full px-6 py-3 border border-primary-200 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <span className="text-primary-700 font-medium">
-                  <span className="font-mono text-sm mr-2">{/* */}</span>
-                  Tech Lab • Sviluppo Software • Consulenza
+            <div className="mt-4 sm:mt-6 mb-6 sm:mb-8">
+              <div className="inline-flex items-center bg-primary-50 rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-primary-200 shadow-sm hover:shadow-md transition-shadow duration-300 mx-4">
+                <span className="text-primary-700 font-medium text-sm sm:text-base">
+                  <span className="font-mono text-xs sm:text-sm mr-2">{/* */}</span>
+                  <span className="hidden sm:inline">Tech Lab • Sviluppo Software • Consulenza</span>
+                  <span className="sm:hidden">Tech Lab • Software • Consulenza</span>
                 </span>
               </div>
             </div>
@@ -68,11 +69,11 @@ export default function HeroSection() {
 
           {/* Linea decorativa centrale */}
           <FadeInUp delay={1000}>
-            <JapaneseLine variant="double" className="max-w-48 mx-auto mb-8" />
+            <JapaneseLine variant="double" className="max-w-36 sm:max-w-48 mx-auto mb-6 sm:mb-8" />
           </FadeInUp>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
             <ScaleIn delay={1200}>
               <OrigamiLink
                 href="#contatti"
@@ -92,10 +93,10 @@ export default function HeroSection() {
 
           {/* Linea decorativa inferiore */}
           <FadeInUp delay={1600}>
-            <JapaneseLine variant="thin" className="max-w-32 mx-auto mt-12" />
+            <JapaneseLine variant="thin" className="max-w-24 sm:max-w-32 mx-auto mt-8 sm:mt-12" />
           </FadeInUp>
         </div>
       </div>
-    </div>
+    </section>
   );
 } 

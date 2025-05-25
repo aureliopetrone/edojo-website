@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     siteName: "eDojo",
   },
   icons: [{ rel: "icon", url: "/favicon.ico" }],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 const nunito = Nunito({

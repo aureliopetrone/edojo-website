@@ -77,3 +77,8 @@
   background-color: var(--color-primary-600);
   color: var(--color-neutral-50);
 }
+
+/* Prevent horizontal overflow from animations */
+main {
+  overflow: hidden;
+}
