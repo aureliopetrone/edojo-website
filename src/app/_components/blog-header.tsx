@@ -2,10 +2,24 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function BlogHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Disable/enable body scroll when mobile menu is open/closed
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function to ensure body scroll is restored
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <>

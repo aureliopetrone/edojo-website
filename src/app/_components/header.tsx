@@ -131,6 +131,20 @@ export default function Header() {
     };
   }, [activeSection, isHomePage]);
 
+  // Disable/enable body scroll when mobile menu is open/closed
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function to ensure body scroll is restored
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   const getLinkClasses = (section: string) => {
     const baseClasses = "px-3 py-2 text-sm font-medium transition-colors duration-200";
     const activeClasses = "text-neutral-50 bg-primary-700/40 rounded-md";
