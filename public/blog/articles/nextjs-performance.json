@@ -1,0 +1,13 @@
+{
+  "id": "nextjs-performance",
+  "title": "Ottimizzare le performance in Next.js",
+  "slug": "nextjs-performance",
+  "excerpt": "Tecniche avanzate per migliorare le performance delle tue applicazioni Next.js",
+  "content": "Le performance sono un aspetto cruciale per il successo di qualsiasi applicazione web. In questo articolo esploreremo le migliori pratiche per ottimizzare le performance in Next.js.\n\n## Image Optimization\n\nNext.js offre un componente Image ottimizzato che carica automaticamente le immagini in modo efficiente:\n\n```jsx\nimport Image from 'next/image'\n\nfunction MyComponent() {\n  return (\n    <Image\n      src=\"/my-image.jpg\"\n      alt=\"Description\"\n      width={500}\n      height={300}\n      priority\n    />\n  )\n}\n```\n\n## Static Generation vs Server-Side Rendering\n\nScegliere la strategia di rendering corretta è fondamentale:\n\n- **Static Generation (SSG)**: Per contenuti che non cambiano frequentemente\n- **Server-Side Rendering (SSR)**: Per contenuti dinamici\n- **Incremental Static Regeneration (ISR)**: Il meglio di entrambi i mondi\n\n## Code Splitting\n\nNext.js implementa automaticamente il code splitting, ma puoi ottimizzarlo ulteriormente con dynamic imports.",
+  "author": "Marco Rossi",
+  "publishedAt": "2024-01-20T14:30:00.000Z",
+  "updatedAt": "2024-01-20T14:30:00.000Z",
+  "tags": ["Next.js", "performance", "optimization"],
+  "featured": false,
+  "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=450&fit=crop&crop=entropy&auto=format"
+} 

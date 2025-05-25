@@ -1,0 +1,13 @@
+{
+  "id": "primo-articolo-blog",
+  "title": "Benvenuti nel nostro blog!",
+  "slug": "primo-articolo-blog",
+  "excerpt": "Scopri come iniziare il tuo viaggio nel mondo dello sviluppo web con i nostri consigli e tutorial.",
+  "content": "Benvenuti nel nostro blog dedicato allo sviluppo web! Qui troverete tutorial, consigli e le ultime novità dal mondo della programmazione.\n\nIn questo primo articolo, vogliamo condividere con voi la nostra passione per la creazione di soluzioni web innovative e performanti.\n\n## Cosa troverete qui\n\n- Tutorial pratici su tecnologie moderne\n- Consigli per migliorare le vostre competenze\n- Case study e progetti reali\n- Le ultime tendenze del settore\n\nRestate sintonizzati per contenuti sempre aggiornati!",
+  "author": "Team Edojo",
+  "publishedAt": "2024-01-15T10:00:00.000Z",
+  "updatedAt": "2024-01-15T10:00:00.000Z",
+  "tags": ["web development", "tutorial", "programmazione"],
+  "featured": true,
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=450&fit=crop&crop=entropy&auto=format"
+} 

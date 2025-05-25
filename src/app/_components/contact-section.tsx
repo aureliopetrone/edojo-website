@@ -13,9 +13,9 @@ export default function ContactSection() {
             Hai un progetto in mente?
           </h2>
           <p className="mt-4 text-lg text-neutral-600">
-            <span className="font-semibold text-neutral-800">Parliamone in una call</span> (o di persona se sei in zona). 
+            <span className="font-semibold text-neutral-800">Parliamone</span> di persona o in call. 
             <br />
-            Raccontaci la tua idea e vediamo come trasformarla in realtà.
+            Descrivi il tuo progetto e valutiamo insieme la soluzione.
           </p>
         </div>
         
@@ -41,8 +41,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-neutral-600 text-sm font-mono">email:</p>
-                  <Link href="mailto:aurelio.petrone@gmail.com" className="text-neutral-900 hover:text-primary-600 transition-colors font-semibold">
-                    aurelio.petrone@gmail.com
+                  <Link href="mailto:info@edojo.it" className="text-neutral-900 hover:text-primary-600 transition-colors font-semibold">
+                    info@edojo.it
                   </Link>
                 </div>
               </div>
@@ -81,9 +81,8 @@ export default function ContactSection() {
 
             <div className="mt-8 p-4 bg-primary-50 rounded-lg border border-primary-200">
               <p className="text-neutral-700 text-sm">
-                <span className="font-semibold text-primary-700">💡 Pro tip:</span> 
-                Più dettagli ci dai sul tuo progetto, più preciso sarà il nostro preventivo. 
-                Non essere timido, raccontaci tutto!
+                <span className="font-semibold text-primary-700">Info:</span> 
+                Fornisci dettagli sul progetto per un preventivo più preciso.
               </p>
             </div>
 

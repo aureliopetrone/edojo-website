@@ -1,0 +1,13 @@
+{
+  "id": "typescript-best-practices",
+  "title": "TypeScript: Best Practices per Sviluppatori",
+  "slug": "typescript-best-practices",
+  "excerpt": "Guida completa alle migliori pratiche per scrivere codice TypeScript pulito e maintainabile",
+  "content": "TypeScript ha rivoluzionato il modo in cui scriviamo JavaScript, fornendo type safety e una migliore developer experience. Ecco le best practices che ogni sviluppatore dovrebbe conoscere.\n\n## Type Annotations vs Type Inference\n\nTypeScript è molto bravo nell'inferire i tipi, ma a volte è meglio essere espliciti:\n\n```typescript\n// Type inference - TypeScript deduce che è number\nconst count = 42;\n\n// Type annotation - quando vogliamo essere espliciti\nconst userName: string = getUserName();\n```\n\n## Utility Types\n\nI utility types sono i tuoi migliori amici:\n\n```typescript\ninterface User {\n  id: number;\n  name: string;\n  email: string;\n  age: number;\n}\n\n// Pick solo i campi necessari\ntype UserPreview = Pick<User, 'id' | 'name'>;\n\n// Rendi tutti i campi opzionali\ntype PartialUser = Partial<User>;\n```\n\n## Strict Mode\n\nAbilita sempre strict mode nel tuo tsconfig.json per catturare più errori.",
+  "author": "Anna Bianchi",
+  "publishedAt": "2024-01-25T09:15:00.000Z",
+  "updatedAt": "2024-01-25T09:15:00.000Z",
+  "tags": ["TypeScript", "best practices", "javascript"],
+  "featured": true,
+  "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=450&fit=crop&crop=entropy&auto=format"
+} 
