@@ -1,6 +1,7 @@
 import Link from "next/link";
 import OrigamiLink from "./origami-link";
 import TypewriterText from "./typewriter-text";
+import InteractiveParticlesSimple from "./interactive-particles-simple";
 
 export default function HeroSection() {
   const headlines = [
@@ -14,7 +15,10 @@ export default function HeroSection() {
 
   return (
     <section className="relative overflow-hidden pt-16 min-h-screen flex items-center section-white">
-      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 w-full">
+      {/* Interactive Particles Background */}
+      <InteractiveParticlesSimple />
+      
+      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 w-full" style={{ zIndex: 2 }}>
         <div className="text-center">
           {/* Main Title */}
           <div className="mb-6">

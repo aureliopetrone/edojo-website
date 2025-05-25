@@ -96,24 +96,25 @@ export default function ProcessCarousel() {
   return (
     <div>
       {/* Carousel Navigation */}
-      <div className="flex items-center justify-between mb-8">
-        <div className="flex space-x-3">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+        <div className="flex flex-wrap gap-2 sm:space-x-3">
           {processSteps.map((step, index) => (
             <button
               key={index}
               onClick={() => goToStep(index)}
-              className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 ${
+              className={`flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-full transition-all duration-300 text-xs sm:text-sm ${
                 index === currentStep
                   ? "bg-primary-400 text-neutral-900"
                   : "bg-neutral-50/10 text-neutral-300 hover:bg-neutral-50/20 hover:text-neutral-50"
               }`}
             >
-              <span className="font-bold text-sm">{step.id}</span>
-              <span className="text-sm font-medium">{step.title}</span>
+              <span className="font-bold">{step.id}</span>
+              <span className="font-medium hidden xs:inline">{step.title}</span>
+              <span className="font-medium xs:hidden">{step.title.substring(0, 3)}</span>
             </button>
           ))}
         </div>
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 justify-center sm:justify-end">
           <button
             onClick={prevStep}
             disabled={currentStep === 0}

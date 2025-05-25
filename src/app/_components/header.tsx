@@ -131,9 +131,19 @@ export default function Header() {
             {/* CTA Button */}
             <Link
               href="#contatti"
-              className="bg-neutral-50 text-primary-600 hover:bg-neutral-100 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm"
+              className="relative bg-black text-white hover:bg-neutral-900 px-6 py-2 text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl origami-button"
+              style={{
+                clipPath: 'polygon(0% 0%, calc(100% - 12px) 0%, 100% 100%, 12px 100%)',
+                transform: 'perspective(1000px) rotateX(5deg)',
+              }}
             >
-              Richiedi Preventivo
+              <span className="relative z-10">Richiedi Preventivo</span>
+              <div 
+                className="absolute inset-0 bg-gradient-to-br from-neutral-700 to-black opacity-0 hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  clipPath: 'polygon(0% 0%, calc(100% - 12px) 0%, 100% 100%, 12px 100%)',
+                }}
+              />
             </Link>
           </div>
 
@@ -202,10 +212,20 @@ export default function Header() {
               <div className="pt-2">
                 <Link
                   href="#contatti"
-                  className="bg-neutral-50 text-primary-600 hover:bg-neutral-100 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 text-center"
+                  className="relative bg-black text-white hover:bg-neutral-900 px-6 py-2 text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl origami-button"
+                  style={{
+                    clipPath: 'polygon(0% 0%, calc(100% - 12px) 0%, 100% 100%, 12px 100%)',
+                    transform: 'perspective(1000px) rotateX(5deg)',
+                  }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Richiedi Preventivo
+                  <span className="relative z-10 block text-center">Richiedi Preventivo</span>
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-br from-neutral-700 to-black opacity-0 hover:opacity-100 transition-opacity duration-300"
+                    style={{
+                      clipPath: 'polygon(0% 0%, calc(100% - 12px) 0%, 100% 100%, 12px 100%)',
+                    }}
+                  />
                 </Link>
               </div>
             </div>
