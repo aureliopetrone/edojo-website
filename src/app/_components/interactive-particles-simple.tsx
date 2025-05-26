@@ -75,7 +75,6 @@ export default function InteractiveParticlesSimple() {
       // Solo se il mouse è dentro l'area del canvas
       if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
         mouseRef.current = { x, y };
-        console.log('Mouse in canvas:', x, y);
       }
     };
 

@@ -51,10 +51,10 @@ const processSteps = [
       </svg>
     ),
     details: [
-      "Sviluppo agile con sprint settimanali",
-      "Demo regolari dei progressi",
-      "Testing automatizzato",
-      "Feedback loop continuo"
+      "Sviluppo trasparente e iterativo",
+      "Aggiornamenti costanti sui progressi",
+      "Testing rigoroso e continuo",
+      "Feedback integrato in tempo reale"
     ]
   },
   {

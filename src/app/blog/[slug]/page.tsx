@@ -13,15 +13,30 @@ interface BlogPostPageProps {
 }
 
 export async function generateStaticParams() {
-  const slugs = getAllPostSlugs();
-  return slugs.map((slug) => ({
-    slug: slug,
-  }));
+  try {
+    console.log('\n🔧 Generating static params for blog posts...');
+    const slugs = await getAllPostSlugs();
+    console.log(`📊 Found ${slugs.length} slugs for static generation:`, slugs);
+    
+    const params = slugs.map((slug) => {
+      if (typeof slug !== 'string') {
+        console.error('❌ Invalid slug type:', typeof slug, slug);
+        return null;
+      }
+      return { slug };
+    }).filter(Boolean);
+    
+    console.log(`✅ Generated ${params.length} static params`);
+    return params;
+  } catch (error) {
+    console.error('❌ Error in generateStaticParams:', error);
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   
   if (!post) {
     return {
@@ -37,7 +52,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();

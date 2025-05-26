@@ -29,7 +29,7 @@ export default function ProcessSection() {
               </JapaneseText>
               <p className="text-neutral-300 text-lg max-w-3xl mx-auto">
                 <span className="font-semibold text-neutral-50">4 step. Zero stress.</span> 
-                Il nostro processo è semplice, trasparente e orientato ai risultati.
+                Il nostro processo è trasparente, orientato ai risultati e ti tiene sempre aggiornato.
               </p>
               <JapaneseLine variant="double" className="max-w-48 mx-auto mt-8" />
             </div>
@@ -41,54 +41,11 @@ export default function ProcessSection() {
             </div>
           </FadeInUp>
 
-          {/* Process Benefits */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <SlideInLeft delay={500}>
-              <div className="bg-neutral-800/50 backdrop-blur-sm rounded-xl p-8 border border-neutral-700/50 transform hover:scale-105 transition-transform duration-300">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-neutral-50">Processo Trasparente</h3>
-                    <p className="text-neutral-300 text-sm">Sempre aggiornato sui progressi</p>
-                  </div>
-                </div>
-                <p className="text-neutral-300 leading-relaxed">
-                  <span className="font-mono text-primary-300">while(developing)</span> ricevi aggiornamenti costanti. 
-                  Vedi il progresso in tempo reale e dai feedback durante lo sviluppo.
-                </p>
-              </div>
-            </SlideInLeft>
-
-            <SlideInRight delay={700}>
-              <div className="bg-neutral-800/50 backdrop-blur-sm rounded-xl p-8 border border-neutral-700/50 transform hover:scale-105 transition-transform duration-300">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-neutral-50">Risultati Misurabili</h3>
-                    <p className="text-neutral-300 text-sm">ROI concreto e verificabile</p>
-                  </div>
-                </div>
-                <p className="text-neutral-300 leading-relaxed">
-                  <span className="font-mono text-primary-300">return success;</span> Ogni progetto ha obiettivi chiari 
-                  e metriche di successo definite fin dall&apos;inizio.
-                </p>
-              </div>
-            </SlideInRight>
-          </div>
-
-          {/* Code Block */}
-          <FadeInUp delay={900}>
-            <div className="mt-16 max-w-3xl mx-auto">
+          {/* Integrated Process Benefits in Code Block */}
+          <FadeInUp delay={500}>
+            <div className="mt-16 max-w-4xl mx-auto">
               <JapaneseLine variant="thin" className="max-w-64 mx-auto mb-8" />
-              <div className="bg-neutral-900 rounded-lg border border-neutral-700 overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              <div className="bg-neutral-900 rounded-lg border border-neutral-700 overflow-hidden shadow-2xl">
                 <div className="bg-neutral-800 px-4 py-2 border-b border-neutral-700">
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -97,22 +54,79 @@ export default function ProcessSection() {
                     <span className="text-neutral-400 text-sm ml-4 font-mono">edojo-process.js</span>
                   </div>
                 </div>
-                <div className="p-6 font-mono text-sm">
+                <div className="p-8 font-mono text-sm">
                   <div className="text-neutral-300">
-                    <span className="text-purple-400">const</span> <span className="text-blue-300">yourProject</span> = <span className="text-yellow-300">{`{`}</span>
-                    <br />
-                    &nbsp;&nbsp;<span className="text-green-300">idea</span>: <span className="text-orange-300">&ldquo;Voglio automatizzare tutto&rdquo;</span>,
-                    <br />
-                    &nbsp;&nbsp;<span className="text-green-300">budget</span>: <span className="text-orange-300">&ldquo;Ragionevole&rdquo;</span>,
-                    <br />
-                    &nbsp;&nbsp;<span className="text-green-300">timeline</span>: <span className="text-orange-300">&ldquo;Ieri&rdquo;</span>
-                    <br />
-                    <span className="text-yellow-300">{`}`}</span>;
+                    <span className="text-purple-400">class</span> <span className="text-blue-300">EdojoProcess</span> <span className="text-yellow-300">{`{`}</span>
                     <br />
                     <br />
-                    <span className="text-purple-400">const</span> <span className="text-blue-300">result</span> = <span className="text-blue-300">eDojo</span>.<span className="text-yellow-300">process</span>(<span className="text-blue-300">yourProject</span>);
+                    &nbsp;&nbsp;<span className="text-green-300">trasparenza</span>() <span className="text-yellow-300">{`{`}</span>
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-purple-400">while</span>(<span className="text-blue-300">developing</span>) <span className="text-yellow-300">{`{`}</span>
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-blue-300">client</span>.<span className="text-yellow-300">sendUpdate</span>(<span className="text-orange-300">&ldquo;progressi in tempo reale&rdquo;</span>);
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-blue-300">client</span>.<span className="text-yellow-300">requestFeedback</span>();
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-yellow-300">{`}`}</span>
+                    <br />
+                    &nbsp;&nbsp;<span className="text-yellow-300">{`}`}</span>
                     <br />
                     <br />
+                    &nbsp;&nbsp;<span className="text-green-300">risultatiMisurabili</span>() <span className="text-yellow-300">{`{`}</span>
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-purple-400">const</span> <span className="text-blue-300">obiettivi</span> = <span className="text-orange-300">&ldquo;definiti fin dall'inizio&rdquo;</span>;
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-purple-400">const</span> <span className="text-blue-300">metriche</span> = <span className="text-orange-300">&ldquo;ROI concreto e verificabile&rdquo;</span>;
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-purple-400">return</span> <span className="text-blue-300">success</span>;
+                    <br />
+                    &nbsp;&nbsp;<span className="text-yellow-300">{`}`}</span>
+                    <br />
+                    <br />
+                    <span className="text-yellow-300">{`}`}</span>
+                  </div>
+                  
+                  {/* Process Benefits Integrated */}
+                  <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-neutral-300 font-sans">
+                    <div className="bg-neutral-800/50 rounded-lg p-6 border border-neutral-700/50">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-8 h-8 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-lg flex items-center justify-center">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-neutral-50">Processo Trasparente</h4>
+                          <p className="text-neutral-400 text-xs">Sempre aggiornato sui progressi</p>
+                        </div>
+                      </div>
+                      <p className="text-neutral-300 text-sm leading-relaxed">
+                        <span className="font-mono text-primary-300">while(developing)</span> ricevi aggiornamenti costanti. 
+                        Vedi il progresso in tempo reale e dai feedback durante lo sviluppo.
+                      </p>
+                    </div>
+
+                    <div className="bg-neutral-800/50 rounded-lg p-6 border border-neutral-700/50">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7" />
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-neutral-50">Risultati Misurabili</h4>
+                          <p className="text-neutral-400 text-xs">ROI concreto e verificabile</p>
+                        </div>
+                      </div>
+                      <p className="text-neutral-300 text-sm leading-relaxed">
+                        <span className="font-mono text-primary-300">return success;</span> Ogni progetto ha obiettivi chiari 
+                        e metriche di successo definite fin dall&apos;inizio.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Output Results */}
+                  <div className="mt-8 font-mono text-sm text-neutral-300">
                     <span className="text-gray-500">{/* Output: */}</span>
                     <br />
                     <span className="text-green-400">✓ Software che funziona</span>

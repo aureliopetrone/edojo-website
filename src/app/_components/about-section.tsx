@@ -3,27 +3,28 @@ import { ModernBackground } from "./modern-background-effects";
 
 export default function AboutSection() {
   const teamMembers = [
-    // CEO/Lead Developer - Aurelio Petrone
+    // Developer - Aurelio Petrone
     <div key="aurelio" className="bg-neutral-50/10 backdrop-blur-sm rounded-lg p-6 border border-neutral-50/20 text-center group hover:bg-neutral-50/15 transition-all duration-300">
       <div className="relative mb-6">
         <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white text-2xl font-bold">
           AP
         </div>
         <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center">
-          <span className="text-white text-xs font-bold">💡</span>
+          <span className="text-white text-xs font-bold">💻</span>
         </div>
       </div>
       <h4 className="text-xl font-bold text-neutral-50 mb-2">Aurelio Petrone</h4>
       <p className="text-primary-300 font-medium mb-3">
-        <span className="font-mono text-sm">Innovation Catalyst</span>
+        <span className="font-mono text-sm">CEO e tech lead</span>
       </p>
       <p className="text-neutral-300 text-sm leading-relaxed mb-4">
-        Founder e innovation catalyst. Trasforma visioni impossibili in 
-        <span className="text-neutral-50 font-semibold">architetture tecnologiche collaborative</span>.
+        Sviluppatore software con 10+ anni di esperienza.
+        <br />
+        <span className="text-neutral-50 font-semibold">So come trasformare la tecnologia in soluzioni.</span>
       </p>
     </div>,
 
-    // Client Relations
+    // Client Specialist
     <div key="chiara" className="bg-neutral-50/10 backdrop-blur-sm rounded-lg p-6 border border-neutral-50/20 text-center group hover:bg-neutral-50/15 transition-all duration-300">
       <div className="relative mb-6">
         <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white text-2xl font-bold">
@@ -35,11 +36,12 @@ export default function AboutSection() {
       </div>
       <h4 className="text-xl font-bold text-neutral-50 mb-2">Chiara Leone</h4>
       <p className="text-primary-300 font-medium mb-3">
-        <span className="font-mono text-sm">Collaboration Expert</span>
+        <span className="font-mono text-sm">Client Relations</span>
       </p>
       <p className="text-neutral-300 text-sm leading-relaxed mb-4">
-        Architetto delle collaborazioni. Crea 
-        <span className="text-neutral-50 font-semibold">sinergie tra aziende diverse</span> per progetti win-win.
+        Fondamentale per assicurare che tu <br />ti senta al centro del tuo progetto.
+        <br />
+        <span className="text-neutral-50 font-semibold">Assicura che i progetti rispettino tempi e aspettative facendo da ponte tra te e il nostro team.</span>
       </p>
     </div>,
 
@@ -55,11 +57,12 @@ export default function AboutSection() {
       </div>
       <h4 className="text-xl font-bold text-neutral-50 mb-2">Enzo Mara</h4>
       <p className="text-primary-300 font-medium mb-3">
-        <span className="font-mono text-sm">Experience Architect</span>
+        <span className="font-mono text-sm">UX/UI Designer</span>
       </p>
       <p className="text-neutral-300 text-sm leading-relaxed mb-4">
-        Architetto delle esperienze collaborative. 
-        <span className="text-neutral-50 font-semibold">Progetta interfacce che abilitano l&apos;innovazione</span>.
+        Design di interfacce e user experience. 
+        <br />
+        <span className="text-neutral-50 font-semibold">Crea soluzioni intuitive e user-friendly</span>
       </p>
     </div>
   ];
@@ -80,7 +83,7 @@ export default function AboutSection() {
             <div className="text-center mb-16">
               <JapaneseText variant="title" brushEffect className="text-neutral-50 mb-6">
                 <span className="block text-lg font-normal text-neutral-300 mb-2">
-                  {/* Tech Lab & Innovation Incubator */}
+                  {/* La nostra evoluzione */}
                 </span>
                 Chi Siamo
               </JapaneseText>
@@ -94,23 +97,17 @@ export default function AboutSection() {
                 <div className="prose prose-lg">
                   <p className="text-neutral-100 mb-6 text-lg">
                     <span className="text-2xl font-bold text-neutral-50 block mb-2">Sviluppo Software.</span>
-                    <span className="text-2xl font-bold text-neutral-50 block mb-2">Consulenza Tecnica.</span>
-                    <span className="text-2xl font-bold text-neutral-50 block mb-2">Progetti Collaborativi.</span>
+                    <span className="text-2xl font-bold text-neutral-50 block mb-2">Automazione Intelligente.</span>
+                    <span className="text-2xl font-bold text-neutral-50 block mb-2">Sistemi su Misura.</span>
                     
-                    Software house specializzata in sviluppo web, mobile e consulenza tecnologica.{" "}
-                    <span className="text-neutral-50 font-semibold">Focus su progetti collaborativi e soluzioni innovative.</span>
+                    Realizziamo software che risolve problemi concreti. <br />
+                    <span className="text-neutral-50 font-semibold">Web app, AI integration, sistemi robotici.</span>
                   </p>
                   <p className="text-neutral-100 mb-6 text-lg">
-                    <span className="font-mono text-primary-300 bg-neutral-900/30 px-2 py-1 rounded text-sm mr-2">
-                      Approccio Collaborativo
-                    </span>
-                    <br className="mb-2" />
-                    Lavoriamo con aziende per sviluppare progetti tecnologici complessi. 
-                    <span className="text-neutral-50 font-semibold">Sviluppo attraverso la collaborazione.</span>
+                    eDojo è un tech lab digitale che si occupa di sviluppo software, automazione e integrazione di AI nei vostri sistemi esistenti. 
                   </p>
-                  <p className="text-neutral-100 text-lg">
-                    <span className="text-neutral-50 font-semibold">Progetti complessi?</span> 
-                    &ldquo;Sviluppiamo insieme.&rdquo;
+                  <p className="text-neutral-100 mb-6 text-lg">
+                    Sviluppiamo soluzioni software da <strong>oltre 10 anni</strong> ed il nostro team è composto da esperti in <strong>sviluppo, automazione e integrazione di AI</strong> con esperienze in <strong>aziende leader nel settore</strong> e in <strong>progetti complessi</strong>.
                   </p>
                 </div>
               </div>
@@ -120,71 +117,71 @@ export default function AboutSection() {
               <div className="lg:pl-8">
                 <div className="bg-neutral-50/10 backdrop-blur-sm rounded-lg p-8 border border-neutral-50/20 transform hover:scale-105 transition-transform duration-300">
                   <h3 className="text-2xl font-bold text-neutral-50 mb-6">
-                    <span className="text-primary-300 font-mono text-lg block mb-1">function</span>
-                    ourEcosystem()
+                    <span className="text-primary-300 font-mono text-lg block mb-1">cosa</span>
+                    realizziamo
                   </h3>
                   
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
                       <div className="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center mt-1">
-                        <span className="text-neutral-900 font-bold text-xs">🤝</span>
+                        <span className="text-neutral-900 font-bold text-xs">⚡</span>
                       </div>
                       <div>
-                        <p className="text-neutral-50 font-semibold">Collaborative Innovation</p>
-                        <p className="text-neutral-300 text-sm">Mettiamo in connessione aziende diverse per progetti condivisi e risultati win-win</p>
+                        <p className="text-neutral-50 font-semibold">Web Application</p>
+                        <p className="text-neutral-300 text-sm">Portali aziendali, dashboard, CRM personalizzati, e-commerce avanzati</p>
                       </div>
                     </div>
                     
                     <div className="flex items-start space-x-3">
                       <div className="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center mt-1">
-                        <span className="text-neutral-900 font-bold text-xs">🧪</span>
+                        <span className="text-neutral-900 font-bold text-xs">🤖</span>
                       </div>
                       <div>
-                        <p className="text-neutral-50 font-semibold">Tech Lab Incubation</p>
-                        <p className="text-neutral-300 text-sm">Incubiamo progetti breakthrough in AI, IoT, robotica e tecnologie emergenti</p>
+                        <p className="text-neutral-50 font-semibold">AI Integration</p>
+                        <p className="text-neutral-300 text-sm">Chatbot intelligenti, automazione documenti, analisi dati con AI</p>
                       </div>
                     </div>
                     
                     <div className="flex items-start space-x-3">
                       <div className="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center mt-1">
-                        <span className="text-neutral-900 font-bold text-xs">🚀</span>
+                        <span className="text-neutral-900 font-bold text-xs">🔧</span>
                       </div>
                       <div>
-                        <p className="text-neutral-50 font-semibold">Impossible Projects</p>
-                        <p className="text-neutral-300 text-sm">Realizziamo progetti che le aziende considerano &ldquo;impossibili&rdquo; da gestire internamente</p>
+                        <p className="text-neutral-50 font-semibold">Automazione Processi</p>
+                        <p className="text-neutral-300 text-sm">Workflow automatizzati, sistemi di controllo, IoT industriale, AI Agents</p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-3">
                       <div className="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center mt-1">
-                        <span className="text-neutral-900 font-bold text-xs">🔗</span>
+                        <span className="text-neutral-900 font-bold text-xs">📱</span>
                       </div>
                       <div>
-                        <p className="text-neutral-50 font-semibold">Strategic Partnerships</p>
-                        <p className="text-neutral-300 text-sm">Creiamo alleanze tra startup, PMI e grandi aziende per progetti innovativi</p>
+                        <p className="text-neutral-50 font-semibold">App Mobile</p>
+                        <p className="text-neutral-300 text-sm">iOS e Android, controllo remoto macchinari, app aziendali</p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-3">
                       <div className="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center mt-1">
-                        <span className="text-neutral-900 font-bold text-xs">💡</span>
+                        <span className="text-neutral-900 font-bold text-xs">🛠️</span>
                       </div>
                       <div>
-                        <p className="text-neutral-50 font-semibold">Innovation Catalyst</p>
-                        <p className="text-neutral-300 text-sm">Trasformiamo idee visionarie in soluzioni concrete attraverso la tecnologia</p>
+                        <p className="text-neutral-50 font-semibold">Consulenza Tecnica</p>
+                        <p className="text-neutral-300 text-sm">Analisi fattibilità, progettazione sistema, team augmentation</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-6 p-4 bg-neutral-900/40 rounded border border-neutral-50/10">
                     <p className="text-neutral-300 text-sm font-mono">
-                      <span className="text-emerald-400">return</span> {"{"}
+                      <span className="text-emerald-400">risultato</span> = {"{"}
                       <br />
-                      &nbsp;&nbsp;<span className="text-blue-300">collaboration</span>: <span className="text-yellow-300">&ldquo;win-win&rdquo;</span>,
+                      &nbsp;&nbsp;<span className="text-blue-300">tempi</span>: <span className="text-yellow-300">&ldquo;ridotti&rdquo;</span>,
                       <br />
-                      &nbsp;&nbsp;<span className="text-blue-300">innovation</span>: <span className="text-yellow-300">&ldquo;breakthrough&rdquo;</span>,
+                      &nbsp;&nbsp;<span className="text-blue-300">costi</span>: <span className="text-yellow-300">&ldquo;ottimizzati&rdquo;</span>,
                       <br />
-                      &nbsp;&nbsp;<span className="text-blue-300">impossibile</span>: <span className="text-yellow-300">&ldquo;possibile&rdquo;</span>
+                      &nbsp;&nbsp;<span className="text-blue-300">efficienza</span>: <span className="text-yellow-300">&ldquo;aumentata&rdquo;</span>
                       <br />
                       {"}"}
                     </p>
@@ -200,11 +197,11 @@ export default function AboutSection() {
               <div className="text-center mb-16">
                 <JapaneseLine variant="thin" className="max-w-32 mx-auto mb-8" />
                 <JapaneseText variant="subtitle" brushEffect className="text-neutral-50 mb-4">
-                  <span className="text-primary-300 font-mono text-lg block mb-1">const</span>
-                  innovationCatalysts = [catalyst, collaborator, architect]
+                  <span className="text-primary-300 font-mono text-lg block mb-1">il</span>
+                  team
                 </JapaneseText>
                 <p className="text-neutral-300 text-lg max-w-2xl mx-auto">
-                  <span className="font-semibold">3 visionari, 1 missione:</span> trasformare progetti impossibili in successi condivisi.
+                  <span className="font-semibold">Sviluppo, progetto e design</span> per soluzioni complete.
                 </p>
                 <JapaneseLine variant="double" className="max-w-48 mx-auto mt-8" />
               </div>

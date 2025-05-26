@@ -7,12 +7,12 @@ import { ModernBackground } from "./modern-background-effects";
 
 export default function HeroSection() {
   const headlines = [
-    { first: "innovate(", second: "together", third: ")" },
-    { first: "lab.incubate(", second: "ideas", third: ")" },
-    { first: "const win =", second: "collaborate()" },
-    { first: "function", second: "breakthrough()" },
-    { first: "tech.empower(", second: "impossible", third: ")" },
-    { first: "ecosystem.", second: "future()" }
+    { first: "from web to", second: "AI revolution", third: "" },
+    { first: "build(", second: "intelligent", third: ").systems" },
+    { first: "robots.meet(", second: "creativity", third: ")" },
+    { first: "ai.generative.", second: "unleashed()" },
+    { first: "const future =", second: "autonomous()" },
+    { first: "microteam.", second: "megaimpact()" }
   ];
 
   return (
@@ -48,8 +48,11 @@ export default function HeroSection() {
               </h1>
             </ScaleIn>
             <FadeInUp delay={600}>
-              <p className="text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed px-4">
-                Tech Lab per progetti innovativi. Sviluppo software e collaborazioni aziendali.
+              <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed px-4">
+                Dal web development all'AI generativa e robotica. 
+                <span className="block mt-2 text-base sm:text-lg text-neutral-500">
+                  Costruiamo soluzioni intelligenti.
+                </span>
               </p>
             </FadeInUp>
           </div>
@@ -59,9 +62,9 @@ export default function HeroSection() {
             <div className="mt-4 sm:mt-6 mb-6 sm:mb-8">
               <div className="inline-flex items-center bg-primary-50 rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-primary-200 shadow-sm hover:shadow-md transition-shadow duration-300 mx-4">
                 <span className="text-primary-700 font-medium text-sm sm:text-base">
-                  <span className="font-mono text-xs sm:text-sm mr-2">{/* */}</span>
-                  <span className="hidden sm:inline">Tech Lab • Sviluppo Software • Consulenza</span>
-                  <span className="sm:hidden">Tech Lab • Software • Consulenza</span>
+                  <span className="font-mono text-xs sm:text-sm mr-2">🤖</span>
+                  <span className="hidden sm:inline">AI Generativa • Robotica • Sviluppo Software</span>
+                  <span className="sm:hidden">AI • Robotica • Software</span>
                 </span>
               </div>
             </div>
@@ -80,12 +83,12 @@ export default function HeroSection() {
                 variant="primary"
                 size="lg"
               >
-                Contatti
+                Parliamone
               </OrigamiLink>
             </ScaleIn>
             <FadeInUp delay={1400}>
               <Link href="#chi-siamo" className="text-sm font-semibold leading-6 text-neutral-600 hover:text-neutral-900 transition-colors group flex items-center">
-                Chi siamo
+                La nostra evoluzione
                 <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform inline-block ml-2">→</span>
               </Link>
             </FadeInUp>

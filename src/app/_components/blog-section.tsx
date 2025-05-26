@@ -3,10 +3,15 @@ import { formatDate } from "~/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function BlogSection() {
-  const latestPosts = getLatestPosts(3);
+export default async function BlogSection() {
+  const latestPosts = await getLatestPosts(3);
 
-  if (latestPosts.length === 0) {
+  // Filter posts that have valid slugs and check if latestPosts is an array and has items
+  const validPosts = Array.isArray(latestPosts) 
+    ? latestPosts.filter(post => post.slug && post.slug !== 'null' && post.slug.trim() !== '')
+    : [];
+
+  if (validPosts.length === 0) {
     return null;
   }
 
@@ -22,7 +27,7 @@ export default function BlogSection() {
 
         {/* Posts Grid */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
-          {latestPosts.map((post) => (
+          {validPosts.map((post) => (
             <article
               key={post.id}
               className="overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
@@ -101,12 +106,24 @@ export default function BlogSection() {
         <div className="text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+            className="relative bg-black text-white hover:bg-neutral-900 px-8 py-3 text-base font-medium transition-all duration-300 shadow-lg hover:shadow-xl origami-button inline-flex items-center"
+            style={{
+              clipPath: 'polygon(0% 0%, calc(100% - 12px) 0%, 100% 100%, 12px 100%)',
+              transform: 'perspective(1000px) rotateX(5deg)',
+            }}
           >
-            Blog
-            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            <span className="relative z-10 flex items-center">
+              Blog
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+            <div 
+              className="absolute inset-0 bg-gradient-to-br from-neutral-700 to-black opacity-0 hover:opacity-100 transition-opacity duration-300"
+              style={{
+                clipPath: 'polygon(0% 0%, calc(100% - 12px) 0%, 100% 100%, 12px 100%)',
+              }}
+            />
           </Link>
         </div>
       </div>

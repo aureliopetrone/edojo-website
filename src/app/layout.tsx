@@ -1,6 +1,6 @@
 import "~/styles/globals.css";
 
-import { type Metadata } from "next";
+import { type Metadata, type Viewport } from "next";
 import { Nunito } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
@@ -21,11 +21,12 @@ export const metadata: Metadata = {
     siteName: "eDojo",
   },
   icons: [{ rel: "icon", url: "/favicon.ico" }],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 const nunito = Nunito({
