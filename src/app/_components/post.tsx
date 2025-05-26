@@ -8,34 +8,42 @@ export function LatestPost() {
   const [latestPost] = api.post.getLatest.useSuspenseQuery();
 
   const utils = api.useUtils();
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const createPost = api.post.create.useMutation({
     onSuccess: async () => {
       await utils.post.invalidate();
-      setName("");
+      setTitle("");
+      setContent("");
     },
   });
 
   return (
     <div className="w-full max-w-xs">
       {latestPost ? (
-        <p className="truncate">Your most recent post: {latestPost.name}</p>
+        <p className="truncate">Your most recent post: {latestPost.title}</p>
       ) : (
         <p>You have no posts yet.</p>
       )}
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          createPost.mutate({ name });
+          createPost.mutate({ title, content });
         }}
         className="flex flex-col gap-2"
       >
         <input
           type="text"
           placeholder="Title"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
           className="w-full rounded-full bg-white/10 px-4 py-2 text-white"
+        />
+        <textarea
+          placeholder="Content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          className="w-full rounded bg-white/10 px-4 py-2 text-white min-h-[100px]"
         />
         <button
           type="submit"

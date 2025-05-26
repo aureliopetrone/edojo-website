@@ -1,5 +1,5 @@
 import OrigamiLink from "./origami-link";
-import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
+import { FadeInUp, JapaneseLine, JapaneseText } from "./japanese-animations";
 import { ModernBackground } from "./modern-background-effects";
 
 export default function ProjectHeroSection() {

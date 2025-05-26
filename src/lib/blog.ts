@@ -14,15 +14,30 @@ export interface BlogPost {
   image: string;
 }
 
+interface DbPost {
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string | null;
+  content: string;
+  publishedAt: Date;
+  updatedAt: Date;
+  featured: boolean;
+  createdBy: {
+    name: string | null;
+    email: string | null;
+  } | null;
+}
+
 // Helper function to convert database post to BlogPost interface
-function convertDbPost(dbPost: any): BlogPost {
+function convertDbPost(dbPost: DbPost): BlogPost {
   return {
     id: dbPost.id.toString(),
     title: dbPost.title,
     slug: dbPost.slug,
-    excerpt: dbPost.excerpt || '',
+    excerpt: dbPost.excerpt ?? '',
     content: dbPost.content,
-    author: dbPost.createdBy?.name || 'Autore sconosciuto',
+    author: dbPost.createdBy?.name ?? 'Autore sconosciuto',
     publishedAt: dbPost.publishedAt.toISOString(),
     updatedAt: dbPost.updatedAt.toISOString(),
     tags: [], // TODO: Implement tags system if needed

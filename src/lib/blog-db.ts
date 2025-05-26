@@ -17,6 +17,23 @@ function generateExcerpt(content: string, maxLength = 150): string {
   return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
 }
 
+interface CreatePostData {
+  title: string;
+  content: string;
+  excerpt?: string;
+  slug?: string;
+  featured?: boolean;
+  userId: string;
+}
+
+interface UpdatePostData {
+  title?: string;
+  content?: string;
+  excerpt?: string;
+  featured?: boolean;
+  published?: boolean;
+}
+
 export const blogDb = {
   // Ottieni tutti i post pubblicati
   async getAllPosts() {
@@ -44,16 +61,9 @@ export const blogDb = {
   },
 
   // Crea nuovo post
-  async createPost(data: {
-    title: string;
-    content: string;
-    excerpt?: string;
-    slug?: string;
-    featured?: boolean;
-    userId: string;
-  }) {
-    const slug = data.slug || generateSlug(data.title);
-    const excerpt = data.excerpt || generateExcerpt(data.content);
+  async createPost(data: CreatePostData) {
+    const slug = data.slug ?? generateSlug(data.title);
+    const excerpt = data.excerpt ?? generateExcerpt(data.content);
 
     return await db.post.create({
       data: {
@@ -61,7 +71,7 @@ export const blogDb = {
         slug,
         content: data.content,
         excerpt,
-        featured: data.featured || false,
+        featured: data.featured ?? false,
         createdById: data.userId,
       },
       include: {
@@ -73,14 +83,8 @@ export const blogDb = {
   },
 
   // Aggiorna post
-  async updatePost(id: number, data: {
-    title?: string;
-    content?: string;
-    excerpt?: string;
-    featured?: boolean;
-    published?: boolean;
-  }) {
-    const updateData: any = { ...data };
+  async updatePost(id: number, data: UpdatePostData) {
+    const updateData: UpdatePostData & { slug?: string; excerpt?: string } = { ...data };
     
     // Rigenera slug se il titolo cambia
     if (data.title) {

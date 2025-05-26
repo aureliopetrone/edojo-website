@@ -49,7 +49,7 @@ export default function HeroSection() {
             </ScaleIn>
             <FadeInUp delay={600}>
               <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed px-4">
-                Dal web development all'AI generativa e robotica. 
+                Dal web development all&apos;AI generativa e robotica. 
                 <span className="block mt-2 text-base sm:text-lg text-neutral-500">
                   Costruiamo soluzioni intelligenti.
                 </span>

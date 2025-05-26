@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 import { getPostBySlug } from '~/lib/blog';
 import { blogDb } from '~/lib/blog-db';
 import { auth } from '~/server/auth';
@@ -7,6 +7,14 @@ interface RouteParams {
   params: Promise<{
     id: string;
   }>;
+}
+
+interface UpdatePostData {
+  title?: string;
+  content?: string;
+  excerpt?: string;
+  featured?: boolean;
+  published?: boolean;
 }
 
 // GET - Ottieni un singolo post per ID o slug
@@ -20,7 +28,6 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     let post;
     
     if (isNumericId) {
-      const dbPost = await blogDb.getPostBySlug(''); // placeholder - we need to add getPostById
       // For now, try by slug first
       post = await getPostBySlug(id);
     } else {
@@ -89,7 +96,7 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
     }
 
     // Parse del body
-    const body = await request.json();
+    const body = await request.json() as Record<string, unknown>;
     console.log('📊 Update data:', {
       title: body.title,
       hasContent: !!body.content,
@@ -97,13 +104,13 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
     });
 
     // Prepara i dati di aggiornamento
-    const updateData: any = {};
+    const updateData: UpdatePostData = {};
     
-    if (body.title) updateData.title = body.title;
-    if (body.excerpt) updateData.excerpt = body.excerpt;
-    if (body.content) updateData.content = body.content;
-    if (body.featured !== undefined) updateData.featured = body.featured;
-    if (body.published !== undefined) updateData.published = body.published;
+    if (typeof body.title === 'string') updateData.title = body.title;
+    if (typeof body.excerpt === 'string') updateData.excerpt = body.excerpt;
+    if (typeof body.content === 'string') updateData.content = body.content;
+    if (typeof body.featured === 'boolean') updateData.featured = body.featured;
+    if (typeof body.published === 'boolean') updateData.published = body.published;
 
     // Aggiorna il post usando SQLite
     const result = await blogDb.updatePost(parseInt(id), updateData);

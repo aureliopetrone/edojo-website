@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 import { blogDb } from '~/lib/blog-db';
 import { getAllPosts } from '~/lib/blog';
 import { auth } from '~/server/auth';
@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Parse del body
-    const body = await request.json();
+    const body = await request.json() as Record<string, unknown>;
     console.log('📊 Request body:', {
       title: body.title,
       hasContent: !!body.content,
@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Validazione dei campi obbligatori
-    if (!body.title) {
+    if (typeof body.title !== 'string' || !body.title) {
       return NextResponse.json(
         {
           success: false,
@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!body.content) {
+    if (typeof body.content !== 'string' || !body.content) {
       return NextResponse.json(
         {
           success: false,
@@ -102,9 +102,9 @@ export async function POST(request: NextRequest) {
     const result = await blogDb.createPost({
       title: body.title,
       content: body.content,
-      excerpt: body.excerpt,
-      slug: body.slug,
-      featured: body.featured || false,
+      excerpt: typeof body.excerpt === 'string' ? body.excerpt : undefined,
+      slug: typeof body.slug === 'string' ? body.slug : undefined,
+      featured: typeof body.featured === 'boolean' ? body.featured : false,
       userId: session.user.id
     });
 

@@ -1,8 +1,9 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import fs from 'fs';
 
 export class PromptLoader {
-  private static cache: Map<string, string> = new Map();
+  private static cache = new Map<string, string>();
   private static promptsDir = 'prompts';
 
   /**
@@ -12,7 +13,7 @@ export class PromptLoader {
     // Controlla cache prima
     if (this.cache.has(promptName)) {
       const cachedPrompt = this.cache.get(promptName);
-      return cachedPrompt || this.getFallbackPrompt(promptName);
+      return cachedPrompt ?? this.getFallbackPrompt(promptName);
     }
 
     try {
@@ -52,7 +53,7 @@ export class PromptLoader {
   /**
    * Combina più prompt
    */
-  static combinePrompts(promptNames: string[], separator: string = '\n\n'): string {
+  static combinePrompts(promptNames: string[], separator = '\n\n'): string {
     const prompts = promptNames.map(name => this.loadPrompt(name));
     return prompts.join(separator);
   }
@@ -67,7 +68,7 @@ export class PromptLoader {
     const sectionRegex = new RegExp(`## ${sectionName}([\\s\\S]*?)(?=## |$)`, 'i');
     const match = prompt.match(sectionRegex);
     
-    return match && match[1] ? match[1].trim() : '';
+    return match?.[1]?.trim() ?? '';
   }
 
   /**
@@ -100,7 +101,7 @@ export class PromptLoader {
       `
     };
 
-    return fallbacks[promptName] || 'Prompt not found and no fallback available.';
+    return fallbacks[promptName] ?? 'Prompt not found and no fallback available.';
   }
 
   /**
@@ -108,7 +109,6 @@ export class PromptLoader {
    */
   static getAvailablePrompts(): string[] {
     try {
-      const fs = require('fs');
       const files = fs.readdirSync(this.promptsDir);
       return files
         .filter((file: string) => file.endsWith('.md'))

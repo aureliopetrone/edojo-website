@@ -1,5 +1,5 @@
 import ProcessCarousel from "./process-carousel";
-import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
+import { FadeInUp, JapaneseLine, JapaneseText } from "./japanese-animations";
 import { ModernBackground } from "./modern-background-effects";
 
 export default function ProcessSection() {
@@ -74,7 +74,7 @@ export default function ProcessSection() {
                     <br />
                     &nbsp;&nbsp;<span className="text-green-300">risultatiMisurabili</span>() <span className="text-yellow-300">{`{`}</span>
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-purple-400">const</span> <span className="text-blue-300">obiettivi</span> = <span className="text-orange-300">&ldquo;definiti fin dall'inizio&rdquo;</span>;
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-purple-400">const</span> <span className="text-blue-300">obiettivi</span> = <span className="text-orange-300">&ldquo;definiti fin dall&apos;inizio&rdquo;</span>;
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-purple-400">const</span> <span className="text-blue-300">metriche</span> = <span className="text-orange-300">&ldquo;ROI concreto e verificabile&rdquo;</span>;
                     <br />
