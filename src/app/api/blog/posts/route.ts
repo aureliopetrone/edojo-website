@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createPost, createSafeSlug, type CreatePostData } from '~/lib/sanity-writer';
+import { blogDb } from '~/lib/blog-db';
 import { getAllPosts } from '~/lib/blog';
+import { getServerAuthSession } from '~/server/auth';
 
 // GET - Ottieni tutti i post
 export async function GET() {
@@ -36,6 +37,18 @@ export async function POST(request: NextRequest) {
   try {
     console.log('\n📝 API: Creating new post...');
     
+    // Verifica autenticazione
+    const session = await getServerAuthSession();
+    if (!session?.user?.id) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Utente non autenticato'
+        },
+        { status: 401 }
+      );
+    }
+
     // Verifica il Content-Type
     const contentType = request.headers.get('content-type');
     if (!contentType?.includes('application/json')) {
@@ -54,7 +67,7 @@ export async function POST(request: NextRequest) {
       title: body.title,
       hasContent: !!body.content,
       hasSlug: !!body.slug,
-      categories: body.categories
+      featured: body.featured
     });
 
     // Validazione dei campi obbligatori
@@ -78,57 +91,34 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Crea uno slug se non fornito
-    const slug = body.slug || createSafeSlug(body.title);
-    
-    // Prepara i dati del post
-    const postData: CreatePostData = {
-      title: body.title,
-      slug,
-      excerpt: body.excerpt,
-      content: body.content,
-      author: body.author || {
-        name: 'eDojo Team',
-        email: 'aurelio.petrone@gmail.com'
-      },
-      categories: body.categories,
-      featured: body.featured || false,
-      publishedAt: body.publishedAt,
-      mainImage: body.mainImage
-    };
-
     console.log('🚀 Creating post with data:', {
-      title: postData.title,
-      slug: postData.slug,
-      author: postData.author?.name,
-      categories: postData.categories
+      title: body.title,
+      slug: body.slug,
+      featured: body.featured,
+      userId: session.user.id
     });
 
-    // Crea il post
-    const result = await createPost(postData);
-
-    if (!result.success) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: result.error,
-          message: result.message
-        },
-        { status: 400 }
-      );
-    }
+    // Crea il post usando SQLite
+    const result = await blogDb.createPost({
+      title: body.title,
+      content: body.content,
+      excerpt: body.excerpt,
+      slug: body.slug,
+      featured: body.featured || false,
+      userId: session.user.id
+    });
 
     console.log('✅ API: Post created successfully');
 
     return NextResponse.json({
       success: true,
-      message: result.message,
-      post: result.post ? {
-        id: result.post._id,
-        title: result.post.title,
-        slug: result.post.slug?.current || result.post.slug,
-        createdAt: result.post._createdAt
-      } : null
+      message: 'Post creato con successo',
+      post: {
+        id: result.id.toString(),
+        title: result.title,
+        slug: result.slug,
+        createdAt: result.createdAt.toISOString()
+      }
     }, { status: 201 });
 
   } catch (error) {

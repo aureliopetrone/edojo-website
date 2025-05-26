@@ -1,6 +1,5 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { logger } from './logger.js';
 
 export class PromptLoader {
   private static cache: Map<string, string> = new Map();
@@ -23,11 +22,11 @@ export class PromptLoader {
       // Salva in cache per riutilizzo
       this.cache.set(promptName, promptContent);
       
-      logger.debug(`📋 Loaded prompt: ${promptName}`);
+      console.log(`📋 Loaded prompt: ${promptName}`);
       return promptContent;
       
     } catch (error) {
-      logger.error(`❌ Failed to load prompt: ${promptName}`, error);
+      console.error(`❌ Failed to load prompt: ${promptName}`, error);
       return this.getFallbackPrompt(promptName);
     }
   }
@@ -68,7 +67,7 @@ export class PromptLoader {
     const sectionRegex = new RegExp(`## ${sectionName}([\\s\\S]*?)(?=## |$)`, 'i');
     const match = prompt.match(sectionRegex);
     
-    return match ? match[1].trim() : '';
+    return match && match[1] ? match[1].trim() : '';
   }
 
   /**
@@ -76,7 +75,7 @@ export class PromptLoader {
    */
   static clearCache(): void {
     this.cache.clear();
-    logger.debug('🔄 Prompt cache cleared');
+    console.log('🔄 Prompt cache cleared');
   }
 
   /**

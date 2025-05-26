@@ -11,9 +11,10 @@ const API_KEY = 'edojo-blog-api-key-2024'; // Cambia in produzione
 /**
  * Funzione helper per fare richieste HTTP
  * @param {string} url 
- * @param {object} options 
+ * @param {RequestInit & {headers?: Record<string, string>}} options 
+ * @returns {Promise<{response?: Response, data?: any, error?: Error}>}
  */
-async function makeRequest(url, options) {
+async function makeRequest(url, options = {}) {
   if (!options) options = {};
   
   try {
@@ -22,7 +23,7 @@ async function makeRequest(url, options) {
       'X-API-Key': API_KEY
     };
     
-    if (options.headers) {
+    if (options && typeof options === 'object' && 'headers' in options) {
       Object.assign(headers, options.headers);
     }
 
@@ -39,8 +40,9 @@ async function makeRequest(url, options) {
     
     return { response, data };
   } catch (error) {
-    console.error(`❌ Errore nella richiesta a ${url}:`, error?.message || error);
-    return { error };
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error(`❌ Errore nella richiesta a ${url}:`, errorMessage);
+    return { error: error instanceof Error ? error : new Error(String(error)) };
   }
 }
 

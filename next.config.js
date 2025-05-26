@@ -15,15 +15,8 @@ const config = {
         port: '',
         pathname: '**',
       },
-      {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io',
-        port: '',
-        pathname: '**',
-      },
     ],
   },
-  // Configurazione per Sanity Studio
   experimental: {
     taint: true,
   },

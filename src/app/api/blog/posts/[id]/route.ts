@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getPostBySlug } from '~/lib/blog';
-import { updatePost, deletePost, type CreatePostData } from '~/lib/sanity-writer';
+import { blogDb } from '~/lib/blog-db';
+import { getServerAuthSession } from '~/server/auth';
 
 interface RouteParams {
   params: Promise<{
@@ -14,8 +15,17 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     const { id } = await params;
     console.log(`\n🔍 API: Fetching post with ID/slug: ${id}`);
     
-    // Proviamo prima come slug, poi come ID
-    const post = await getPostBySlug(id);
+    // Se è un numero, cerca per ID, altrimenti per slug
+    const isNumericId = !isNaN(Number(id));
+    let post;
+    
+    if (isNumericId) {
+      const dbPost = await blogDb.getPostBySlug(''); // placeholder - we need to add getPostById
+      // For now, try by slug first
+      post = await getPostBySlug(id);
+    } else {
+      post = await getPostBySlug(id);
+    }
     
     if (!post) {
       return NextResponse.json(
@@ -54,6 +64,18 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
     const { id } = await params;
     console.log(`\n✏️  API: Updating post with ID: ${id}`);
     
+    // Verifica autenticazione
+    const session = await getServerAuthSession();
+    if (!session?.user?.id) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Utente non autenticato'
+        },
+        { status: 401 }
+      );
+    }
+    
     // Verifica il Content-Type
     const contentType = request.headers.get('content-type');
     if (!contentType?.includes('application/json')) {
@@ -75,39 +97,27 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
     });
 
     // Prepara i dati di aggiornamento
-    const updateData: Partial<CreatePostData> = {};
+    const updateData: any = {};
     
     if (body.title) updateData.title = body.title;
     if (body.excerpt) updateData.excerpt = body.excerpt;
     if (body.content) updateData.content = body.content;
     if (body.featured !== undefined) updateData.featured = body.featured;
-    if (body.publishedAt) updateData.publishedAt = body.publishedAt;
-    if (body.categories) updateData.categories = body.categories;
+    if (body.published !== undefined) updateData.published = body.published;
 
-    // Aggiorna il post
-    const result = await updatePost(id, updateData);
-
-    if (!result.success) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: result.error,
-          message: result.message
-        },
-        { status: 400 }
-      );
-    }
+    // Aggiorna il post usando SQLite
+    const result = await blogDb.updatePost(parseInt(id), updateData);
 
     console.log('✅ API: Post updated successfully');
 
     return NextResponse.json({
       success: true,
-      message: result.message,
-      post: result.post ? {
-        id: result.post._id,
-        title: result.post.title,
-        updatedAt: result.post._updatedAt
-      } : null
+      message: 'Post aggiornato con successo',
+      post: {
+        id: result.id.toString(),
+        title: result.title,
+        updatedAt: result.updatedAt.toISOString()
+      }
     });
 
   } catch (error) {
@@ -130,25 +140,26 @@ export async function DELETE(request: NextRequest, { params }: RouteParams) {
     const { id } = await params;
     console.log(`\n🗑️  API: Deleting post with ID: ${id}`);
 
-    // Elimina il post
-    const result = await deletePost(id);
-
-    if (!result.success) {
+    // Verifica autenticazione
+    const session = await getServerAuthSession();
+    if (!session?.user?.id) {
       return NextResponse.json(
         {
           success: false,
-          error: result.error,
-          message: result.message
+          error: 'Utente non autenticato'
         },
-        { status: 400 }
+        { status: 401 }
       );
     }
+
+    // Elimina il post usando SQLite
+    await blogDb.deletePost(parseInt(id));
 
     console.log('✅ API: Post deleted successfully');
 
     return NextResponse.json({
       success: true,
-      message: result.message
+      message: 'Post eliminato con successo'
     });
 
   } catch (error) {
