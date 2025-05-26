@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getPostBySlug } from '~/lib/blog';
 import { blogDb } from '~/lib/blog-db';
-import { getServerAuthSession } from '~/server/auth';
+import { auth } from '~/server/auth';
 
 interface RouteParams {
   params: Promise<{
@@ -65,7 +65,7 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
     console.log(`\n✏️  API: Updating post with ID: ${id}`);
     
     // Verifica autenticazione
-    const session = await getServerAuthSession();
+    const session = await auth();
     if (!session?.user?.id) {
       return NextResponse.json(
         {
@@ -141,7 +141,7 @@ export async function DELETE(request: NextRequest, { params }: RouteParams) {
     console.log(`\n🗑️  API: Deleting post with ID: ${id}`);
 
     // Verifica autenticazione
-    const session = await getServerAuthSession();
+    const session = await auth();
     if (!session?.user?.id) {
       return NextResponse.json(
         {

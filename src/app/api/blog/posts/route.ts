@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { blogDb } from '~/lib/blog-db';
 import { getAllPosts } from '~/lib/blog';
-import { getServerAuthSession } from '~/server/auth';
+import { auth } from '~/server/auth';
 
 // GET - Ottieni tutti i post
 export async function GET() {
@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
     console.log('\n📝 API: Creating new post...');
     
     // Verifica autenticazione
-    const session = await getServerAuthSession();
+    const session = await auth();
     if (!session?.user?.id) {
       return NextResponse.json(
         {

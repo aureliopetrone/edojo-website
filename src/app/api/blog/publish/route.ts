@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { blogDb } from '~/lib/blog-db';
-import { getServerAuthSession } from '~/server/auth';
+import { auth } from '~/server/auth';
 
 // Semplice API key per autenticazione (in produzione usa qualcosa di più sicuro)
 const API_KEY = process.env.BLOG_API_KEY || 'edojo-blog-api-key-2024';
@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     
     // Verifica autenticazione tramite API key o sessione
     const hasApiKey = verifyAuth(request);
-    const session = await getServerAuthSession();
+    const session = await auth();
     
     if (!hasApiKey && !session?.user?.id) {
       console.warn('⚠️  Unauthorized access attempt');
@@ -146,7 +146,7 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   // Verifica autenticazione anche per le info
   const hasApiKey = verifyAuth(request);
-  const session = await getServerAuthSession();
+  const session = await auth();
   
   if (!hasApiKey && !session?.user?.id) {
     return NextResponse.json(
