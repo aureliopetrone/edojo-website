@@ -8,10 +8,12 @@
 # testing
 /coverage
 
-# database
-/prisma/db.sqlite
-/prisma/db.sqlite-journal
-db.sqlite
+# database - PostgreSQL dumps/backups (se necessari)
+# /prisma/db.sqlite
+# /prisma/db.sqlite-journal
+# db.sqlite
+*.sql.backup
+*.dump
 
 # next.js
 /.next/
