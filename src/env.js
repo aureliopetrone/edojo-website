@@ -27,6 +27,9 @@ export const env = createEnv({
     // Email Service
     RESEND_API_KEY: z.string(),
     
+    // Vercel Blob Storage
+    BLOB_READ_WRITE_TOKEN: z.string(),
+    
     // Company Contact Information
     CONTACT_EMAIL: z.string().email(),
     CONTACT_PHONE: z.string(),
@@ -72,6 +75,9 @@ export const env = createEnv({
     
     // Email Service
     RESEND_API_KEY: process.env.RESEND_API_KEY,
+    
+    // Vercel Blob Storage
+    BLOB_READ_WRITE_TOKEN: process.env.BLOB_READ_WRITE_TOKEN,
     
     // Company Contact Information
     CONTACT_EMAIL: process.env.CONTACT_EMAIL,

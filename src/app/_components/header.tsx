@@ -208,12 +208,6 @@ export default function Header() {
                   Cosa Facciamo
                 </Link>
                 <Link
-                  href="/blog"
-                  className="px-3 py-2 text-sm font-medium text-neutral-300 hover:text-neutral-50 transition-colors duration-200"
-                >
-                  Blog
-                </Link>
-                <Link
                   href={getNavHref("contatti")}
                   className={getLinkClasses("contatti")}
                 >
@@ -300,13 +294,6 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Cosa Facciamo
-            </Link>
-            <Link
-              href="/blog"
-              className="text-3xl font-bold text-white hover:text-red-100 transition-colors duration-300 text-center"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Blog
             </Link>
             <Link
               href={getNavHref("contatti")}

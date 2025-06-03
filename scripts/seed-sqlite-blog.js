@@ -1,4 +1,4 @@
-const { PrismaClient } = require('@prisma/client')
+import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
@@ -127,8 +127,6 @@ function generateExcerpt(content, maxLength = 150) {
 }
 
 // Esegui il seeding
-if (require.main === module) {
-  seedDatabase()
-}
+seedDatabase()
 
-module.exports = { seedDatabase } 
+export { seedDatabase } 
