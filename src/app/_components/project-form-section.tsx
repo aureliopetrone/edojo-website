@@ -14,7 +14,7 @@ export default function ProjectFormSection() {
       />
       
       <section id="form-progetto" className="relative">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <FadeInUp>
             <div className="text-center mb-16">
               <JapaneseLine variant="thin" className="max-w-32 mx-auto mb-8" />

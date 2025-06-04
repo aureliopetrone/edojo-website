@@ -13,7 +13,7 @@ export default function ProjectAiSection() {
       />
       
       <section id="come-facciamo" className="relative">
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <FadeInUp>
             <div className="text-center mb-16">
               <JapaneseLine variant="thin" className="max-w-32 mx-auto mb-8" />

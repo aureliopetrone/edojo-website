@@ -3,8 +3,8 @@ import { companyInfo } from "~/config/company-info";
 
 export default function SimpleFooter() {
   return (
-    <footer className="bg-neutral-900 py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer className="bg-neutral-950 py-8 relative">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         <div className="text-center">
           {/* Logo */}
           <div className="mb-6">

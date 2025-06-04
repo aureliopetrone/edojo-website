@@ -23,7 +23,7 @@ export default function AboutSection() {
       </div>
       
       <section id="chi-siamo" className="relative">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           {/* Hero Typography Section - Asymmetric Layout */}
           <div className="relative mb-32">
             {/* Main Title - Positioned Artistically */}

@@ -167,7 +167,7 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 w-full bg-primary-600/95 backdrop-blur-sm border-b border-primary-700/50 z-50">
-        <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
