@@ -5,56 +5,9 @@ import { ModernBackground } from "./modern-background-effects";
 export default function InCorsaSection() {
   return (
     <div className="py-32 relative">
-      {/* Split Background with irregular boundary */}
+      {/* Simple gradient background */}
       <div className="absolute inset-0">
-        {/* White background base */}
-        <div className="absolute inset-0 bg-white"></div>
-        
-        {/* Shadow for 3D effect */}
-        <div 
-          className="absolute inset-0 bg-black/20"
-          style={{
-            clipPath: `polygon(
-              50% 0%,
-              51% 10%,
-              49% 20%,
-              52% 30%,
-              48% 40%,
-              51.5% 50%,
-              48.5% 60%,
-              52% 70%,
-              49% 80%,
-              51% 90%,
-              50% 100%,
-              100% 100%,
-              100% 0%
-            )`,
-            transform: 'translateX(6px)',
-            filter: 'blur(3px)'
-          }}
-        ></div>
-        
-        {/* Primary background with irregular clip-path */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-700"
-          style={{
-            clipPath: `polygon(
-              50% 0%,
-              51% 10%,
-              49% 20%,
-              52% 30%,
-              48% 40%,
-              51.5% 50%,
-              48.5% 60%,
-              52% 70%,
-              49% 80%,
-              51% 90%,
-              50% 100%,
-              100% 100%,
-              100% 0%
-            )`
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-neutral-200 50% to-neutral-300"></div>
       </div>
 
       {/* Modern Background Effects */}
@@ -99,17 +52,10 @@ export default function InCorsaSection() {
 
             {/* Split Section Content - No Box */}
             <div className="relative min-h-[800px]">
-              <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[800px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[800px] gap-8 lg:gap-0">
                 {/* LEFT SIDE - Problems */}
                 <SlideInLeft delay={300} className="relative">
-                  {/* Chaotic background elements representing problems */}
-                  <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute top-8 left-8 w-16 h-16 bg-red-500/10 rounded-lg rotate-12"></div>
-                    <div className="absolute bottom-12 right-8 w-20 h-8 bg-amber-500/10 rounded-full -rotate-6"></div>
-                    <div className="absolute top-1/3 right-12 w-12 h-12 bg-orange-500/10 rounded-lg rotate-45"></div>
-                  </div>
-
-                  <div className="relative p-12 lg:p-16 h-full flex flex-col justify-center">
+                  <div className="relative p-8 lg:p-16 h-full flex flex-col justify-center bg-white rounded-2xl shadow-lg lg:shadow-xl mb-8 lg:mb-0 lg:mr-8">
                     {/* Header */}
                     <div className="mb-12">
                       <div className="flex items-start justify-between mb-6">
@@ -160,14 +106,7 @@ export default function InCorsaSection() {
 
                 {/* RIGHT SIDE - Solutions */}
                 <SlideInRight delay={300} className="relative">
-                  {/* Ordered background elements representing solutions */}
-                  <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute top-12 right-12 w-16 h-16 bg-emerald-500/10 rounded-full"></div>
-                    <div className="absolute bottom-16 left-12 w-12 h-12 bg-blue-500/10 rounded-lg"></div>
-                    <div className="absolute top-1/2 left-16 w-8 h-24 bg-white/10 rounded-full"></div>
-                  </div>
-
-                  <div className="relative p-12 lg:p-16 h-full flex flex-col justify-center text-white">
+                  <div className="relative p-8 lg:p-16 h-full flex flex-col justify-center bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-2xl shadow-lg lg:shadow-xl lg:ml-8">
                     {/* Header */}
                     <div className="mb-12">
                       <div className="flex items-start justify-between mb-6">

@@ -37,9 +37,9 @@ export default function ContactSection() {
                     <div>
                       <div className="overflow-hidden">
                         <h1 className="text-6xl sm:text-7xl lg:text-9xl font-black text-white leading-[0.8] tracking-tighter text-center">
-                          Hai un Progetto
+                          Hai qualcosa
                           <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                            in Mente?
+                            in mente?
                           </span>
                         </h1>
                       </div>

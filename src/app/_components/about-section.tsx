@@ -80,8 +80,8 @@ export default function AboutSection() {
                 <div className="space-y-8">
                   <div>
                     <h3 className="text-3xl font-bold text-white mb-6 leading-tight">
-                      Realizziamo software che risolve
-                      <span className="block text-gradient-hero">
+                      Realizziamo software che risolve{" "}
+                      <span className="inline-block text-gradient-hero">
                         problemi concreti
                       </span>
                     </h3>
