@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -9,14 +8,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <Image
-                src="/logo-nobg.png"
-                alt="eDojo Logo"
-                width={32}
-                height={32}
-                className="w-8 h-8"
-              />
-              <h3 className="text-xl font-bold text-neutral-50">eDojo</h3>
+              <h3 className="text-xl font-bold text-neutral-50">edojo</h3>
             </div>
             <div className="text-neutral-400 space-y-1">
               <p>Via Aldo Moro, 50</p>
@@ -57,7 +49,7 @@ export default function Footer() {
         
         <div className="border-t border-neutral-700 mt-8 pt-8 text-center">
           <p className="text-neutral-400">
-            © 2024 eDojo. Tutti i diritti riservati.
+            © 2025 edojo. Tutti i diritti riservati.
           </p>
         </div>
       </div>

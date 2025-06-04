@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif,
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
   
   /* Palette colori principale - Rosso e Bianco */
   --color-primary-50: #fef2f2;
@@ -29,6 +31,17 @@
   --color-neutral-800: #262626;
   --color-neutral-900: #171717;
   --color-neutral-950: #0a0a0a;
+  
+  /* Tech Colors - Moderni */
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-purple-400: #a78bfa;
+  --color-purple-500: #8b5cf6;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
   
   /* Colori semantici basati sul rosso */
   --color-success-400: #4ade80;
@@ -65,6 +78,13 @@
   --border: var(--color-neutral-800);
   --input: var(--color-neutral-800);
   --ring: var(--color-primary-500);
+  
+  /* Modern Gradients */
+  --gradient-tech: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-ai: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-cyber: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
+  --gradient-hero: linear-gradient(135deg, #67e8f9 0%, #60a5fa 50%, #67e8f9 100%);
+  --gradient-primary: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #f97316 100%);
 }
 
 /* Utility classes for section backgrounds */
@@ -78,7 +98,110 @@
   color: var(--color-neutral-50);
 }
 
+/* Modern Tech Utilities */
+.gradient-tech {
+  background: var(--gradient-tech);
+}
+
+.gradient-ai {
+  background: var(--gradient-ai);
+}
+
+.gradient-cyber {
+  background: var(--gradient-cyber);
+}
+
+.gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.glassmorphism {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glassmorphism-dark {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Modern shadows */
+.shadow-glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.shadow-glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.shadow-glow-cyan {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+}
+
+/* Animation utilities */
+@keyframes modernPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes modernGlow {
+  0%, 100% { box-shadow: 0 0 5px currentColor; }
+  50% { box-shadow: 0 0 20px currentColor; }
+}
+
+@keyframes modernFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-modern-pulse {
+  animation: modernPulse 2s ease-in-out infinite;
+}
+
+.animate-modern-glow {
+  animation: modernGlow 2s ease-in-out infinite;
+}
+
+.animate-modern-float {
+  animation: modernFloat 3s ease-in-out infinite;
+}
+
 /* Prevent horizontal overflow from animations */
 main {
   overflow: hidden;
+}
+
+/* Modern typography utilities */
+.text-gradient-blue {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-ai {
+  background: linear-gradient(135deg, #fafafa, #3b82f6, #fafafa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-hero {
+  background: var(--gradient-hero);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

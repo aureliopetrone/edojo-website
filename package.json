@@ -21,6 +21,7 @@
     "@trpc/server": "^11.1.2",
     "@vercel/blob": "^1.1.1",
     "clsx": "^2.1.1",
+    "geist": "^1.4.2",
     "next": "^15.3.2",
     "next-auth": "5.0.0-beta.25",
     "nextjs-google-analytics": "^2.3.7",

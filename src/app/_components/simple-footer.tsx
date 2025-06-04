@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function SimpleFooter() {
   return (
@@ -9,15 +8,8 @@ export default function SimpleFooter() {
           {/* Logo */}
           <div className="mb-6">
             <Link href="/" className="inline-flex items-center space-x-3 group">
-              <Image
-                src="/logo-nobg.png"
-                alt="eDojo Logo"
-                width={32}
-                height={32}
-                className="w-8 h-8"
-              />
               <span className="text-2xl font-bold text-neutral-50 group-hover:text-primary-400 transition-colors">
-                e<span className="text-neutral-200">Dojo</span>
+                edojo
               </span>
             </Link>
           </div>
@@ -78,7 +70,7 @@ export default function SimpleFooter() {
           {/* Copyright */}
           <div className="pt-6 border-t border-neutral-700">
             <p className="text-sm text-neutral-400">
-              © 2024 eDojo. Tutti i diritti riservati.
+              © 2024 edojo. Tutti i diritti riservati.
             </p>
           </div>
         </div>

@@ -4,195 +4,295 @@ import { ModernBackground } from "./modern-background-effects";
 
 export default function InCorsaSection() {
   return (
-    <div className="py-24 bg-gradient-to-br from-red-50 via-neutral-50 to-amber-50 relative">
+    <div className="py-32 relative">
+      {/* Split Background with irregular boundary */}
+      <div className="absolute inset-0">
+        {/* White background base */}
+        <div className="absolute inset-0 bg-white"></div>
+        
+        {/* Shadow for 3D effect */}
+        <div 
+          className="absolute inset-0 bg-black/20"
+          style={{
+            clipPath: `polygon(
+              50% 0%,
+              51% 10%,
+              49% 20%,
+              52% 30%,
+              48% 40%,
+              51.5% 50%,
+              48.5% 60%,
+              52% 70%,
+              49% 80%,
+              51% 90%,
+              50% 100%,
+              100% 100%,
+              100% 0%
+            )`,
+            transform: 'translateX(6px)',
+            filter: 'blur(3px)'
+          }}
+        ></div>
+        
+        {/* Primary background with irregular clip-path */}
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-700"
+          style={{
+            clipPath: `polygon(
+              50% 0%,
+              51% 10%,
+              49% 20%,
+              52% 30%,
+              48% 40%,
+              51.5% 50%,
+              48.5% 60%,
+              52% 70%,
+              49% 80%,
+              51% 90%,
+              50% 100%,
+              100% 100%,
+              100% 0%
+            )`
+          }}
+        ></div>
+      </div>
+
       {/* Modern Background Effects */}
-      <ModernBackground 
-        variant="grid" 
-        intensity="subtle" 
-        colorScheme="neutral" 
+      <ModernBackground
+        variant="grid"
+        intensity="subtle"
+        colorScheme="neutral"
         darkMode={false}
       />
-      
-      <section id="in-corsa" className="relative">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+      <section id="in-corsa" className="relative z-10">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <FadeInUp>
-            <div className="text-center mb-16">
-              <JapaneseLine variant="thin" className="max-w-32 mx-auto mb-8" />
-              <JapaneseText variant="title" brushEffect className="text-neutral-900 mb-6">
-                <span className="block text-lg font-normal text-neutral-600 mb-2 font-mono">
-                  {/* Project Rescue */}
-                </span>
-                Progetto in Difficoltà?
-                <span className="block text-lg font-normal text-neutral-600 mt-2">
-                  (audit tecnico gratuito)
-                </span>
-              </JapaneseText>
-              <p className="text-neutral-600 text-lg max-w-3xl mx-auto">
-                <span className="font-semibold text-neutral-800">Software bloccato, buggy o fuori controllo?</span> 
-                Analizziamo gratuitamente il codice e ti diciamo cosa si può salvare e quanto costa.
-              </p>
-              <JapaneseLine variant="double" className="max-w-48 mx-auto mt-8" />
+            {/* New Hero Typography Section - Artistic Layout */}
+            <div className="relative mb-24">
+              {/* Main Title - Positioned Artistically */}
+              <div className="relative">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-[10rem] sm:text-[12rem] lg:text-[18rem] font-black text-neutral-800/5 leading-none select-none pointer-events-none">
+                  rescue
+                </div>
+                <div className="relative pt-16 lg:pt-24">
+                  <div className="flex flex-col">
+                    {/* Main Heading */}
+                    <div>
+                      <div className="overflow-hidden">
+                        <JapaneseText variant="title" className="text-6xl sm:text-7xl lg:text-9xl font-black text-neutral-800 leading-[0.8] tracking-tighter text-center">
+                          Progetto in
+                          <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                            Difficoltà?
+                          </span>
+                        </JapaneseText>
+                      </div>
+                      <div className="mt-8 lg:mt-12 relative flex justify-center">
+                        <JapaneseLine variant="thick" className="w-24 bg-gradient-to-r from-cyan-400 to-blue-500" />
+                        <JapaneseLine variant="thin" className="w-16 bg-gradient-to-r from-blue-500 to-cyan-300 mt-2 ml-4" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Split Section Content - No Box */}
+            <div className="relative min-h-[800px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[800px]">
+                {/* LEFT SIDE - Problems */}
+                <SlideInLeft delay={300} className="relative">
+                  {/* Chaotic background elements representing problems */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute top-8 left-8 w-16 h-16 bg-red-500/10 rounded-lg rotate-12"></div>
+                    <div className="absolute bottom-12 right-8 w-20 h-8 bg-amber-500/10 rounded-full -rotate-6"></div>
+                    <div className="absolute top-1/3 right-12 w-12 h-12 bg-orange-500/10 rounded-lg rotate-45"></div>
+                  </div>
+
+                  <div className="relative p-12 lg:p-16 h-full flex flex-col justify-center">
+                    {/* Header */}
+                    <div className="mb-12">
+                      <div className="flex items-start justify-between mb-6">
+                        <JapaneseLine variant="thin" className="w-8 bg-red-500" />
+                      </div>
+                      <JapaneseText variant="title" className="text-3xl font-black text-neutral-900 leading-tight">
+                        <span className="block">Ti riconosci in</span>
+                        <span className="block text-red-600 italic">questi problemi?</span>
+                      </JapaneseText>
+                    </div>
+
+                    {/* Problems */}
+                    <div className="space-y-8">
+                      <div className="group relative">
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-red-500 to-red-600 rounded-r-full"></div>
+                        <div className="pl-8 py-4">
+                          <h4 className="font-bold text-neutral-900 text-lg mb-2">Sviluppo fermo da mesi</h4>
+                          <p className="text-neutral-600 text-sm leading-relaxed">Il team precedente ha abbandonato o non riesce più a progredire</p>
+                        </div>
+                      </div>
+
+                      <div className="group relative">
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-red-600 to-red-700 rounded-r-full"></div>
+                        <div className="pl-8 py-4">
+                          <h4 className="font-bold text-neutral-900 text-lg mb-2">Software pieno di bug</h4>
+                          <p className="text-neutral-600 text-sm leading-relaxed">Funzioni che si rompone continuamente, performance scadenti</p>
+                        </div>
+                      </div>
+
+                      <div className="group relative">
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-red-700 to-red-800 rounded-r-full"></div>
+                        <div className="pl-8 py-4">
+                          <h4 className="font-bold text-neutral-900 text-lg mb-2">Budget sforato, tempi dilatati</h4>
+                          <p className="text-neutral-600 text-sm leading-relaxed">Il progetto costa il doppio e non si vede la fine</p>
+                        </div>
+                      </div>
+
+                      <div className="group relative">
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-red-800 to-red-600 rounded-r-full"></div>
+                        <div className="pl-8 py-4">
+                          <h4 className="font-bold text-neutral-900 text-lg mb-2">Codice incomprensibile</h4>
+                          <p className="text-neutral-600 text-sm leading-relaxed">Documentazione inesistente, nessuno sa come funziona</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SlideInLeft>
+
+                {/* RIGHT SIDE - Solutions */}
+                <SlideInRight delay={300} className="relative">
+                  {/* Ordered background elements representing solutions */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute top-12 right-12 w-16 h-16 bg-emerald-500/10 rounded-full"></div>
+                    <div className="absolute bottom-16 left-12 w-12 h-12 bg-blue-500/10 rounded-lg"></div>
+                    <div className="absolute top-1/2 left-16 w-8 h-24 bg-white/10 rounded-full"></div>
+                  </div>
+
+                  <div className="relative p-12 lg:p-16 h-full flex flex-col justify-center text-white">
+                    {/* Header */}
+                    <div className="mb-12">
+                      <div className="flex items-start justify-between mb-6">
+                        <JapaneseLine variant="thin" className="w-8 bg-emerald-400" />
+                      </div>
+                      <JapaneseText variant="title" className="text-3xl font-black leading-tight">
+                        <span className="block">Come Ti</span>
+                        <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent italic">Aiutiamo</span>
+                      </JapaneseText>
+                    </div>
+
+                    {/* Solutions */}
+                    <div className="space-y-8">
+                      <div className="group relative">
+                        <div className="flex items-center space-x-6">
+                          <div className="relative flex-shrink-0">
+                            <svg className="w-10 h-10 text-white transition-all duration-500 group-hover:text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                              <circle cx="11" cy="11" r="3" strokeWidth={1} />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center space-x-2 mb-2">
+                              <span className="font-mono text-xs text-cyan-300">ANALYZE</span>
+                              <div className="w-1 h-1 bg-cyan-400 rounded-full"></div>
+                            </div>
+                            <h4 className="font-bold text-lg mb-2">Analisi del Codice</h4>
+                            <p className="text-primary-100 text-sm leading-relaxed">Esaminiamo la base di codice per identificare problemi tecnici</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="group relative">
+                        <div className="flex items-center space-x-6">
+                          <div className="relative flex-shrink-0">
+                            <svg className="w-10 h-10 text-white transition-all duration-500 group-hover:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                              <circle cx="12" cy="12" r="1" fill="currentColor" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center space-x-2 mb-2">
+                              <span className="font-mono text-xs text-blue-300">EVALUATE</span>
+                              <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
+                            </div>
+                            <h4 className="font-bold text-lg mb-2">Valutazione Architettura</h4>
+                            <p className="text-primary-100 text-sm leading-relaxed">Verifichiamo se la struttura è solida o va ripensata</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="group relative">
+                        <div className="flex items-center space-x-6">
+                          <div className="relative flex-shrink-0">
+                            <svg className="w-10 h-10 text-white transition-all duration-500 group-hover:text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center space-x-2 mb-2">
+                              <span className="font-mono text-xs text-cyan-300">RECOVER</span>
+                              <div className="w-1 h-1 bg-cyan-400 rounded-full"></div>
+                            </div>
+                            <h4 className="font-bold text-lg mb-2">Piano di Recupero</h4>
+                            <p className="text-primary-100 text-sm leading-relaxed">Proponiamo soluzioni concrete con tempi e costi realistici</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="group relative">
+                        <div className="flex items-center space-x-6">
+                          <div className="relative flex-shrink-0">
+                            <svg className="w-10 h-10 text-white transition-all duration-500 group-hover:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center space-x-2 mb-2">
+                              <span className="font-mono text-xs text-blue-300">DEPLOY</span>
+                              <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
+                            </div>
+                            <h4 className="font-bold text-lg mb-2">Roadmap Chiara</h4>
+                            <p className="text-primary-100 text-sm leading-relaxed">Step by step per rimettere il progetto sui binari</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SlideInRight>
+              </div>
             </div>
           </FadeInUp>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left side - Common project problems */}
-            <SlideInLeft delay={300}>
-              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-8 border border-neutral-200 shadow-lg">
-                <h3 className="text-xl font-bold text-neutral-900 mb-6">
-                  <span className="text-red-600 font-mono text-sm block mb-1">{/* Segnali di allarme */}</span>
-                  Ti riconosci in questi problemi?
-                </h3>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-1">
-                      <span className="text-red-600 font-bold text-xs">⚠️</span>
-                    </div>
-                    <div>
-                      <p className="text-neutral-800 font-semibold">Sviluppo fermo da mesi</p>
-                      <p className="text-neutral-600 text-sm">Il team precedente ha abbandonato o non riesce più a progredire</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-1">
-                      <span className="text-red-600 font-bold text-xs">🐛</span>
-                    </div>
-                    <div>
-                      <p className="text-neutral-800 font-semibold">Software pieno di bug</p>
-                      <p className="text-neutral-600 text-sm">Funzioni che si rompono continuamente, performance scadenti</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-1">
-                      <span className="text-red-600 font-bold text-xs">💸</span>
-                    </div>
-                    <div>
-                      <p className="text-neutral-800 font-semibold">Budget sforato, tempi dilatatati</p>
-                      <p className="text-neutral-600 text-sm">Il progetto costa il doppio e non si vede la fine</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-1">
-                      <span className="text-red-600 font-bold text-xs">📝</span>
-                    </div>
-                    <div>
-                      <p className="text-neutral-800 font-semibold">Codice incomprensibile</p>
-                      <p className="text-neutral-600 text-sm">Documentazione inesistente, nessuno sa come funziona</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
-                  <p className="text-amber-800 text-sm font-medium">
-                    <span className="font-mono text-amber-600">if(</span>
-                    progetto in difficoltà
-                    <span className="font-mono text-amber-600">) {`{ auditGratuito() }`}</span>
-                  </p>
-                </div>
-              </div>
-            </SlideInLeft>
-            
-            {/* Right side - Our rescue approach */}
-            <SlideInRight delay={300}>
-              <div className="bg-primary-600 rounded-xl p-8 text-white">
-                <h3 className="text-xl font-bold mb-6">
-                  <span className="text-primary-200 font-mono text-sm block mb-1">{/* Audit gratuito */}</span>
-                  Come Ti Aiutiamo
-                </h3>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mt-1">
-                      <span className="text-white font-bold text-xs">1</span>
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold">Analisi del Codice</p>
-                      <p className="text-primary-100 text-sm">Esaminiamo la base di codice per identificare problemi tecnici</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mt-1">
-                      <span className="text-white font-bold text-xs">2</span>
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold">Valutazione Architettura</p>
-                      <p className="text-primary-100 text-sm">Verifichiamo se la struttura è solida o va ripensata</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mt-1">
-                      <span className="text-white font-bold text-xs">3</span>
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold">Piano di Recupero</p>
-                      <p className="text-primary-100 text-sm">Proponiamo soluzioni concrete con tempi e costi realistici</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mt-1">
-                      <span className="text-white font-bold text-xs">4</span>
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold">Roadmap Chiara</p>
-                      <p className="text-primary-100 text-sm">Step by step per rimettere il progetto sui binari</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white/10 rounded-lg p-4 border border-white/20">
-                  <p className="text-primary-100 text-sm font-mono">
-                    <span className="text-emerald-300">function</span> <span className="text-blue-200">projectRescue</span>() {"{"}
-                    <br />
-                    &nbsp;&nbsp;<span className="text-gray-300">{/* Audit gratuito in 48h */}</span>
-                    <br />
-                    &nbsp;&nbsp;<span className="text-emerald-300">return</span> {"{"}
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-yellow-200">problemi</span>: <span className="text-green-300">&ldquo;identificati&rdquo;</span>,
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-yellow-200">soluzioni</span>: <span className="text-green-300">&ldquo;concrete&rdquo;</span>,
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-yellow-200">costo</span>: <span className="text-green-300">&ldquo;gratuito&rdquo;</span>
-                    <br />
-                    &nbsp;&nbsp;{"}"};
-                    <br />
-                    {"}"}
-                  </p>
-                </div>
-              </div>
-            </SlideInRight>
-          </div>
 
           {/* CTA Section */}
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-neutral-50 to-primary-50 rounded-xl p-8 border border-neutral-200">
-              <h3 className="text-2xl font-bold text-neutral-900 mb-4">
-                <span className="font-mono text-primary-600 text-sm block mb-1">{/* Free project audit */}</span>
-                Vuoi una nostra opinione?
-              </h3>
-              <p className="text-neutral-600 text-lg mb-6 max-w-2xl mx-auto">
-                Inviaci i dettagli del progetto. Ti rispondiamo entro 48h con 
-                un&apos;analisi gratuita e preventivo per il recupero.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <OrigamiLink
-                  href="#contatti"
-                  variant="primary"
-                  size="lg"
-                >
-                  <span className="font-mono text-sm mr-2">rescue(</span>
-                  Richiedi Audit Gratuito
-                  <span className="font-mono text-sm ml-2">)</span>
-                </OrigamiLink>
-                <p className="text-neutral-500 text-sm">
-                  <span className="font-mono">{/* */} </span>Risposta entro 48h • Analisi riservata
+          <div className="mt-28 text-center">
+            <div className="relative group">
+              {/* Decorative background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-neutral-100/50 to-primary-100/50 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+
+              <div className="relative bg-gradient-to-r from-neutral-50/90 to-primary-50/90 backdrop-blur-lg rounded-2xl p-16 border border-neutral-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.01]">
+                <JapaneseLine variant="thin" className="max-w-32 mx-auto mb-8" />
+                <JapaneseText variant="body" className="mt-8 text-lg text-neutral-600">
+                  <span className="font-semibold text-neutral-800">Software bloccato, buggy o fuori controllo?</span><br />
+                  Analizziamo gratuitamente il codice e ti diciamo cosa si può salvare e quanto costa.
+                </JapaneseText>
+                <p className="mt-4 text-sm text-neutral-500">
+                  Audit tecnico gratuito per progetti in difficoltà.
                 </p>
+
+                <div className="flex flex-col sm:flex-row mt-10 gap-8 justify-center items-center">
+                  <OrigamiLink
+                    href="#contatti"
+                    variant="primary"
+                    size="lg"
+                  >
+                    Richiedi Audit Gratuito
+                  </OrigamiLink>
+                  <p className="text-neutral-500 text-sm">
+                    <span className="font-mono">{/* */} </span>Risultati programmabili • Analisi riservata
+                  </p>
+                </div>
+
+                <JapaneseLine variant="double" className="max-w-48 mx-auto mt-8" />
+
               </div>
             </div>
           </div>

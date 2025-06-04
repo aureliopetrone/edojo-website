@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
@@ -173,15 +172,8 @@ export default function Header() {
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center space-x-3">
-                <Image
-                  src="/logo-nobg.png"
-                  alt="eDojo Logo"
-                  width={40}
-                  height={40}
-                  className="w-10 h-10 brightness-0 invert opacity-90"
-                />
                 <span className="text-2xl font-bold text-neutral-50">
-                  e<span className="text-neutral-200">Dojo</span>
+                  edojo
                 </span>
               </Link>
             </div>

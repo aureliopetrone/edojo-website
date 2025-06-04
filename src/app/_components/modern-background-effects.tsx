@@ -353,7 +353,7 @@ export function ParticleConstellation({ count = 50, color = "rgba(255, 255, 255,
 interface ModernBackgroundProps {
   variant?: "floating" | "mesh" | "morphing" | "grid" | "constellation" | "mixed";
   intensity?: "subtle" | "moderate" | "intense";
-  colorScheme?: "blue" | "purple" | "green" | "pink" | "neutral";
+  colorScheme?: "blue" | "purple" | "green" | "pink" | "neutral" | "red";
   darkMode?: boolean;
   className?: string;
 }
@@ -370,7 +370,8 @@ export function ModernBackground({
     purple: ["#8b5cf6", "#7c3aed", "#a855f7", "#9333ea"],
     green: ["#10b981", "#059669", "#22c55e", "#16a34a"],
     pink: ["#ec4899", "#db2777", "#f472b6", "#e879f9"],
-    neutral: ["#6b7280", "#4b5563", "#9ca3af", "#374151"]
+    neutral: ["#6b7280", "#4b5563", "#9ca3af", "#374151"],
+    red: ["#ef4444", "#dc2626", "#b91c1c", "#991b1b"]
   };
 
   const intensitySettings = {

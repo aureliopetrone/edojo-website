@@ -75,9 +75,8 @@ export default function OrigamiButton({
         </span>
         <span 
           className="inline-block transition-transform duration-300 group-hover:translate-x-1 text-xl"
-          style={{ fontFamily: "serif" }}
         >
-          削
+          →
         </span>
       </span>
       

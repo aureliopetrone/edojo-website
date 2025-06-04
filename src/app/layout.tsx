@@ -1,7 +1,8 @@
 import "~/styles/globals.css";
 
 import { type Metadata, type Viewport } from "next";
-import { Nunito } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import CookieBanner from "~/app/_components/cookie-banner";
@@ -29,18 +30,11 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-nunito",
-  display: "swap",
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="it" className={`${nunito.variable}`}>
+    <html lang="it" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="font-sans">
         <TRPCReactProvider>
           {children}

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function SimpleHeader() {
   return (
@@ -9,15 +8,8 @@ export default function SimpleHeader() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-3 group">
-              <Image
-                src="/logo-nobg.png"
-                alt="eDojo Logo"
-                width={40}
-                height={40}
-                className="w-10 h-10 brightness-0 invert opacity-90"
-              />
               <span className="text-2xl font-bold text-neutral-50 group-hover:text-neutral-200 transition-colors">
-                e<span className="text-neutral-200">Dojo</span>
+                edojo
               </span>
             </Link>
           </div>
