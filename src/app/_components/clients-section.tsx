@@ -104,7 +104,7 @@ export default function ClientsSection() {
             {/* Main Title - Positioned Artistically */}
             <div className="relative">
               <div className="absolute top-0 left-0 text-[8rem] sm:text-[10rem] lg:text-[12rem] font-black text-primary-600/10 leading-none select-none pointer-events-none">
-                2012/2025
+                s.2012
               </div>
               <div className="relative pt-12 lg:pt-20">
                 <div className="flex flex-col">

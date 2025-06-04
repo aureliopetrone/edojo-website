@@ -29,7 +29,7 @@ export default function ContactSection() {
               {/* Main Title - Positioned Artistically */}
               <div className="relative">
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-[10rem] sm:text-[12rem] lg:text-[18rem] font-black text-white/5 leading-none select-none pointer-events-none">
-                  edojo
+                  ciao
                 </div>
                 <div className="relative pt-12 lg:pt-20">
                   <div className="flex flex-col">
