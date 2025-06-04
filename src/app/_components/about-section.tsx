@@ -96,7 +96,7 @@ export default function AboutSection() {
                       Sviluppiamo soluzioni software innovative e personalizzate da <strong className="text-cyan-200">oltre 10 anni</strong> con un team di esperti in sviluppo, automazione e integrazione AI.
                     </p>
                     <p>
-                      <strong className="text-cyan-200">La nostra missione è aiutare le aziende nella sperimentazione e nell'implementazione di soluzioni innovative in modo rapido e accessibile.</strong>
+                      <strong className="text-cyan-200">La nostra missione &egrave; aiutare le aziende nella sperimentazione e nell&apos;implementazione di soluzioni innovative in modo rapido e accessibile.</strong>
                     </p>
                   </div>
                 </div>

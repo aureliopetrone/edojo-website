@@ -65,7 +65,7 @@ export default function AccelerationBackground({ className }: AccelerationBackgr
         length: Math.random() * 50 + 20,
         speed: Math.random() * 18 + 12, // Increased speed significantly
         opacity: Math.random() * 0.7 + 0.3, // Aumentata opacità per maggiore visibilità
-        color: colors[Math.floor(Math.random() * colors.length)] || '#dc2626',
+        color: colors[Math.floor(Math.random() * colors.length)] ?? '#dc2626',
         prevX: startX,
         prevY: startY,
       });
@@ -235,7 +235,7 @@ export default function AccelerationBackground({ className }: AccelerationBackgr
       
       {/* CSS-based 3D perspective lines - più visibili */}
       <div className="absolute inset-0" style={{ perspective: "1000px" }}>
-        {[...Array(20)].map((_, i) => (
+        {Array.from({ length: 20 }, (_, i) => (
           <div
             key={i}
             className="absolute w-2 bg-gradient-to-t from-slate-600/0 via-slate-500/60 to-slate-400/0 opacity-60"
