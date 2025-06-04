@@ -20,7 +20,7 @@ export default function ProjectHeroSection() {
               {/* Main Title */}
               <div className="mb-8">
                 <JapaneseLine variant="thin" className="max-w-32 mx-auto mb-8" />
-                <JapaneseText variant="title" brushEffect className="text-5xl font-bold tracking-tight sm:text-7xl leading-tight mb-6">
+                <JapaneseText variant="title" brushEffect className="text-5xl font-bold tracking-tight sm:text-7xl leading-[1.1] mb-6 py-2">
                   <span className="text-primary-600">Sviluppiamo</span>
                   <br />
                   <span className="text-neutral-900">la tua idea</span>

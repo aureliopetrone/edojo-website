@@ -35,8 +35,8 @@ export default function AboutSection() {
                 <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-12">
                   {/* Left Side - Main Heading */}
                   <div className="lg:w-1/2">
-                    <div className="overflow-hidden">
-                      <h1 className="text-7xl lg:text-9xl font-black text-white leading-[0.8] tracking-tighter">
+                    <div>
+                      <h1 className="text-7xl lg:text-9xl font-black text-white leading-[1.1] tracking-tighter py-2">
                         Chi
                         <span className="block text-gradient-hero">
                           Siamo
@@ -55,7 +55,7 @@ export default function AboutSection() {
                       <p className="text-white/70 text-lg font-medium tracking-wide uppercase">
                         Tech Lab Digitale
                       </p>
-                      <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+                      <h2 className="text-4xl lg:text-5xl font-bold text-white leading-[1.1] py-1">
                         Sviluppo Software
                         <span className="block text-2xl lg:text-3xl text-cyan-200 font-normal mt-2">
                           Automazione Intelligente
@@ -79,7 +79,7 @@ export default function AboutSection() {
               <div className="xl:col-span-5 xl:col-start-1">
                 <div className="space-y-8">
                   <div>
-                    <h3 className="text-3xl font-bold text-white mb-6 leading-tight">
+                    <h3 className="text-3xl font-bold text-white mb-6 leading-[1.1] py-1">
                       Realizziamo software che risolve{" "}
                       <span className="inline-block text-gradient-hero">
                         problemi concreti
@@ -105,7 +105,7 @@ export default function AboutSection() {
               {/* Services Grid - Right Side with offset */}
               <div className="xl:col-span-6 xl:col-start-7 xl:mt-16">
                 <div className="mb-10">
-                  <h3 className="text-3xl font-bold text-white mb-6 leading-tight">
+                  <h3 className="text-3xl font-bold text-white mb-6 leading-[1.1] py-1">
                     Cosa Realizziamo
                   </h3>
                   <div className="w-20 h-1 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full"></div>

@@ -23,50 +23,6 @@ export default function TeamSection() {
           </p>
         </div>
       </div>
-    </div>,
-
-    // Client Specialist
-    <div key="chiara" className="group">
-      <div className="flex items-start space-x-6">
-        <div className="relative">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white text-xl font-bold transform group-hover:scale-110 transition-transform duration-300">
-            CL
-          </div>
-          <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center">
-            <span className="text-black text-xs">🤝</span>
-          </div>
-        </div>
-        <div className="flex-1">
-          <h4 className="text-2xl font-bold text-white mb-1 tracking-tight">Chiara Leone</h4>
-          <p className="text-emerald-200 font-medium text-sm uppercase tracking-wider mb-3">Client Relations</p>
-          <p className="text-neutral-100 text-sm leading-relaxed">
-            Ponte tra cliente e team tecnico.
-            <span className="block text-white font-medium mt-2">Garantisce tempi e qualità del progetto.</span>
-          </p>
-        </div>
-      </div>
-    </div>,
-
-    // UX/UI Designer
-    <div key="enzo" className="group">
-      <div className="flex items-start space-x-6">
-        <div className="relative">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white text-xl font-bold transform group-hover:scale-110 transition-transform duration-300">
-            EM
-          </div>
-          <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
-            <span className="text-black text-xs">🎨</span>
-          </div>
-        </div>
-        <div className="flex-1">
-          <h4 className="text-2xl font-bold text-white mb-1 tracking-tight">Enzo Mara</h4>
-          <p className="text-blue-200 font-medium text-sm uppercase tracking-wider mb-3">UX/UI Designer</p>
-          <p className="text-neutral-100 text-sm leading-relaxed">
-            Design di interfacce e user experience.
-            <span className="block text-white font-medium mt-2">Crea soluzioni intuitive e user-friendly.</span>
-          </p>
-        </div>
-      </div>
     </div>
   ];
 
@@ -101,10 +57,10 @@ export default function TeamSection() {
                   <div className="flex flex-col">
                     {/* Main Heading */}
                     <div>
-                      <div className="overflow-hidden">
-                        <h1 className="text-6xl sm:text-7xl lg:text-9xl font-black text-white leading-[0.8] tracking-tighter text-center">
-                          Il Nostro
-                          <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                      <div>
+                        <h1 className="text-7xl lg:text-9xl font-black text-white leading-[1.1] tracking-tighter py-2">
+                          Il nostro
+                          <span className="block text-gradient-hero">
                             Team
                           </span>
                         </h1>
@@ -122,31 +78,21 @@ export default function TeamSection() {
             {/* Descriptive Paragraphs */}
             <div className="text-center mx-auto mb-16">
               <p className="mt-6 text-lg text-neutral-300">
-                <span className="font-semibold text-white">Competenze diverse, obiettivo comune:</span> 
-                creare soluzioni complete e di qualità per i nostri clienti.
+                <span className="font-semibold text-white">Competenza ed esperienza</span> 
+                al servizio dei nostri clienti per creare soluzioni complete e di qualità.
               </p>
               <p className="mt-2 text-sm text-neutral-400">
-                Sviluppo, progetto e design in un unico team affiatato.
+                Sviluppo, progetto e design con focus sulla qualità e l&apos;innovazione.
               </p>
             </div>
           </FadeInUp>
 
-          {/* Team Grid - Asymmetric but controlled layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-            <div className="lg:transform lg:translate-y-8">
-              <SlideInLeft delay={200}>
-                {teamMembers[0]}
-              </SlideInLeft>
-            </div>
-            <div className="lg:transform lg:-translate-y-4">
+          {/* Team Member - Centered */}
+          <div className="flex justify-center">
+            <div className="max-w-md">
               <FadeInUp delay={400}>
-                {teamMembers[1]}
+                {teamMembers[0]}
               </FadeInUp>
-            </div>
-            <div className="lg:transform lg:translate-y-12">
-              <SlideInRight delay={600}>
-                {teamMembers[2]}
-              </SlideInRight>
             </div>
           </div>
         </div>

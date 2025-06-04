@@ -2,7 +2,7 @@ import OrigamiLink from "./origami-link";
 import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
 import { ModernBackground } from "./modern-background-effects";
 
-export default function InCorsaSection() {
+export default function RescueLandingSection() {
   return (
     <div className="py-32 relative">
       {/* Simple gradient background */}
@@ -18,31 +18,31 @@ export default function InCorsaSection() {
         darkMode={false}
       />
 
-      <section id="in-corsa" className="relative z-10">
+      <section id="rescue-landing" className="relative z-10">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <FadeInUp>
             {/* New Hero Typography Section - Artistic Layout */}
             <div className="relative mb-24">
               {/* Main Title - Positioned Artistically */}
               <div className="relative">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-[10rem] sm:text-[12rem] lg:text-[18rem] font-black text-neutral-800/5 leading-none select-none pointer-events-none">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-[8rem] sm:text-[10rem] lg:text-[14rem] font-black text-neutral-800/5 leading-none select-none pointer-events-none">
                   rescue
                 </div>
-                <div className="relative pt-16 lg:pt-24">
+                <div className="relative pt-12 lg:pt-16">
                   <div className="flex flex-col">
                     {/* Main Heading */}
                     <div>
-                      <div className="overflow-hidden">
-                        <JapaneseText variant="title" className="text-6xl sm:text-7xl lg:text-9xl font-black text-neutral-800 leading-[0.8] tracking-tighter text-center">
-                          Progetto in
+                      <div>
+                        <JapaneseText variant="title" className="text-4xl sm:text-5xl lg:text-7xl font-black text-neutral-800 leading-[1.1] tracking-tighter text-center py-2">
+                          Progetto
                           <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                            Difficoltà?
+                            Stagnante?
                           </span>
                         </JapaneseText>
                       </div>
-                      <div className="mt-8 lg:mt-12 relative flex justify-center">
-                        <JapaneseLine variant="thick" className="w-24 bg-gradient-to-r from-cyan-400 to-blue-500" />
-                        <JapaneseLine variant="thin" className="w-16 bg-gradient-to-r from-blue-500 to-cyan-300 mt-2 ml-4" />
+                      <div className="mt-6 lg:mt-8 relative flex justify-center">
+                        <JapaneseLine variant="thick" className="w-20 bg-gradient-to-r from-cyan-400 to-blue-500" />
+                        <JapaneseLine variant="thin" className="w-12 bg-gradient-to-r from-blue-500 to-cyan-300 mt-2 ml-3" />
                       </div>
                     </div>
                   </div>
@@ -59,45 +59,45 @@ export default function InCorsaSection() {
                     {/* Header */}
                     <div className="mb-12">
                       <div className="flex items-start justify-between mb-6">
-                        <JapaneseLine variant="thin" className="w-8 bg-red-500" />
+                        <JapaneseLine variant="thin" className="w-8 bg-amber-500" />
                       </div>
-                      <JapaneseText variant="title" className="text-3xl font-black text-neutral-900 leading-tight">
-                        <span className="block">Ti riconosci in</span>
-                        <span className="block text-red-600 italic">questi problemi?</span>
+                      <JapaneseText variant="title" className="text-3xl font-black text-neutral-900 leading-[1.1] py-1">
+                        <span className="block">Situazioni che</span>
+                        <span className="block text-amber-600 italic">riconosciamo</span>
                       </JapaneseText>
                     </div>
 
                     {/* Problems */}
                     <div className="space-y-8">
                       <div className="group relative">
-                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-red-500 to-red-600 rounded-r-full"></div>
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-500 to-amber-600 rounded-r-full"></div>
                         <div className="pl-8 py-4">
-                          <h4 className="font-bold text-neutral-900 text-lg mb-2">Sviluppo fermo da mesi</h4>
-                          <p className="text-neutral-600 text-sm leading-relaxed">Il team precedente ha abbandonato o non riesce più a progredire</p>
+                          <h4 className="font-bold text-neutral-900 text-lg mb-2">Sviluppo rallentato</h4>
+                          <p className="text-neutral-600 text-sm leading-relaxed">Il team precedente ha lasciato o fatica a fare progressi significativi</p>
                         </div>
                       </div>
 
                       <div className="group relative">
-                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-red-600 to-red-700 rounded-r-full"></div>
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-600 to-orange-500 rounded-r-full"></div>
                         <div className="pl-8 py-4">
-                          <h4 className="font-bold text-neutral-900 text-lg mb-2">Software pieno di bug</h4>
-                          <p className="text-neutral-600 text-sm leading-relaxed">Funzioni che si rompone continuamente, performance scadenti</p>
+                          <h4 className="font-bold text-neutral-900 text-lg mb-2">Qualità del codice</h4>
+                          <p className="text-neutral-600 text-sm leading-relaxed">Funzionalità instabili e performance non ottimali</p>
                         </div>
                       </div>
 
                       <div className="group relative">
-                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-red-700 to-red-800 rounded-r-full"></div>
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-500 to-orange-600 rounded-r-full"></div>
                         <div className="pl-8 py-4">
-                          <h4 className="font-bold text-neutral-900 text-lg mb-2">Budget sforato, tempi dilatati</h4>
-                          <p className="text-neutral-600 text-sm leading-relaxed">Il progetto costa il doppio e non si vede la fine</p>
+                          <h4 className="font-bold text-neutral-900 text-lg mb-2">Gestione risorse</h4>
+                          <p className="text-neutral-600 text-sm leading-relaxed">Budget e tempi che si allungano oltre le previsioni iniziali</p>
                         </div>
                       </div>
 
                       <div className="group relative">
-                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-red-800 to-red-600 rounded-r-full"></div>
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-600 to-amber-500 rounded-r-full"></div>
                         <div className="pl-8 py-4">
-                          <h4 className="font-bold text-neutral-900 text-lg mb-2">Codice incomprensibile</h4>
-                          <p className="text-neutral-600 text-sm leading-relaxed">Documentazione inesistente, nessuno sa come funziona</p>
+                          <h4 className="font-bold text-neutral-900 text-lg mb-2">Documentazione carente</h4>
+                          <p className="text-neutral-600 text-sm leading-relaxed">Mancanza di documentazione tecnica e difficoltà di comprensione del codice</p>
                         </div>
                       </div>
                     </div>
@@ -112,9 +112,9 @@ export default function InCorsaSection() {
                       <div className="flex items-start justify-between mb-6">
                         <JapaneseLine variant="thin" className="w-8 bg-emerald-400" />
                       </div>
-                      <JapaneseText variant="title" className="text-3xl font-black leading-tight">
-                        <span className="block">Come Ti</span>
-                        <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent italic">Aiutiamo</span>
+                      <JapaneseText variant="title" className="text-3xl font-black leading-[1.1] py-1">
+                        <span className="block">Il nostro</span>
+                        <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent italic">Approccio</span>
                       </JapaneseText>
                     </div>
 
@@ -130,11 +130,11 @@ export default function InCorsaSection() {
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center space-x-2 mb-2">
-                              <span className="font-mono text-xs text-cyan-300">ANALYZE</span>
+                              <span className="font-mono text-xs text-cyan-300">ANALIZZA</span>
                               <div className="w-1 h-1 bg-cyan-400 rounded-full"></div>
                             </div>
-                            <h4 className="font-bold text-lg mb-2">Analisi del Codice</h4>
-                            <p className="text-primary-100 text-sm leading-relaxed">Esaminiamo la base di codice per identificare problemi tecnici</p>
+                            <h4 className="font-bold text-lg mb-2">Analisi Tecnica</h4>
+                            <p className="text-primary-100 text-sm leading-relaxed">Valutiamo la base di codice per identificare criticità e opportunità</p>
                           </div>
                         </div>
                       </div>
@@ -149,11 +149,11 @@ export default function InCorsaSection() {
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center space-x-2 mb-2">
-                              <span className="font-mono text-xs text-blue-300">EVALUATE</span>
+                              <span className="font-mono text-xs text-blue-300">VALUTA</span>
                               <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
                             </div>
-                            <h4 className="font-bold text-lg mb-2">Valutazione Architettura</h4>
-                            <p className="text-primary-100 text-sm leading-relaxed">Verifichiamo se la struttura è solida o va ripensata</p>
+                            <h4 className="font-bold text-lg mb-2">Assessment Architetturale</h4>
+                            <p className="text-primary-100 text-sm leading-relaxed">Verifichiamo la solidità della struttura e proponiamo miglioramenti</p>
                           </div>
                         </div>
                       </div>
@@ -168,11 +168,11 @@ export default function InCorsaSection() {
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center space-x-2 mb-2">
-                              <span className="font-mono text-xs text-cyan-300">RECOVER</span>
+                              <span className="font-mono text-xs text-cyan-300">PIANIFICA</span>
                               <div className="w-1 h-1 bg-cyan-400 rounded-full"></div>
                             </div>
-                            <h4 className="font-bold text-lg mb-2">Piano di Recupero</h4>
-                            <p className="text-primary-100 text-sm leading-relaxed">Proponiamo soluzioni concrete con tempi e costi realistici</p>
+                            <h4 className="font-bold text-lg mb-2">Strategia di Miglioramento</h4>
+                            <p className="text-primary-100 text-sm leading-relaxed">Definiamo un piano concreto con priorità e milestone realistiche</p>
                           </div>
                         </div>
                       </div>
@@ -186,11 +186,11 @@ export default function InCorsaSection() {
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center space-x-2 mb-2">
-                              <span className="font-mono text-xs text-blue-300">DEPLOY</span>
+                              <span className="font-mono text-xs text-blue-300">IMPLEMENTA</span>
                               <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
                             </div>
-                            <h4 className="font-bold text-lg mb-2">Roadmap Chiara</h4>
-                            <p className="text-primary-100 text-sm leading-relaxed">Step by step per rimettere il progetto sui binari</p>
+                            <h4 className="font-bold text-lg mb-2">Roadmap Operativa</h4>
+                            <p className="text-primary-100 text-sm leading-relaxed">Esecuzione step-by-step per riportare il progetto in carreggiata</p>
                           </div>
                         </div>
                       </div>
@@ -210,11 +210,11 @@ export default function InCorsaSection() {
               <div className="relative bg-gradient-to-r from-neutral-50/90 to-primary-50/90 backdrop-blur-lg rounded-2xl p-16 border border-neutral-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.01]">
                 <JapaneseLine variant="thin" className="max-w-32 mx-auto mb-8" />
                 <JapaneseText variant="body" className="mt-8 text-lg text-neutral-600">
-                  <span className="font-semibold text-neutral-800">Software bloccato, buggy o fuori controllo?</span><br />
-                  Analizziamo gratuitamente il codice e ti diciamo cosa si può salvare e quanto costa.
+                  <span className="font-semibold text-neutral-800">Progetto che non avanza come previsto?</span><br />
+                  Valutiamo insieme la situazione e definiamo il percorso migliore per ottimizzare i risultati.
                 </JapaneseText>
                 <p className="mt-4 text-sm text-neutral-500">
-                  Audit tecnico gratuito per progetti in difficoltà.
+                  Analisi tecnica gratuita per progetti che necessitano di una nuova direzione.
                 </p>
 
                 <div className="flex flex-col sm:flex-row mt-10 gap-8 justify-center items-center">
@@ -223,10 +223,10 @@ export default function InCorsaSection() {
                     variant="primary"
                     size="lg"
                   >
-                    Richiedi Audit Gratuito
+                    Richiedi Valutazione
                   </OrigamiLink>
                   <p className="text-neutral-500 text-sm">
-                    <span className="font-mono">{/* */} </span>Risultati programmabili • Analisi riservata
+                    <span className="font-mono">{/* */} </span>Consulenza professionale • Analisi riservata
                   </p>
                 </div>
 

@@ -35,8 +35,8 @@ export default function ContactSection() {
                   <div className="flex flex-col">
                     {/* Main Heading */}
                     <div>
-                      <div className="overflow-hidden">
-                        <h1 className="text-6xl sm:text-7xl lg:text-9xl font-black text-white leading-[0.8] tracking-tighter text-center">
+                      <div>
+                        <h1 className="text-6xl sm:text-7xl lg:text-9xl font-black text-white leading-[1.1] tracking-tighter text-center py-2">
                           Hai qualcosa
                           <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                             in mente?

@@ -17,10 +17,20 @@ export default function SimpleHeader() {
           {/* Navigation */}
           <nav className="flex items-center">
             <Link 
-              href="#form-progetto"
-              className="bg-neutral-50 text-primary-600 hover:bg-neutral-100 px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm"
+              href="#contatti"
+              className="relative bg-black text-white hover:bg-neutral-900 px-6 py-2 text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl origami-button"
+              style={{
+                clipPath: 'polygon(0% 0%, calc(100% - 12px) 0%, 100% 100%, 12px 100%)',
+                transform: 'perspective(1000px) rotateX(5deg)',
+              }}
             >
-              Contattaci
+              <span className="relative z-10">Richiedi Audit</span>
+              <div 
+                className="absolute inset-0 bg-gradient-to-br from-neutral-700 to-black opacity-0 hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  clipPath: 'polygon(0% 0%, calc(100% - 12px) 0%, 100% 100%, 12px 100%)',
+                }}
+              />
             </Link>
           </nav>
         </div>

@@ -110,18 +110,12 @@ export default function ClientsSection() {
                 <div className="flex flex-col">
                   {/* Main Heading */}
                   <div>
-                    <div className="overflow-hidden">
-                      <h1 className="text-6xl sm:text-7xl lg:text-9xl font-black text-gray-800 leading-[0.8] tracking-tighter text-center lg:text-left">
-                        I Nostri
-                        <span className="block bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
-                          Clienti
-                        </span>
-                      </h1>
-                    </div>
-                    <div className="mt-6 lg:mt-8 relative flex justify-center lg:justify-start">
-                      <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full"></div>
-                      <div className="w-16 h-1 bg-gradient-to-r from-primary-600 to-primary-400 rounded-full mt-2 ml-4"></div>
-                    </div>
+                    <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black text-neutral-900 leading-[1.1] tracking-tighter text-center py-2">
+                      Chi ha
+                      <span className="block bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                        scelto edojo
+                      </span>
+                    </h1>
                   </div>
                 </div>
               </div>

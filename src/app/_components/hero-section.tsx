@@ -28,7 +28,7 @@ export default function HeroSection() {
               {/* Main Title - Positioned Artistically */}
               <div className="relative pt-8 lg:pt-16">
                 <ScaleIn delay={200}>
-                  <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[0.8] mb-8">
+                  <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1] mb-8 py-2">
                     <span className="block text-white">
                       AIUTIAMO I
                     </span>

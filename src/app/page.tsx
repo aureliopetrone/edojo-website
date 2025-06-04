@@ -5,7 +5,6 @@ import AboutSection from "~/app/_components/about-section";
 import ClientsSection from "~/app/_components/clients-section";
 import TeamSection from "~/app/_components/team-section";
 import ProcessSection from "~/app/_components/process-section";
-import InCorsaSection from "~/app/_components/in-corsa-section";
 import ContactSection from "~/app/_components/contact-section";
 import Footer from "~/app/_components/footer";
 
@@ -19,7 +18,6 @@ export default async function Home() {
         <ClientsSection />
         <TeamSection />
         {/* <ProcessSection /> */}
-        <InCorsaSection />
         <ContactSection />
         <Footer />
       </main>
