@@ -2,6 +2,7 @@ import Link from "next/link";
 import ContactForm from "./contact-form";
 import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
 import { ModernBackground } from "./modern-background-effects";
+import { companyInfo } from "~/config/company-info";
 
 export default function RescueContactSection() {
   return (
@@ -135,8 +136,8 @@ export default function RescueContactSection() {
                       </svg>
                     </div>
                     <div>
-                      <Link href="mailto:info@edojo.it" className="text-neutral-300 hover:text-cyan-400 transition-colors text-sm">
-                        info@edojo.it
+                      <Link href={`mailto:${companyInfo.contact.email}`} className="text-neutral-300 hover:text-cyan-400 transition-colors text-sm">
+                        {companyInfo.contact.email}
                       </Link>
                     </div>
                   </div>

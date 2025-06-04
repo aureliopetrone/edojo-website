@@ -2,6 +2,7 @@ import Link from "next/link";
 import ContactForm from "./contact-form";
 import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
 import { ModernBackground } from "./modern-background-effects";
+import { companyInfo } from "~/config/company-info";
 
 export default function ContactSection() {
   return (
@@ -89,8 +90,8 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <p className="text-neutral-400 text-sm font-mono">email:</p>
-                      <Link href="mailto:info@edojo.it" className="text-white text-lg hover:text-cyan-400 transition-colors font-semibold">
-                        info@edojo.it
+                      <Link href={`mailto:${companyInfo.contact.email}`} className="text-white text-lg hover:text-cyan-400 transition-colors font-semibold">
+                        {companyInfo.contact.email}
                       </Link>
                     </div>
                   </div>

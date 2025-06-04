@@ -2,10 +2,19 @@ import { type Metadata } from "next";
 import Header from "~/app/_components/header";
 import Footer from "~/app/_components/footer";
 import CookiePreferences from "~/app/_components/cookie-preferences";
+import { companyInfo } from "~/config/company-info";
 
 export const metadata: Metadata = {
-  title: "Preferenze Cookie - eDojo",
-  description: "Gestisci le tue preferenze sui cookie per il sito eDojo",
+  title: companyInfo.pageMetadata.cookiePreferences.title,
+  description: companyInfo.pageMetadata.cookiePreferences.description,
+  keywords: companyInfo.pageMetadata.cookiePreferences.keywords,
+  openGraph: {
+    title: companyInfo.pageMetadata.cookiePreferences.title,
+    description: companyInfo.pageMetadata.cookiePreferences.description,
+    type: "website",
+    locale: "it_IT",
+    siteName: "eDojo",
+  },
 };
 
 export default function CookiePreferencesPage() {

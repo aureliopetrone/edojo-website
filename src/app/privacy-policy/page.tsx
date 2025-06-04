@@ -1,10 +1,19 @@
 import { type Metadata } from "next";
 import Header from "~/app/_components/header";
 import Footer from "~/app/_components/footer";
+import { companyInfo } from "~/config/company-info";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - eDojo",
-  description: "Informativa sulla privacy e trattamento dei dati personali di eDojo",
+  title: companyInfo.pageMetadata.privacyPolicy.title,
+  description: companyInfo.pageMetadata.privacyPolicy.description,
+  keywords: companyInfo.pageMetadata.privacyPolicy.keywords,
+  openGraph: {
+    title: companyInfo.pageMetadata.privacyPolicy.title,
+    description: companyInfo.pageMetadata.privacyPolicy.description,
+    type: "website",
+    locale: "it_IT",
+    siteName: "eDojo",
+  },
 };
 
 export default function PrivacyPolicy() {

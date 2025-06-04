@@ -9,19 +9,9 @@ import CookieBanner from "~/app/_components/cookie-banner";
 import GoogleAnalyticsWrapper from "~/app/_components/google-analytics";
 
 export const metadata: Metadata = {
-  title: "eDojo - Cultura Digitale per il Business",
-  description: "Accompagniamo le aziende nel percorso di trasformazione digitale con metodologie consolidate e tecnologie innovative. Consulenza, sviluppo e supporto per la crescita digitale.",
-  keywords: "trasformazione digitale, consulenza tecnologica, sviluppo software, innovazione aziendale, cultura digitale, metodologie agili, business intelligence",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
   authors: [{ name: "eDojo" }],
   creator: "eDojo",
-  openGraph: {
-    title: "eDojo - Intelligenza Artificiale Accessibile per PMI",
-    description: "Democratizziamo l'accesso all'AI per le piccole imprese. Soluzioni pratiche, convenienti e immediate per far crescere il tuo business.",
-    type: "website",
-    locale: "it_IT",
-    siteName: "eDojo",
-  },
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export const viewport: Viewport = {

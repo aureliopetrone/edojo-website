@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { companyInfo } from "~/config/company-info";
 
 export default function SimpleFooter() {
   return (
@@ -9,7 +10,7 @@ export default function SimpleFooter() {
           <div className="mb-6">
             <Link href="/" className="inline-flex items-center space-x-3 group">
               <span className="text-2xl font-bold text-neutral-50 group-hover:text-primary-400 transition-colors">
-                edojo
+                {companyInfo.name}
               </span>
             </Link>
           </div>
@@ -17,23 +18,23 @@ export default function SimpleFooter() {
           {/* Contact Info */}
           <div className="mb-6">
             <p className="text-neutral-300 mb-4">
-              Hai domande sul progetto gratuito?
+              Contattaci per maggiori informazioni
             </p>
             <div className="space-y-2">
               <p>
                 <a 
-                  href="mailto:info@edojo.it" 
+                  href={`mailto:${companyInfo.contact.email}`}
                   className="text-primary-400 hover:text-primary-300 font-medium transition-colors"
                 >
-                  info@edojo.it
+                  {companyInfo.contact.email}
                 </a>
               </p>
               <p>
                 <a 
-                  href="tel:+390825123456" 
+                  href={`tel:${companyInfo.contact.phone}`}
                   className="text-primary-400 hover:text-primary-300 font-medium transition-colors"
                 >
-                  +39 0825 123456
+                  {companyInfo.contact.phone}
                 </a>
               </p>
             </div>
@@ -41,36 +42,27 @@ export default function SimpleFooter() {
 
           {/* Company Info */}
           <div className="mb-6 text-neutral-400 text-sm">
-            <p>Via Aldo Moro, 50 - Solofra (AV)</p>
-            <p>P.IVA 03030880649</p>
+            <p>{companyInfo.address.street} - {companyInfo.address.city}</p>
+            <p>{companyInfo.vatNumber}</p>
           </div>
 
-          {/* Links */}
-          <div className="flex items-center justify-center space-x-6 mb-6">
-            <Link 
-              href="/"
-              className="text-sm text-neutral-400 hover:text-primary-300 transition-colors"
-            >
-              Sito Principale
-            </Link>
-            <Link 
-              href="/#chi-siamo"
-              className="text-sm text-neutral-400 hover:text-primary-300 transition-colors"
-            >
-              Chi Siamo
-            </Link>
-            <Link 
-              href="/#contatti"
-              className="text-sm text-neutral-400 hover:text-primary-300 transition-colors"
-            >
-              Contatti
-            </Link>
+          {/* Navigation Links */}
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-6">
+            {companyInfo.navigation.footer.map((link, index) => (
+              <Link 
+                key={index}
+                href={link.href}
+                className="text-sm text-neutral-400 hover:text-primary-300 transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
 
           {/* Copyright */}
           <div className="pt-6 border-t border-neutral-700">
             <p className="text-sm text-neutral-400">
-              © 2024 edojo. Tutti i diritti riservati.
+              {companyInfo.copyright}
             </p>
           </div>
         </div>
