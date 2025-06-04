@@ -83,6 +83,10 @@ export const companyInfo = {
         href: "/prototipazione"
       },
       {
+        name: "Consulenza Tecnica",
+        href: "/consulenza"
+      },
+      {
         name: "Rescue Projects",
         href: "/rescue"
       },
@@ -121,6 +125,11 @@ export const companyInfo = {
       description: "Recuperiamo progetti IT in difficoltà, risolviamo problemi tecnici complessi e riportiamo in vita software e sistemi abbandonati o mal funzionanti.",
       keywords: "rescue projects, recupero progetti, consulenza IT, debugging, refactoring, legacy systems, problemi software"
     },
+    consulenza: {
+      title: "Consulenza Tecnica e Team Augmentation - eDojo",
+      description: "Servizi di consulenza tecnica specializzata e team augmentation. Affianchiamo i tuoi team interni con sviluppatori esperti per accelerare i progetti e trasferire competenze.",
+      keywords: "consulenza tecnica, team augmentation, outsourcing, sviluppatori senior, mentoring, affiancamento team, competenze tecniche, progetti aziendali"
+    },
     privacyPolicy: {
       title: "Privacy Policy - eDojo",
       description: "Informativa sulla privacy di eDojo. Scopri come trattiamo i tuoi dati personali e quali diritti hai secondo il GDPR.",
@@ -145,6 +154,11 @@ export const companyInfo = {
     },
     {
       path: '/ai-generativa',
+      priority: 0.8,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      path: '/consulenza',
       priority: 0.8,
       changeFrequency: 'monthly' as const,
     },
