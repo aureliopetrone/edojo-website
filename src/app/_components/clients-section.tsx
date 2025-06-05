@@ -41,7 +41,7 @@ export default function ClientsSection() {
     <section 
       ref={sectionRef}
       id="clienti" 
-      className="relative py-24 bg-gradient-to-br from-neutral-50 to-neutral-100 overflow-hidden"
+      className="relative py-32 bg-gradient-to-br from-neutral-50 to-neutral-100 overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -51,28 +51,30 @@ export default function ClientsSection() {
       </div>
 
       {/* Client Logos Background Pattern - Cinematic Map Effect */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" style={{ perspective: '1000px' }}>
         <div
           className="absolute animate-map-journey"
           style={{
-            opacity: 0.15,
-            animationDuration: '35s',
-            width: '600%', // Much larger grid for zoom effects
-            height: '600%',
-            left: '-250%', // Center the oversized grid
-            top: '-250%',
+            opacity: 0.2,
+            animationDuration: '20s',
+            width: '800%', // Even larger grid for more dramatic zoom effects
+            height: '800%',
+            left: '-350%', // Center the oversized grid
+            top: '-350%',
             transformOrigin: 'center center',
+            transformStyle: 'preserve-3d',
           }}
         >
           <div 
-            className="grid gap-8 md:gap-12 lg:gap-16 w-full h-full items-center justify-items-center"
+            className="grid gap-3 md:gap-4 lg:gap-5 w-full h-full items-center justify-items-center"
             style={{
-              gridTemplateColumns: 'repeat(40, 1fr)', // Much denser grid for zoom
-              gridTemplateRows: 'repeat(30, 1fr)', // 40 * 30 = 1200 cells
+              gridTemplateColumns: 'repeat(50, 1fr)', // Denser grid with closer logos
+              gridTemplateRows: 'repeat(40, 1fr)', // 50 * 40 = 2000 cells
+              transform: 'rotateX(15deg)', // Add initial 3D perspective
             }}
           >
             {/* Generate many logos for the large grid */}
-            {Array.from({ length: 1200 }).map((_, index) => {
+            {Array.from({ length: 2000 }).map((_, index) => {
               // Create a more random distribution instead of sequential
               const shuffledIndex = (index * 7 + Math.floor(index / 5) * 3 + Math.floor(index / 40) * 11) % clients.length;
               const client = clients[shuffledIndex];
@@ -99,23 +101,27 @@ export default function ClientsSection() {
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 z-10">
         {/* Header */}
         <div className="fade-in-element">
-          {/* New Hero Typography Section */}
-          <div className="relative mb-12 lg:mb-16">
-            {/* Main Title - Positioned Artistically */}
+          {/* Hero Typography Section - Brand Consistent */}
+          <div className="relative mb-16">
+            {/* Main Title - Brand Consistent */}
             <div className="relative">
-              <div className="absolute top-0 left-0 text-[8rem] sm:text-[10rem] lg:text-[12rem] font-black text-primary-600/10 leading-none select-none pointer-events-none">
+              <div className="absolute top-0 left-0 text-[10rem] sm:text-[12rem] lg:text-[18rem] font-black text-primary-600/8 leading-none select-none pointer-events-none">
                 s.2012
               </div>
-              <div className="relative pt-12 lg:pt-20">
+              <div className="relative pt-16 lg:pt-24">
                 <div className="flex flex-col">
                   {/* Main Heading */}
                   <div>
-                    <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black text-neutral-900 leading-[1.1] tracking-tighter text-center py-2">
-                      Chi ha
-                      <span className="block bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                        scelto edojo
+                    <h1 className="text-7xl lg:text-9xl font-black text-neutral-900 leading-[1.1] tracking-tighter text-right py-2">
+                      Lavoriamo con
+                      <span className="block text-gradient-red-purple animate-gradient-shift">
+                        grandi clienti
                       </span>
                     </h1>
+                  </div>
+                  <div className="mt-8 relative flex justify-end">
+                    <div className="w-24 h-1 gradient-red-purple rounded-full"></div>
+                    <div className="w-16 h-1 gradient-purple-red rounded-full mt-2 mr-8 animate-subtle-shift"></div>
                   </div>
                 </div>
               </div>
@@ -123,13 +129,12 @@ export default function ClientsSection() {
           </div>
 
           {/* Descriptive Paragraphs */}
-          <div className="text-left mx-auto">
-            <p className="mt-6 text-lg text-gray-700">
-              Ecco alcuni dei clienti che hanno scelto il nostro team per la loro esperienza e competenza 
-              per i loro progetti digitali.
+          <div className="text-right ml-auto max-w-2xl">
+            <p className="mt-6 text-xl text-gray-700 leading-relaxed">
+              Durante i nostri anni di attività, abbiamo creato <br /> prodotti digitali per 30+ grandi clienti.
             </p>
-            <p className="mt-2 text-sm text-gray-600">
-              Progetti realizzati in collaborazione con i membri del nostro team.
+            <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+              Il nostro team ha lavorato con clienti di successo da PMI<br /> a multinazionali ed enti governativi.
             </p>
           </div>
         </div>
@@ -151,19 +156,22 @@ export default function ClientsSection() {
         
         @keyframes mapJourney {
           0% {
-            transform: scale(1.2) translate(0%, 0%);
+            transform: scale(0.8) translate3d(0%, 0%, 0px) rotateX(35deg) rotateY(0deg);
           }
-          25% {
-            transform: scale(0.8) translate(-5%, -3%);
+          20% {
+            transform: scale(2.0) translate3d(-5%, -3%, -150px) rotateX(20deg) rotateY(-3deg);
           }
-          50% {
-            transform: scale(1.5) translate(-8%, -10%);
+          40% {
+            transform: scale(0.6) translate3d(6%, -4%, 80px) rotateX(45deg) rotateY(4deg);
           }
-          75% {
-            transform: scale(0.9) translate(3%, 5%);
+          60% {
+            transform: scale(2.5) translate3d(-3%, 5%, -200px) rotateX(15deg) rotateY(-2deg);
+          }
+          80% {
+            transform: scale(1.0) translate3d(4%, -2%, 40px) rotateX(40deg) rotateY(3deg);
           }
           100% {
-            transform: scale(1.2) translate(0%, 0%);
+            transform: scale(0.8) translate3d(0%, 0%, 0px) rotateX(35deg) rotateY(0deg);
           }
         }
         

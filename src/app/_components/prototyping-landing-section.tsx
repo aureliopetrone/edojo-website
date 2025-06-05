@@ -131,7 +131,7 @@ export default function PrototypingLandingSection() {
             </OrigamiButton>
             <OrigamiButton
               onClick={() => document.getElementById('servizi')?.scrollIntoView({ behavior: 'smooth' })}
-              variant="outline"
+              variant="dark"
               className="border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-3 text-lg font-semibold"
             >
               Scopri i servizi

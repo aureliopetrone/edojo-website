@@ -4,10 +4,10 @@ import { ModernBackground } from "./modern-background-effects";
 export default function TeamSection() {
   const teamMembers = [
     // Developer - Aurelio Petrone
-    <div key="aurelio" className="group">
+    <div key="aurelio" className="group w-full max-w-md mx-auto">
       <div className="flex items-start space-x-6">
         <div className="relative">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white text-xl font-bold transform group-hover:scale-110 transition-transform duration-300">
+          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-600 to-secondary-600 flex items-center justify-center text-white text-xl font-bold transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
             AP
           </div>
           <div className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center">
@@ -16,9 +16,9 @@ export default function TeamSection() {
         </div>
         <div className="flex-1">
           <h4 className="text-2xl font-bold text-white mb-1 tracking-tight">Aurelio Petrone</h4>
-          <p className="text-cyan-200 font-medium text-sm uppercase tracking-wider mb-3">CEO & Tech Lead</p>
-          <p className="text-neutral-100 text-sm leading-relaxed">
-            10+ anni di esperienza nel sviluppo software.
+          <p className="text-secondary-300 font-medium text-sm uppercase tracking-wider mb-3">CEO & Tech Lead</p>
+          <p className="text-white/70 text-sm leading-relaxed">
+            15+ anni di esperienza nel sviluppo software per PMI e aziende multinazionali.
             <span className="block text-white font-medium mt-2">Trasforma la tecnologia in soluzioni concrete.</span>
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <div className="py-32 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 relative overflow-hidden">
+    <div className="py-32 bg-neutral-950 relative overflow-hidden">
       {/* Modern Background Effects */}
       <ModernBackground 
         variant="constellation" 
@@ -36,11 +36,11 @@ export default function TeamSection() {
         darkMode={true}
       />
       
-      {/* Artistic geometric shapes */}
+      {/* Brand geometric shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-neutral-700/8 to-neutral-800/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-tl from-neutral-800/8 to-neutral-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 right-1/6 w-64 h-64 bg-gradient-to-bl from-neutral-700/6 to-neutral-800/8 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-primary-500/8 to-secondary-500/10 rounded-full blur-3xl animate-elegant-float"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-tl from-secondary-500/8 to-primary-500/6 rounded-full blur-3xl animate-elegant-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-1/6 w-64 h-64 bg-gradient-to-bl from-white/4 to-secondary-400/6 rounded-full blur-2xl animate-elegant-float" style={{ animationDelay: '1s' }}></div>
       </div>
       
       <section id="team" className="relative">
@@ -60,14 +60,14 @@ export default function TeamSection() {
                       <div>
                         <h1 className="text-7xl lg:text-9xl font-black text-white leading-[1.1] tracking-tighter py-2">
                           Il nostro
-                          <span className="block text-gradient-hero">
+                          <span className="block text-gradient-red-purple animate-gradient-shift">
                             Team
                           </span>
                         </h1>
                       </div>
-                      <div className="mt-6 lg:mt-8 relative flex justify-center">
-                        <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
-                        <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-300 rounded-full mt-2 ml-4"></div>
+                      <div className="mt-6 lg:mt-8 relative flex justify-center gap-4">
+                        <div className="w-32 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"></div>
+                        <div className="w-16 h-1 bg-gradient-to-r from-secondary-500 to-primary-500 rounded-full animate-subtle-shift"></div>
                       </div>
                     </div>
                   </div>
@@ -77,23 +77,22 @@ export default function TeamSection() {
 
             {/* Descriptive Paragraphs */}
             <div className="text-center mx-auto mb-16">
-              <p className="mt-6 text-lg text-neutral-300">
-                <span className="font-semibold text-white">Competenza ed esperienza</span> 
-                al servizio dei nostri clienti per creare soluzioni complete e di qualità.
+              <p className="mt-6 text-lg text-white/70">
+                <span className="font-semibold text-white">Competenza ed esperienza</span> al servizio dei nostri clienti per creare soluzioni complete e di qualità.
               </p>
-              <p className="mt-2 text-sm text-neutral-400">
+              <p className="mt-2 text-sm text-white/50">
                 Sviluppo, progetto e design con focus sulla qualità e l&apos;innovazione.
               </p>
             </div>
           </FadeInUp>
 
-          {/* Team Member - Centered */}
-          <div className="flex justify-center">
-            <div className="max-w-md">
-              <FadeInUp delay={400}>
-                {teamMembers[0]}
+          {/* Team Members Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+            {teamMembers.map((member, index) => (
+              <FadeInUp key={index} delay={400 + index * 100}>
+                {member}
               </FadeInUp>
-            </div>
+            ))}
           </div>
         </div>
       </section>

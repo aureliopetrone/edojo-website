@@ -6,20 +6,34 @@
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco,
     Consolas, "Liberation Mono", "Courier New", monospace;
   
-  /* Palette colori principale - Rosso e Bianco */
-  --color-primary-50: #fef2f2;
+  /* DESIGN SYSTEM - eDojo Bold Brand Identity (Rosso + Viola Tech) */
+  /* Palette primaria - Rosso Bold */
+  --color-primary-50: #fef1f1;
   --color-primary-100: #fee2e2;
   --color-primary-200: #fecaca;
   --color-primary-300: #fca5a5;
   --color-primary-400: #f87171;
-  --color-primary-500: #ef4444;
-  --color-primary-600: #dc2626;
-  --color-primary-700: #b91c1c;
-  --color-primary-800: #991b1b;
-  --color-primary-900: #7f1d1d;
-  --color-primary-950: #450a0a;
+  --color-primary-500: #ff2d2d;
+  --color-primary-600: #e60012;
+  --color-primary-700: #cc0010;
+  --color-primary-800: #b3000e;
+  --color-primary-900: #9a000c;
+  --color-primary-950: #660008;
   
-  /* Grigi neutri per testi e backgrounds */
+  /* Palette secondaria - Viola Tech Bold */
+  --color-secondary-50: #f5f3ff;
+  --color-secondary-100: #ede9fe;
+  --color-secondary-200: #ddd6fe;
+  --color-secondary-300: #c4b5fd;
+  --color-secondary-400: #a78bfa;
+  --color-secondary-500: #8b5cf6;
+  --color-secondary-600: #7c3aed;
+  --color-secondary-700: #6d28d9;
+  --color-secondary-800: #5b21b6;
+  --color-secondary-900: #4c1d95;
+  --color-secondary-950: #2e1065;
+  
+  /* Grigi neutri - Brand consistency */
   --color-neutral-50: #fafafa;
   --color-neutral-100: #f5f5f5;
   --color-neutral-200: #e5e5e5;
@@ -32,18 +46,15 @@
   --color-neutral-900: #171717;
   --color-neutral-950: #0a0a0a;
   
-  /* Tech Colors - Moderni */
-  --color-blue-400: #60a5fa;
-  --color-blue-500: #3b82f6;
-  --color-blue-600: #2563eb;
-  --color-cyan-400: #22d3ee;
-  --color-cyan-500: #06b6d4;
-  --color-purple-400: #a78bfa;
-  --color-purple-500: #8b5cf6;
-  --color-green-400: #4ade80;
-  --color-green-500: #22c55e;
+  /* Tech accents - Cyan/Blu per contrasto */
+  --color-tech-400: #00d4ff;
+  --color-tech-500: #00bfff;
+  --color-tech-600: #0099cc;
+  --color-blue-400: #3b82f6;
+  --color-blue-500: #2563eb;
+  --color-blue-600: #1d4ed8;
   
-  /* Colori semantici basati sul rosso */
+  /* Colori semantici basati sul brand */
   --color-success-400: #4ade80;
   --color-success-500: #22c55e;
   --color-success-600: #16a34a;
@@ -53,11 +64,11 @@
   --color-warning-600: #ca8a04;
   
   --color-error-400: #f87171;
-  --color-error-500: #ef4444;
-  --color-error-600: #dc2626;
+  --color-error-500: #ff2d2d;
+  --color-error-600: #e60012;
 }
 
-/* Dark theme (mantiene l'estetica scura ma con accenti rossi) */
+/* DESIGN SYSTEM - Dark Mode Bold Consistent */
 :root {
   --background: var(--color-neutral-950);
   --foreground: var(--color-neutral-50);
@@ -67,7 +78,7 @@
   --popover-foreground: var(--color-neutral-100);
   --primary: var(--color-primary-600);
   --primary-foreground: var(--color-neutral-50);
-  --secondary: var(--color-neutral-800);
+  --secondary: var(--color-secondary-600);
   --secondary-foreground: var(--color-neutral-200);
   --muted: var(--color-neutral-800);
   --muted-foreground: var(--color-neutral-400);
@@ -79,121 +90,154 @@
   --input: var(--color-neutral-800);
   --ring: var(--color-primary-500);
   
-  /* Modern Gradients */
-  --gradient-tech: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-ai: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-cyber: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
-  --gradient-hero: linear-gradient(135deg, #67e8f9 0%, #60a5fa 50%, #67e8f9 100%);
-  --gradient-primary: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #f97316 100%);
+
+  
+  /* BRAND GRADIENTS - Refined Tech Elegance */
+  --gradient-brand: linear-gradient(115deg, #e60012 0%, #8b5cf6 100%);
+  --gradient-brand-subtle: linear-gradient(115deg, rgba(230, 0, 18, 0.8) 0%, rgba(139, 92, 246, 0.8) 100%);
+  --gradient-tech: linear-gradient(90deg, #8b5cf6 0%, #7c3aed 100%);
+  --gradient-hero: linear-gradient(135deg, #e60012 0%, #8b5cf6 100%);
+  --gradient-subtle: linear-gradient(180deg, #0a0a0a 0%, #171717 100%);
+  --gradient-accent: linear-gradient(90deg, #ff2d2d 0%, #e60012 100%);
+  --gradient-purple-red: linear-gradient(115deg, #8b5cf6 0%, #e60012 100%);
+  --gradient-red-purple: linear-gradient(115deg, #e60012 0%, #8b5cf6 100%);
+  
+  /* NEW - Sophisticated mono-gradients for refined look */
+  --gradient-red-mono: linear-gradient(135deg, #ff2d2d 0%, #cc0010 100%);
+  --gradient-purple-mono: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  --gradient-dark-subtle: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(23, 23, 23, 0.95) 100%);
 }
 
-/* Utility classes for section backgrounds */
-.section-white {
-  background-color: var(--color-neutral-50);
-  color: var(--color-neutral-900);
+/* DESIGN SYSTEM - Section Backgrounds */
+.section-hero {
+  background: var(--color-neutral-950);
 }
 
-.section-red {
-  background-color: var(--color-primary-600);
+.section-brand {
+  background: var(--gradient-brand);
   color: var(--color-neutral-50);
 }
 
-/* Modern Tech Utilities */
+.section-brand-bold {
+  background: var(--gradient-brand);
+  color: var(--color-neutral-50);
+}
+
+.section-tech {
+  background: var(--gradient-tech);
+  color: var(--color-neutral-50);
+}
+
+.section-purple-red {
+  background: var(--gradient-purple-red);
+  color: var(--color-neutral-50);
+}
+
+.section-neutral {
+  background: var(--gradient-subtle);
+  color: var(--color-neutral-50);
+}
+
+/* BRAND UTILITIES */
+.gradient-brand {
+  background: var(--gradient-brand);
+}
+
+.gradient-brand-bold {
+  background: var(--gradient-brand);
+}
+
 .gradient-tech {
   background: var(--gradient-tech);
-}
-
-.gradient-ai {
-  background: var(--gradient-ai);
-}
-
-.gradient-cyber {
-  background: var(--gradient-cyber);
 }
 
 .gradient-hero {
   background: var(--gradient-hero);
 }
 
-.gradient-primary {
-  background: var(--gradient-primary);
+.gradient-subtle {
+  background: var(--gradient-subtle);
 }
 
+.gradient-bold-accent {
+  background: var(--gradient-accent);
+}
+
+.gradient-purple-red {
+  background: var(--gradient-purple-red);
+}
+
+.gradient-red-purple {
+  background: var(--gradient-red-purple);
+}
+
+/* MODERN EFFECTS - Consistent glassmorphism */
 .glassmorphism {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .glassmorphism-dark {
-  backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Modern shadows */
-.shadow-glow-blue {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+.glassmorphism-brand {
+  backdrop-filter: blur(20px);
+  background: rgba(230, 0, 18, 0.15);
+  border: 1px solid rgba(255, 45, 45, 0.3);
 }
 
-.shadow-glow-purple {
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+.glassmorphism-purple {
+  backdrop-filter: blur(20px);
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.3);
 }
 
-.shadow-glow-cyan {
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+/* BRAND SHADOWS - Bold */
+.shadow-brand {
+  box-shadow: 0 0 30px rgba(230, 0, 18, 0.4);
 }
 
-/* Animation utilities */
-@keyframes modernPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+.shadow-brand-bold {
+  box-shadow: 0 0 40px rgba(255, 45, 45, 0.6), 0 10px 25px rgba(230, 0, 18, 0.3);
 }
 
-@keyframes modernGlow {
-  0%, 100% { box-shadow: 0 0 5px currentColor; }
-  50% { box-shadow: 0 0 20px currentColor; }
+.shadow-purple {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
 }
 
-@keyframes modernFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+.shadow-purple-red {
+  box-shadow: 0 0 40px rgba(255, 45, 45, 0.3), 0 0 40px rgba(139, 92, 246, 0.3);
 }
 
-.animate-modern-pulse {
-  animation: modernPulse 2s ease-in-out infinite;
+.shadow-tech {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
 }
 
-.animate-modern-glow {
-  animation: modernGlow 2s ease-in-out infinite;
+.shadow-elegant {
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.15), 0 8px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.animate-modern-float {
-  animation: modernFloat 3s ease-in-out infinite;
-}
-
-/* Prevent horizontal overflow from animations */
-main {
-  overflow: hidden;
-}
-
-/* Modern typography utilities */
-.text-gradient-blue {
-  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+/* TYPOGRAPHY GRADIENTS - Bold */
+.text-gradient-brand {
+  background: var(--gradient-brand);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-purple {
-  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+.text-gradient-brand-bold {
+  background: var(--gradient-brand);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-ai {
-  background: linear-gradient(135deg, #fafafa, #3b82f6, #fafafa);
+.text-gradient-tech {
+  background: var(--gradient-tech);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -206,18 +250,133 @@ main {
   -webkit-text-fill-color: transparent;
 }
 
-/* Marquee Animation for Language Slider */
+.text-gradient-bold-accent {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple-red {
+  background: var(--gradient-purple-red);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-red-purple {
+  background: var(--gradient-red-purple);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ANIMATIONS - Bold timing */
+@keyframes brandPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes brandGlow {
+  0%, 100% { box-shadow: 0 0 10px currentColor; }
+  50% { box-shadow: 0 0 30px currentColor, 0 0 50px currentColor; }
+}
+
+@keyframes elegantFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes boldPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+@keyframes purpleGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(139, 92, 246, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.6), 0 0 60px rgba(255, 45, 45, 0.4); }
+}
+
+/* ANIMATIONS - Refined and Sophisticated */
+@keyframes subtleShift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(2px); }
+}
+
+@keyframes gentleFade {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+@keyframes techGlitch {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-1px); }
+  40% { transform: translateX(1px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(0); }
+}
+
+@keyframes subtleGradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes minimalPulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+}
+
+/* Existing animation classes */
+.animate-brand-pulse {
+  animation: brandPulse 2.5s ease-in-out infinite;
+}
+
+.animate-brand-glow {
+  animation: brandGlow 2.5s ease-in-out infinite;
+}
+
+.animate-elegant-float {
+  animation: elegantFloat 4s ease-in-out infinite;
+}
+
+.animate-bold-pulse {
+  animation: boldPulse 3s ease-in-out infinite;
+}
+
+.animate-purple-glow {
+  animation: purpleGlow 3s ease-in-out infinite;
+}
+
+/* New refined animation classes */
+.animate-subtle-shift {
+  animation: subtleShift 4s ease-in-out infinite;
+}
+
+.animate-gentle-fade {
+  animation: gentleFade 3s ease-in-out infinite;
+}
+
+.animate-tech-glitch {
+  animation: techGlitch 5s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: subtleGradientShift 8s ease infinite;
+}
+
+.animate-minimal-pulse {
+  animation: minimalPulse 4s ease-in-out infinite;
+}
+
+/* MARQUEE - Consistent implementation */
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 
 .pause-marquee {
@@ -226,4 +385,9 @@ main {
 
 .hover\:pause-marquee:hover {
   animation-play-state: paused;
+}
+
+/* LAYOUT - Prevent overflow */
+main {
+  overflow-x: hidden;
 }

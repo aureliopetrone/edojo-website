@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import OrigamiButton from "./origami-button";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -109,7 +110,7 @@ export default function ContactForm() {
           Controlla la tua email per la conferma di ricezione.
         </p>
         
-        <button
+        <OrigamiButton
           onClick={() => {
             setSubmitStatus({ type: null, message: "" });
             setFormData({
@@ -120,10 +121,11 @@ export default function ContactForm() {
               message: "",
             });
           }}
-          className="bg-neutral-50 hover:bg-neutral-100 text-neutral-900 font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+          variant="purple-red"
+          size="md"
         >
           Invia un altro messaggio
-        </button>
+        </OrigamiButton>
       </div>
     );
   }
@@ -245,39 +247,43 @@ export default function ContactForm() {
           />
         </div>
 
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full bg-neutral-900 hover:bg-neutral-800 disabled:bg-neutral-600 text-neutral-50 font-semibold py-3 px-6 rounded-lg transition-all duration-200 disabled:cursor-not-allowed"
-        >
-          {isSubmitting ? (
-            <span className="flex items-center justify-center">
-              <svg
-                className="animate-spin -ml-1 mr-3 h-5 w-5 text-neutral-50"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                ></circle>
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                ></path>
-              </svg>
-              Invio in corso...
-            </span>
-          ) : (
-            "Invia Messaggio"
-          )}
-        </button>
+        <div className="w-full">
+          <OrigamiButton
+            type="submit"
+            disabled={isSubmitting}
+            variant="red-purple"
+            size="lg"
+            className="w-full"
+          >
+            {isSubmitting ? (
+              <>
+                <svg
+                  className="animate-spin h-5 w-5 text-white mr-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                Invio in corso...
+              </>
+            ) : (
+              "Invia Messaggio"
+            )}
+          </OrigamiButton>
+        </div>
       </form>
     </div>
   );

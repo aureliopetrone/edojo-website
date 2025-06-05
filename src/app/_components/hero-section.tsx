@@ -1,51 +1,62 @@
 "use client";
 
 import Link from "next/link";
-import OrigamiLink from "./origami-link";
+import OrigamiButton from "./origami-button";
 import { FadeInUp, ScaleIn } from "./japanese-animations";
 import AccelerationBackground from "./acceleration-background";
+import TechPattern from "./tech-pattern";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-black">
+    <section id="home" className="section-hero relative min-h-screen flex items-center overflow-hidden">
       {/* Acceleration Background Effect */}
       <AccelerationBackground />
       
-      {/* Clean contrast overlay - ridotta opacità per maggiore visibilità dell'effetto */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40 pointer-events-none" />
+      {/* Clean contrast overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/50 pointer-events-none" />
       
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full min-h-screen flex items-center" style={{ zIndex: 2 }}>
         <div className="text-center w-full py-12 sm:py-16">
           
-          {/* Artistic Typography with Background "edojo" */}
-          <div className="mb-16">
-            <div className="relative">
-              {/* Background "edojo" text */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 text-[8rem] sm:text-[12rem] lg:text-[20rem] font-black text-white/3 leading-none select-none pointer-events-none">
-                edojo
-              </div>
-              
-              {/* Main Title - Positioned Artistically */}
-              <div className="relative pt-8 lg:pt-16">
-                <ScaleIn delay={200}>
-                  <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1] mb-8 py-2">
-                    <span className="block text-white">
-                      AIUTIAMO I
-                    </span>
-                    <span className="block text-6xl sm:text-7xl lg:text-8xl bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-500 bg-clip-text text-transparent font-black">
-                      GIGANTI
-                    </span>
-                    <span className="block text-4xl sm:text-5xl lg:text-6xl text-white font-black mt-4">
-                      A CORRERE VELOCI
-                    </span>
-                  </h1>
-                  
-                  {/* Decorative gradient lines */}
-                  <div className="mt-8 relative flex justify-center">
-                    <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
-                    <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-300 rounded-full mt-2 ml-6"></div>
-                  </div>
-                </ScaleIn>
+
+            
+                        {/* Brand Typography with Refined Design */}
+            <div className="mb-16">
+              <div className="relative">
+                {/* Background "edojo" text - Ultra Bold */}
+                <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+                  <span className="text-[20rem] sm:text-[25rem] lg:text-[35rem] font-black text-white/[0.02] leading-none select-none pointer-events-none tracking-tighter">
+                    edojo
+                  </span>
+                </div>
+                
+                {/* Subtle tech pattern background */}
+                <TechPattern variant="circuit" opacity={0.03} className="text-white" />
+                
+
+                
+                {/* Main Title - Ultra Bold Typography */}
+                <div className="relative pt-8 lg:pt-16">
+                  <ScaleIn delay={200}>
+                    <h1 className="text-7xl sm:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] mb-8">
+                      <span className="block text-white">
+                        AIUTIAMO I
+                      </span>
+                      <span className="block text-8xl sm:text-9xl lg:text-[12rem] mt-4">
+                        <span className="text-gradient-red-purple animate-gradient-shift">GIGANTI</span>
+                      </span>
+                      <span className="block text-5xl sm:text-6xl lg:text-7xl text-white mt-6">
+                        A CORRERE VELOCI
+                      </span>
+                    </h1>
+                    
+                    {/* Bold accent element */}
+                    <div className="mt-12 relative flex justify-center gap-4">
+                      <div className="w-32 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"></div>
+                      <div className="w-16 h-1 bg-gradient-to-r from-secondary-500 to-primary-500 rounded-full animate-subtle-shift"></div>
+                    </div>
+                  </ScaleIn>
+                </div>
               </div>
             </div>
             
@@ -54,29 +65,27 @@ export default function HeroSection() {
                 Acceleriamo la trasformazione digitale con AI e tecnologie innovative.
               </p>
             </FadeInUp>
-          </div>
 
           {/* Clean Bold CTA Section */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mt-12">
             <ScaleIn delay={600}>
               <div className="relative group">
-                <OrigamiLink
+                <OrigamiButton
                   href="#contatti"
-                  variant="primary"
+                  variant="purple-red"
                   size="lg"
-                  className="gradient-primary hover:shadow-lg text-white font-black text-lg px-12 py-4 rounded-xl border-0 transform hover:scale-105 transition-all duration-300 uppercase tracking-wide"
                 >
                   RACCONTACI IL PROGETTO
-                </OrigamiLink>
+                </OrigamiButton>
               </div>
             </ScaleIn>
             
             <FadeInUp delay={800}>
               <Link 
                 href="#chi-siamo" 
-                className="group inline-flex items-center text-xl font-bold text-white hover:text-orange-300 transition-all duration-300"
+                className="group inline-flex items-center text-xl font-bold text-white hover:text-secondary-400 transition-all duration-300"
               >
-                <span className="border-b-2 border-white group-hover:border-orange-300 transition-all duration-300 uppercase tracking-wide">SCOPRI DI PIÙ</span>
+                <span className="border-b-2 border-white group-hover:border-secondary-400 transition-all duration-300 uppercase tracking-wide">SCOPRI DI PIÙ</span>
                 <svg className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

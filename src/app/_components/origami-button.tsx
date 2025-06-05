@@ -1,92 +1,109 @@
-import { type ButtonHTMLAttributes, type ReactNode } from "react";
-import { cn } from "~/lib/utils";
+import React from 'react';
+import Link from 'next/link';
+import { cn } from '~/lib/utils';
 
-interface OrigamiButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
-  variant?: "primary" | "secondary" | "outline";
-  size?: "sm" | "md" | "lg";
+interface OrigamiButtonProps {
+  href?: string;
+  onClick?: () => void;
+  children: React.ReactNode;
+  variant?: 'brand' | 'tech' | 'dark' | 'brand-bold' | 'purple-red' | 'red-purple';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  external?: boolean;
 }
 
-export default function OrigamiButton({
+const OrigamiButton: React.FC<OrigamiButtonProps> = ({
+  href,
+  onClick,
   children,
-  variant = "primary",
-  size = "md",
+  variant = 'brand',
+  size = 'md',
   className,
-  ...props
-}: OrigamiButtonProps) {
-  const baseStyles = "relative inline-flex items-center justify-center font-medium transition-all duration-300 focus:outline-none overflow-hidden";
+  disabled = false,
+  type = 'button',
+  external = false,
+}) => {
+  const baseClasses = "relative inline-flex items-center justify-center font-medium transition-all duration-500 group";
   
-  const variants = {
-    primary: "bg-neutral-900 text-neutral-50 hover:bg-neutral-800",
-    secondary: "bg-neutral-800 text-neutral-50 hover:bg-neutral-700",
-    outline: "border-2 border-neutral-900 text-neutral-900 hover:bg-neutral-50"
+  const variantClasses = {
+    brand: "bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800",
+    'brand-bold': "bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800",
+    'purple-red': "bg-gradient-to-r from-secondary-600 to-primary-600 text-white hover:from-secondary-700 hover:to-primary-700",
+    'red-purple': "bg-gradient-to-r from-primary-600 to-secondary-600 text-white hover:from-primary-700 hover:to-secondary-700",
+    tech: "bg-gradient-to-r from-secondary-600 to-secondary-700 text-white hover:from-secondary-700 hover:to-secondary-800",
+    dark: "bg-neutral-900 text-white hover:bg-neutral-800 border border-neutral-700"
+  };
+  
+  const sizeClasses = {
+    sm: "px-5 py-2.5 text-sm gap-2",
+    md: "px-6 py-3 text-base gap-2.5",
+    lg: "px-8 py-3.5 text-lg gap-3",
+    xl: "px-10 py-4 text-xl gap-3"
   };
 
-  const sizes = {
-    sm: "px-6 py-3 text-sm min-h-[40px]",
-    md: "px-8 py-4 text-base min-h-[50px]",
-    lg: "px-10 py-5 text-lg min-h-[60px]"
+  const clipPathStyle = {
+    clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 100%, 8px 100%)',
   };
+
+
+
+  const combinedClasses = cn(
+    baseClasses,
+    variantClasses[variant],
+    sizeClasses[size],
+    disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
+    className
+  );
+
+  const buttonContent = (
+    <>
+      <span className="relative z-10 font-semibold tracking-wide">
+        {children}
+      </span>
+      {/* Subtle hover effect line */}
+      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+    </>
+  );
+
+  if (href) {
+    if (external) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={combinedClasses}
+          style={clipPathStyle}
+        >
+          {buttonContent}
+        </a>
+      );
+    }
+    
+    return (
+      <Link
+        href={href}
+        className={combinedClasses}
+        style={clipPathStyle}
+      >
+        {buttonContent}
+      </Link>
+    );
+  }
 
   return (
     <button
-      className={cn(
-        baseStyles,
-        variants[variant],
-        sizes[size],
-        "group",
-        className
-      )}
-      style={{
-        clipPath: "polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%)",
-        borderRadius: "0",
-      }}
-      {...props}
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={combinedClasses}
+      style={clipPathStyle}
     >
-      {/* Brush stroke texture overlay */}
-      <div 
-        className="absolute inset-0 opacity-20 mix-blend-multiply"
-        style={{
-          background: `
-            radial-gradient(ellipse at 20% 30%, rgba(0,0,0,0.3) 0%, transparent 50%),
-            radial-gradient(ellipse at 80% 70%, rgba(0,0,0,0.2) 0%, transparent 50%),
-            radial-gradient(ellipse at 40% 80%, rgba(0,0,0,0.1) 0%, transparent 50%)
-          `
-        }}
-      />
-      
-      {/* Ink bleeding effect */}
-      <div 
-        className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300"
-        style={{
-          background: `
-            radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 30%),
-            radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 0%, transparent 30%),
-            radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 40%)
-          `
-        }}
-      />
-      
-      {/* Content */}
-      <span className="relative flex items-center gap-3 z-10">
-        <span className="font-bold tracking-wide">
-          {children}
-        </span>
-        <span 
-          className="inline-block transition-transform duration-300 group-hover:translate-x-1 text-xl"
-        >
-          →
-        </span>
-      </span>
-      
-      {/* Brush stroke shadow */}
-      <div 
-        className="absolute -bottom-1 left-2 right-4 h-1 bg-black/10 blur-sm"
-        style={{
-          clipPath: "polygon(5% 0%, 95% 0%, 90% 100%, 10% 100%)"
-        }}
-      />
+      {buttonContent}
     </button>
   );
-} 
+};
+
+export default OrigamiButton; 

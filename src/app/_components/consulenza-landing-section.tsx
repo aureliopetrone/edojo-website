@@ -131,7 +131,7 @@ export default function ConsulenzaLandingSection() {
             </OrigamiButton>
             <OrigamiButton
               onClick={() => document.getElementById('servizi')?.scrollIntoView({ behavior: 'smooth' })}
-              variant="outline"
+              variant="dark"
               className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-3 text-lg font-semibold"
             >
               Scopri i servizi

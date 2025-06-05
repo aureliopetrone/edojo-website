@@ -13,6 +13,9 @@ export const companyInfo = {
     prototypingEmail: "prototyping@edojo.it",
     whatsapp: "+39 345 678 9012"
   },
+  social: {
+    linkedin: "https://www.linkedin.com/company/edojo"
+  },
   copyright: `© ${new Date().getFullYear()} edojo. Tutti i diritti riservati.`,
   services: [
     {
@@ -106,7 +109,7 @@ export const companyInfo = {
   },
   pageMetadata: {
     home: {
-      title: "eDojo - Cultura Digitale per il Business",
+      title: "eDojo - Tech Lab digitale",
       description: "Accompagniamo le aziende nel percorso di trasformazione digitale con metodologie consolidate e tecnologie innovative. Consulenza, sviluppo e supporto per la crescita digitale.",
       keywords: "trasformazione digitale, consulenza tecnologica, sviluppo software, innovazione aziendale, cultura digitale, metodologie agili, business intelligence"
     },
