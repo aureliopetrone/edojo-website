@@ -109,38 +109,38 @@ export const companyInfo = {
   },
   pageMetadata: {
     home: {
-      title: "eDojo - Tech Lab digitale",
+      title: "edojo - Tech Lab digitale",
       description: "Accompagniamo le aziende nel percorso di trasformazione digitale con metodologie consolidate e tecnologie innovative. Consulenza, sviluppo e supporto per la crescita digitale.",
       keywords: "trasformazione digitale, consulenza tecnologica, sviluppo software, innovazione aziendale, cultura digitale, metodologie agili, business intelligence"
     },
     prototipazione: {
-      title: "Prototipazione Rapida - eDojo",
+      title: "Prototipazione Rapida - edojo",
       description: "Servizi di prototipazione rapida per trasformare le tue idee in realtà. Sviluppo MVP, proof of concept e soluzioni personalizzate per il tuo business.",
       keywords: "prototipazione rapida, MVP, proof of concept, sviluppo agile, startup, innovazione, product development"
     },
     aiGenerativa: {
-      title: "Intelligenza Artificiale Generativa - eDojo",
+      title: "Intelligenza Artificiale Generativa - edojo",
       description: "Soluzioni di AI generativa per le PMI: chatbot intelligenti, automazione dei processi, analisi dati e machine learning per far crescere il tuo business.",
       keywords: "intelligenza artificiale, AI generativa, chatbot, machine learning, automazione, PMI, business intelligence, NLP"
     },
     rescue: {
-      title: "Rescue Projects - Recupero Progetti IT - eDojo",
+      title: "Rescue Projects - Recupero Progetti IT - edojo",
       description: "Recuperiamo progetti IT in difficoltà, risolviamo problemi tecnici complessi e riportiamo in vita software e sistemi abbandonati o mal funzionanti.",
       keywords: "rescue projects, recupero progetti, consulenza IT, debugging, refactoring, legacy systems, problemi software"
     },
     consulenza: {
-      title: "Consulenza Tecnica e Team Augmentation - eDojo",
+      title: "Consulenza Tecnica e Team Augmentation - edojo",
       description: "Servizi di consulenza tecnica specializzata e team augmentation. Affianchiamo i tuoi team interni con sviluppatori esperti per accelerare i progetti e trasferire competenze.",
       keywords: "consulenza tecnica, team augmentation, outsourcing, sviluppatori senior, mentoring, affiancamento team, competenze tecniche, progetti aziendali"
     },
     privacyPolicy: {
-      title: "Privacy Policy - eDojo",
-      description: "Informativa sulla privacy di eDojo. Scopri come trattiamo i tuoi dati personali e quali diritti hai secondo il GDPR.",
+      title: "Privacy Policy - edojo",
+      description: "Informativa sulla privacy di edojo. Scopri come trattiamo i tuoi dati personali e quali diritti hai secondo il GDPR.",
       keywords: "privacy policy, GDPR, protezione dati, informativa privacy, trattamento dati personali"
     },
     cookiePreferences: {
-      title: "Cookie Preferences - eDojo", 
-      description: "Gestisci le tue preferenze sui cookie per il sito eDojo. Personalizza l'esperienza di navigazione secondo le tue esigenze.",
+      title: "Cookie Preferences - edojo", 
+      description: "Gestisci le tue preferenze sui cookie per il sito edojo. Personalizza l'esperienza di navigazione secondo le tue esigenze.",
       keywords: "cookie preferences, gestione cookie, privacy, personalizzazione, preferenze utente"
     }
   },
