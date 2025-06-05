@@ -24,59 +24,65 @@ export default function PrototypingServicesSection() {
       title: "App Mobile",
       description: "Prototipi iOS e Android nativi con UX ottimizzata",
       features: ["React Native", "Flutter", "SwiftUI", "Kotlin"],
-      gradient: "from-pink-500 to-purple-600"
+      gradient: "gradient-red-purple"
     },
     {
       icon: <Globe size={32} />,
       title: "Web App",
       description: "Applicazioni web progressive e responsive",
       features: ["React/Next.js", "Vue.js", "Progressive PWA", "API Integration"],
-      gradient: "from-blue-500 to-cyan-600"
+      gradient: "gradient-purple-red"
     },
     {
       icon: <Brain size={32} />,
       title: "AI/ML Integration",
       description: "Integrazione di intelligenza artificiale e machine learning",
       features: ["TensorFlow", "PyTorch", "OpenAI API", "Computer Vision"],
-      gradient: "from-purple-500 to-pink-600"
+      gradient: "gradient-red-purple"
     },
     {
       icon: <Database size={32} />,
       title: "Backend & API",
       description: "Architetture scalabili e performanti",
       features: ["Node.js", "Python", "GraphQL", "Microservizi"],
-      gradient: "from-green-500 to-blue-600"
+      gradient: "gradient-purple-red"
     },
     {
       icon: <Cloud size={32} />,
       title: "Cloud Native",
       description: "Soluzioni cloud-first e containerizzate",
       features: ["Docker", "Kubernetes", "AWS/Azure", "Serverless"],
-      gradient: "from-cyan-500 to-blue-600"
+      gradient: "gradient-red-purple"
     },
     {
       icon: <TestTube size={32} />,
       title: "IoT & Hardware",
       description: "Prototipi per Internet of Things e dispositivi smart",
       features: ["Arduino", "Raspberry Pi", "Sensori", "Edge Computing"],
-      gradient: "from-orange-500 to-red-600"
+      gradient: "gradient-purple-red"
     }
   ];
 
   const techStack = [
-    { name: "React/Next.js", color: "text-blue-400" },
-    { name: "TypeScript", color: "text-blue-300" },
-    { name: "Python", color: "text-yellow-400" },
-    { name: "Node.js", color: "text-green-400" },
-    { name: "Docker", color: "text-cyan-400" },
-    { name: "AWS", color: "text-orange-400" },
-    { name: "TensorFlow", color: "text-purple-400" },
-    { name: "React Native", color: "text-pink-400" }
+    { name: "React/Next.js", color: "text-primary-400" },
+    { name: "TypeScript", color: "text-secondary-400" },
+    { name: "Python", color: "text-primary-400" },
+    { name: "Node.js", color: "text-secondary-400" },
+    { name: "Docker", color: "text-primary-400" },
+    { name: "AWS", color: "text-secondary-400" },
+    { name: "TensorFlow", color: "text-primary-400" },
+    { name: "React Native", color: "text-secondary-400" }
   ];
 
   return (
-    <section id="servizi" className="py-20 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="servizi" className="py-20 bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 relative">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -85,16 +91,16 @@ export default function PrototypingServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl lg:text-5xl font-black mb-6">
+            <span className="text-gradient-purple-red animate-gradient-shift">
               I Nostri Servizi
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
             Dall&apos;idea al codice: sviluppiamo il tuo MVP con tecnologie all&apos;avanguardia 
             e metodologie agili per validare rapidamente il mercato.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-cyan-400 mx-auto mt-6 rounded-full" />
+          <div className="w-24 h-1 gradient-purple-red mx-auto mt-6 rounded-full" />
         </motion.div>
 
         {/* Services Grid */}
@@ -108,9 +114,9 @@ export default function PrototypingServicesSection() {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105 h-full">
+              <div className="glassmorphism-purple rounded-xl p-6 hover:shadow-purple transition-all duration-300 hover:transform hover:scale-105 h-full">
                 {/* Icon */}
-                <div className={`w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-16 h-16 ${service.gradient} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-brand`}>
                   <div className="text-white">
                     {service.icon}
                   </div>
@@ -118,7 +124,7 @@ export default function PrototypingServicesSection() {
 
                 {/* Content */}
                 <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                <p className="text-neutral-300 mb-4 text-sm leading-relaxed">
                   {service.description}
                 </p>
 
@@ -127,7 +133,7 @@ export default function PrototypingServicesSection() {
                   {service.features.map((feature, featureIndex) => (
                     <span
                       key={featureIndex}
-                      className="px-3 py-1 bg-white/10 text-gray-300 text-xs rounded-full border border-white/20"
+                      className="px-3 py-1 glassmorphism-dark text-neutral-300 text-xs rounded-full border border-primary-400/30"
                     >
                       {feature}
                     </span>
@@ -146,8 +152,8 @@ export default function PrototypingServicesSection() {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <h3 className="text-3xl font-bold text-center mb-12">
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          <h3 className="text-3xl font-black text-center mb-12">
+            <span className="text-gradient-red-purple">
               Il Nostro Processo
             </span>
           </h3>
@@ -160,15 +166,15 @@ export default function PrototypingServicesSection() {
               { icon: <Rocket size={24} />, title: "Launch", desc: "Deploy e scaling" }
             ].map((step, index) => (
               <div key={index} className="text-center relative">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 gradient-purple-red rounded-full flex items-center justify-center mx-auto mb-4 shadow-purple">
                   <div className="text-white">{step.icon}</div>
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">{step.title}</h4>
-                <p className="text-gray-400 text-sm">{step.desc}</p>
+                <p className="text-neutral-400 text-sm">{step.desc}</p>
                 
                 {/* Connector Line */}
                 {index < 3 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-purple-500/50 to-cyan-500/50 transform -translate-x-8" />
+                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 gradient-red-purple transform -translate-x-8 opacity-50" />
                 )}
               </div>
             ))}
@@ -183,7 +189,7 @@ export default function PrototypingServicesSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h3 className="text-2xl font-bold text-white mb-8">
+          <h3 className="text-2xl font-black text-white mb-8">
             Tecnologie All&apos;Avanguardia
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
@@ -194,11 +200,32 @@ export default function PrototypingServicesSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 ${tech.color} font-medium hover:scale-105 transition-transform duration-200`}
+                className={`px-4 py-2 glassmorphism-brand rounded-lg border border-primary-400/30 ${tech.color} font-medium hover:scale-105 transition-transform duration-200`}
               >
                 {tech.name}
               </motion.span>
             ))}
+          </div>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mt-20"
+        >
+          <div className="glassmorphism-brand rounded-2xl p-12 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-black text-white mb-4">
+              Pronto a trasformare la tua idea in realtà?
+            </h3>
+            <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
+              Contattaci per una consulenza gratuita e scopri come possiamo sviluppare il tuo prototipo in tempi record.
+            </p>
+            <button className="gradient-purple-red hover:shadow-purple-red text-white px-8 py-3 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105">
+              Inizia il Tuo Progetto
+            </button>
           </div>
         </motion.div>
       </div>
