@@ -1,5 +1,5 @@
 import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
-import { ModernBackground } from "./modern-background-effects";
+import BrandGeometricBackground from "./brand-geometric-background";
 
 export default function TeamSection() {
   const teamMembers = [
@@ -28,12 +28,10 @@ export default function TeamSection() {
 
   return (
     <div className="py-32 bg-neutral-950 relative overflow-hidden">
-      {/* Modern Background Effects */}
-      <ModernBackground 
-        variant="constellation" 
-        intensity="moderate" 
-        colorScheme="neutral" 
-        darkMode={true}
+      {/* Brand Geometric Background Effects */}
+      <BrandGeometricBackground 
+        variant="floating" 
+        intensity="medium"
       />
       
       {/* Brand geometric shapes */}

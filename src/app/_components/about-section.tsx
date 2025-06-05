@@ -1,7 +1,7 @@
 'use client';
 
 import { FadeInUp, SlideInLeft, SlideInRight, StaggeredAnimation, JapaneseLine, JapaneseText } from "./japanese-animations";
-import { ModernBackground } from "./modern-background-effects";
+import BrandGeometricBackground from "./brand-geometric-background";
 import { useRef, useState, useEffect } from "react";
 
 export default function AboutSection() {
@@ -51,12 +51,10 @@ export default function AboutSection() {
       {/* Subtle gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none"></div>
       
-      {/* Modern Background Effects - Subtle */}
-      <ModernBackground 
-        variant="mixed" 
-        intensity="subtle" 
-        colorScheme="neutral" 
-        darkMode={true}
+      {/* Brand Geometric Background Effects */}
+      <BrandGeometricBackground 
+        variant="particles" 
+        intensity="subtle"
       />
       
       {/* Elegant geometric elements with purple-red theme */}

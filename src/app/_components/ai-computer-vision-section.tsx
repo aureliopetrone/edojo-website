@@ -1,5 +1,5 @@
 import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
-import { ModernBackground } from "./modern-background-effects";
+import BrandGeometricBackground from "./brand-geometric-background";
 
 export default function AiComputerVisionSection() {
   return (
@@ -11,11 +11,9 @@ export default function AiComputerVisionSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-transparent to-secondary-500/10"></div>
       </div>
 
-      <ModernBackground
-        variant="grid"
+      <BrandGeometricBackground
+        variant="orbital"
         intensity="subtle"
-        colorScheme="red"
-        darkMode={true}
       />
 
       <section id="computer-vision" className="relative z-10">

@@ -1,5 +1,5 @@
 import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
-import { ModernBackground } from "./modern-background-effects";
+import BrandGeometricBackground from "./brand-geometric-background";
 import ReinforcementLearningAnimation from "./reinforcement-learning-animation";
 
 export default function AiReinforcementLearningSection() {
@@ -10,11 +10,9 @@ export default function AiReinforcementLearningSection() {
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50"></div>
       </div>
 
-      <ModernBackground
-        variant="grid"
+      <BrandGeometricBackground
+        variant="floating"
         intensity="subtle"
-        colorScheme="purple"
-        darkMode={false}
       />
 
       <section id="reinforcement-learning" className="relative z-10">

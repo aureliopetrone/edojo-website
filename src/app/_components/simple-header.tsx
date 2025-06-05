@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BrandLogo from "./brand-logo";
 
 export default function SimpleHeader() {
   return (
@@ -8,6 +9,7 @@ export default function SimpleHeader() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-3 group">
+              <BrandLogo size="md" />
               <span className="text-4xl font-bold text-neutral-50 group-hover:text-neutral-200 transition-colors">
                 edojo
               </span>

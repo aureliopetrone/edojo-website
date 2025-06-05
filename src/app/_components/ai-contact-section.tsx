@@ -1,18 +1,16 @@
 import Link from "next/link";
 import ContactForm from "./contact-form";
 import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
-import { ModernBackground } from "./modern-background-effects";
+import BrandGeometricBackground from "./brand-geometric-background";
 import { companyInfo } from "~/config/company-info";
 
 export default function AiContactSection() {
   return (
     <div className="py-32 bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 relative overflow-hidden">
-      {/* Modern Background Effects */}
-      <ModernBackground 
-        variant="mixed" 
-        intensity="moderate" 
-        colorScheme="neutral" 
-        darkMode={true}
+      {/* Brand Geometric Background Effects */}
+      <BrandGeometricBackground 
+        variant="particles" 
+        intensity="medium"
       />
       
       {/* AI-themed geometric shapes */}

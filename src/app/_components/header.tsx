@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { companyInfo } from "~/config/company-info";
 import OrigamiButton from "./origami-button";
+import BrandLogo from "./brand-logo";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -181,6 +182,7 @@ export default function Header() {
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center space-x-3">
+                <BrandLogo size="md" />
                 <span className="text-4xl font-bold text-neutral-50">
                   edojo
                 </span>

@@ -1,16 +1,14 @@
 import ProjectForm from "./project-form";
 import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
-import { ModernBackground } from "./modern-background-effects";
+import BrandGeometricBackground from "./brand-geometric-background";
 
 export default function ProjectFormSection() {
   return (
     <div className="py-24 bg-gradient-to-br from-neutral-900 via-black to-neutral-900 relative">
-      {/* Modern Background Effects */}
-      <ModernBackground 
-        variant="grid" 
-        intensity="subtle" 
-        colorScheme="neutral" 
-        darkMode={true}
+      {/* Brand Geometric Background Effects */}
+      <BrandGeometricBackground 
+        variant="orbital" 
+        intensity="subtle"
       />
       
       <section id="form-progetto" className="relative">

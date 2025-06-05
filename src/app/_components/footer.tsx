@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { companyInfo } from "~/config/company-info";
+import BrandLogo from "./brand-logo";
 
 export default function Footer() {
   return (
@@ -9,6 +10,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
+              <BrandLogo size="md" />
               <h3 className="text-xl font-bold text-neutral-50">{companyInfo.name}</h3>
             </div>
             <div className="text-neutral-400 space-y-1">

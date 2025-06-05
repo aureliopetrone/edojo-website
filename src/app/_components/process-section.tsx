@@ -1,16 +1,14 @@
 import ProcessCarousel from "./process-carousel";
 import { FadeInUp, JapaneseLine, JapaneseText } from "./japanese-animations";
-import { ModernBackground } from "./modern-background-effects";
+import BrandGeometricBackground from "./brand-geometric-background";
 
 export default function ProcessSection() {
   return (
     <div className="py-24 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 relative">
-      {/* Modern Background Effects */}
-      <ModernBackground 
-        variant="constellation" 
-        intensity="moderate" 
-        colorScheme="blue" 
-        darkMode={true}
+      {/* Brand Geometric Background Effects */}
+      <BrandGeometricBackground 
+        variant="orbital" 
+        intensity="medium"
       />
       
       <section id="processo" className="relative">

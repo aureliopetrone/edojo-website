@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { companyInfo } from "~/config/company-info";
+import BrandLogo from "./brand-logo";
 
 export default function SimpleFooter() {
   return (
@@ -15,6 +16,7 @@ export default function SimpleFooter() {
           {/* Logo */}
           <div className="mb-6">
             <Link href="/" className="inline-flex items-center space-x-3 group">
+              <BrandLogo size="lg" />
               <span className="text-2xl font-bold text-neutral-50 group-hover:text-gradient-red-purple transition-all duration-300">
                 {companyInfo.name}
               </span>

@@ -1,16 +1,14 @@
 import OrigamiLink from "./origami-link";
 import { FadeInUp, JapaneseLine, JapaneseText } from "./japanese-animations";
-import { ModernBackground } from "./modern-background-effects";
+import BrandGeometricBackground from "./brand-geometric-background";
 
 export default function ProjectHeroSection() {
   return (
     <div className="relative overflow-hidden pt-16 bg-gradient-to-br from-green-50 via-neutral-50 to-blue-50">
-      {/* Modern Background Effects */}
-      <ModernBackground 
-        variant="grid" 
-        intensity="subtle" 
-        colorScheme="green" 
-        darkMode={false}
+      {/* Brand Geometric Background Effects */}
+      <BrandGeometricBackground 
+        variant="particles" 
+        intensity="subtle"
       />
       
       <section className="relative">

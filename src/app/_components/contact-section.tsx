@@ -1,18 +1,16 @@
 import Link from "next/link";
 import ContactForm from "./contact-form";
 import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
-import { ModernBackground } from "./modern-background-effects";
+import BrandGeometricBackground from "./brand-geometric-background";
 import { companyInfo } from "~/config/company-info";
 
 export default function ContactSection() {
   return (
     <div className="py-32 section-neutral relative overflow-hidden">
-      {/* Modern Background Effects - Subtle */}
-      <ModernBackground 
-        variant="mixed" 
-        intensity="subtle" 
-        colorScheme="neutral" 
-        darkMode={true}
+      {/* Brand Geometric Background Effects */}
+      <BrandGeometricBackground 
+        variant="particles" 
+        intensity="subtle"
       />
       
       {/* Elegant geometric shapes with purple-red theme */}

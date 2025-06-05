@@ -4,7 +4,6 @@ import Link from "next/link";
 import OrigamiButton from "./origami-button";
 import { FadeInUp, ScaleIn } from "./japanese-animations";
 import AccelerationBackground from "./acceleration-background";
-import TechPattern from "./tech-pattern";
 
 export default function HeroSection() {
   return (
@@ -23,16 +22,8 @@ export default function HeroSection() {
                         {/* Brand Typography with Refined Design */}
             <div className="mb-16">
               <div className="relative">
-                {/* Background "edojo" text - Ultra Bold */}
-                <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-                  <span className="text-[20rem] sm:text-[25rem] lg:text-[35rem] font-black text-white/[0.02] leading-none select-none pointer-events-none tracking-tighter">
-                    edojo
-                  </span>
-                </div>
-                
-                {/* Subtle tech pattern background */}
-                <TechPattern variant="circuit" opacity={0.03} className="text-white" />
-                
+
+
 
                 
                 {/* Main Title - Ultra Bold Typography */}

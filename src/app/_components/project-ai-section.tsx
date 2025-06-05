@@ -1,15 +1,13 @@
 import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
-import { ModernBackground } from "./modern-background-effects";
+import BrandGeometricBackground from "./brand-geometric-background";
 
 export default function ProjectAiSection() {
   return (
     <div className="relative py-20 bg-gradient-to-br from-neutral-800 via-neutral-900 to-black">
-      {/* Modern Background Effects */}
-      <ModernBackground 
-        variant="constellation" 
-        intensity="moderate" 
-        colorScheme="blue" 
-        darkMode={true}
+      {/* Brand Geometric Background Effects */}
+      <BrandGeometricBackground 
+        variant="orbital" 
+        intensity="medium"
       />
       
       <section id="come-facciamo" className="relative">

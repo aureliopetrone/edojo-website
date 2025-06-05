@@ -1,6 +1,6 @@
 import OrigamiLink from "./origami-link";
 import { FadeInUp, JapaneseLine, JapaneseText } from "./japanese-animations";
-import { ModernBackground } from "./modern-background-effects";
+import BrandGeometricBackground from "./brand-geometric-background";
 import AiChatDemo from "./ai-chat-demo";
 
 export default function AiGenerativeSection() {
@@ -13,12 +13,10 @@ export default function AiGenerativeSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-transparent to-secondary-500/10"></div>
       </div>
 
-      {/* Modern Background Effects */}
-      <ModernBackground
-        variant="grid"
+      {/* Brand Geometric Background Effects */}
+      <BrandGeometricBackground
+        variant="floating"
         intensity="subtle"
-        colorScheme="red"
-        darkMode={true}
       />
 
       <section id="ai-generative" className="relative z-10">

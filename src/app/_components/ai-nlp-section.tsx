@@ -1,5 +1,5 @@
 import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
-import { ModernBackground } from "./modern-background-effects";
+import BrandGeometricBackground from "./brand-geometric-background";
 
 export default function AiNlpSection() {
   return (
@@ -11,11 +11,9 @@ export default function AiNlpSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-secondary-500/10 via-transparent to-primary-500/10"></div>
       </div>
 
-      <ModernBackground
-        variant="mesh"
+      <BrandGeometricBackground
+        variant="particles"
         intensity="subtle"
-        colorScheme="green"
-        darkMode={true}
       />
 
       <section id="nlp" className="relative z-10">
