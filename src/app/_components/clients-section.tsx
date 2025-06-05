@@ -113,7 +113,7 @@ export default function ClientsSection() {
                   {/* Main Heading */}
                   <div>
                     <h1 className="text-7xl lg:text-9xl font-black text-neutral-900 leading-[1.1] tracking-tighter text-right py-2">
-                      Lavoriamo con
+                      30+
                       <span className="block text-gradient-red-purple animate-gradient-shift">
                         grandi clienti
                       </span>

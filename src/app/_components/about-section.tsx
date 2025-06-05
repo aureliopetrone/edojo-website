@@ -135,6 +135,13 @@ export default function AboutSection() {
               -webkit-user-select: none;
               -moz-user-select: none;
               -ms-user-select: none;
+              /* Hide scrollbar for Chrome, Safari and Opera */
+              -webkit-overflow-scrolling: touch;
+              scrollbar-width: none; /* Firefox */
+              -ms-overflow-style: none; /* Internet Explorer 10+ */
+            }
+            .marquee-scrollable::-webkit-scrollbar {
+              display: none; /* Chrome, Safari, Edge */
             }
             .marquee-scrollable:active {
               cursor: grabbing;
@@ -158,167 +165,167 @@ export default function AboutSection() {
                 WebkitOverflowScrolling: 'touch'
               }}
             >
-                            <div className={`marquee-container flex gap-6 ${!isAutoPlaying ? '' : ''}`}>
+                            <div className={`marquee-container flex gap-4 sm:gap-6 ${!isAutoPlaying ? '' : ''}`}>
                 {/* First Set of Services */}
-                <div className="flex gap-6 min-w-max">
+                <div className="flex gap-4 sm:gap-6 min-w-max">
                 {/* Web Application */}
-                <div className="group cursor-pointer p-4 rounded-2xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-cyan-300/20 min-w-[200px]">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-cyan-300/60 group-hover:bg-white/15 relative overflow-hidden">
-                    <svg className="w-8 h-8 text-white transition-all duration-500 group-hover:text-cyan-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-cyan-300/20 w-[140px] sm:w-[180px] max-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-cyan-300/60 group-hover:bg-white/15 relative overflow-hidden">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all duration-500 group-hover:text-cyan-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12c0 1.66-4.03 3-9 3s-9-1.34-9-3m18 0c0-1.66-4.03-3-9-3s-9 1.34-9 3m18 0v6c0 1.66-4.03 3-9 3s-9-1.34-9-3v-6" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-2 group-hover:text-cyan-200 transition-colors duration-300">Web Application</h4>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Portali aziendali, dashboard real-time, CRM intelligenti</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-cyan-200 transition-colors duration-300">Web Application</h4>
+                    <p className="text-white/70 text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">Portali aziendali, dashboard CRM</p>
                   </div>
                 </div>
                 
                 {/* AI Integration */}
-                <div className="group cursor-pointer p-4 rounded-2xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-blue-300/20 min-w-[200px]">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-blue-300/60 group-hover:bg-white/15 relative overflow-hidden">
-                    <svg className="w-8 h-8 text-white transition-all duration-500 group-hover:text-blue-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-blue-300/20 w-[140px] sm:w-[180px] max-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-blue-300/60 group-hover:bg-white/15 relative overflow-hidden">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all duration-500 group-hover:text-blue-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <circle cx="12" cy="12" r="3" strokeWidth={2} />
                       <circle cx="12" cy="12" r="8" strokeWidth={1.5} strokeDasharray="8 4" opacity="0.7" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-2 group-hover:text-blue-200 transition-colors duration-300">AI Integration</h4>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Chatbot conversazionali, automazione documenti, ML personalizzato</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-blue-200 transition-colors duration-300">AI Integration</h4>
+                    <p className="text-white/70 text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">Chatbot, automazione ML</p>
                   </div>
                 </div>
                 
                 {/* Automazione Processi */}
-                <div className="group cursor-pointer p-4 rounded-2xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-emerald-300/20 min-w-[200px]">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-emerald-300/60 group-hover:bg-white/15 relative overflow-hidden">
-                    <svg className="w-8 h-8 text-white transition-all duration-500 group-hover:text-emerald-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-emerald-300/20 w-[140px] sm:w-[180px] max-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-emerald-300/60 group-hover:bg-white/15 relative overflow-hidden">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all duration-500 group-hover:text-emerald-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-2 group-hover:text-emerald-200 transition-colors duration-300">Automazione Processi</h4>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Workflow intelligenti, sistemi IoT, AI Agents autonomi</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-emerald-200 transition-colors duration-300">Automazione</h4>
+                    <p className="text-white/70 text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">Workflow IoT, AI Agents</p>
                   </div>
                 </div>
                 
                 {/* Robotica */}
-                <div className="group cursor-pointer p-4 rounded-2xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-orange-300/20 min-w-[200px]">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-orange-300/60 group-hover:bg-white/15 relative overflow-hidden">
-                    <svg className="w-8 h-8 text-white transition-all duration-500 group-hover:text-orange-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-orange-300/20 w-[140px] sm:w-[180px] max-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-orange-300/60 group-hover:bg-white/15 relative overflow-hidden">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all duration-500 group-hover:text-orange-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-2 group-hover:text-orange-200 transition-colors duration-300">Robotica</h4>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Automazione industriale, robot collaborativi, sistemi meccatronici</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-orange-200 transition-colors duration-300">Robotica</h4>
+                    <p className="text-white/70 text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">Automazione industriale</p>
                   </div>
                 </div>
 
                 {/* App Mobile */}
-                <div className="group cursor-pointer p-4 rounded-2xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-purple-300/20 min-w-[200px]">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-purple-300/60 group-hover:bg-white/15 relative overflow-hidden">
-                    <svg className="w-8 h-8 text-white transition-all duration-500 group-hover:text-purple-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-purple-300/20 w-[140px] sm:w-[180px] max-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-purple-300/60 group-hover:bg-white/15 relative overflow-hidden">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all duration-500 group-hover:text-purple-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-2 group-hover:text-purple-200 transition-colors duration-300">App Mobile</h4>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">iOS e Android native, controllo remoto macchinari</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-purple-200 transition-colors duration-300">App Mobile</h4>
+                    <p className="text-white/70 text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">iOS e Android native</p>
                   </div>
                 </div>
 
                 {/* Consulenza Tecnica */}
-                <div className="group cursor-pointer p-4 rounded-2xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-yellow-300/20 min-w-[200px]">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-yellow-300/60 group-hover:bg-white/15 relative overflow-hidden">
-                    <svg className="w-8 h-8 text-white transition-all duration-500 group-hover:text-yellow-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-yellow-300/20 w-[140px] sm:w-[180px] max-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-yellow-300/60 group-hover:bg-white/15 relative overflow-hidden">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all duration-500 group-hover:text-yellow-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-2 group-hover:text-yellow-200 transition-colors duration-300">Consulenza Tecnica</h4>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Analisi architetturali, team augmentation, mentoring</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-yellow-200 transition-colors duration-300">Consulenza</h4>
+                    <p className="text-white/70 text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">Analisi e mentoring</p>
                   </div>
                 </div>
               </div>
               
               {/* Duplicate Set for Seamless Loop */}
-              <div className="flex gap-6 min-w-max">
+              <div className="flex gap-4 sm:gap-6 min-w-max">
                 {/* Web Application - Duplicate */}
-                <div className="group cursor-pointer p-4 rounded-2xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-cyan-300/20 min-w-[200px]">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-cyan-300/60 group-hover:bg-white/15 relative overflow-hidden">
-                    <svg className="w-8 h-8 text-white transition-all duration-500 group-hover:text-cyan-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-cyan-300/20 w-[140px] sm:w-[180px] max-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-cyan-300/60 group-hover:bg-white/15 relative overflow-hidden">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all duration-500 group-hover:text-cyan-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12c0 1.66-4.03 3-9 3s-9-1.34-9-3m18 0c0-1.66-4.03-3-9-3s-9 1.34-9 3m18 0v6c0 1.66-4.03 3-9 3s-9-1.34-9-3v-6" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-2 group-hover:text-cyan-200 transition-colors duration-300">Web Application</h4>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Portali aziendali, dashboard real-time, CRM intelligenti</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-cyan-200 transition-colors duration-300">Web Application</h4>
+                    <p className="text-white/70 text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">Portali aziendali, dashboard CRM</p>
                   </div>
                 </div>
                 
                 {/* AI Integration - Duplicate */}
-                <div className="group cursor-pointer p-4 rounded-2xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-blue-300/20 min-w-[200px]">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-blue-300/60 group-hover:bg-white/15 relative overflow-hidden">
-                    <svg className="w-8 h-8 text-white transition-all duration-500 group-hover:text-blue-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-blue-300/20 w-[140px] sm:w-[180px] max-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-blue-300/60 group-hover:bg-white/15 relative overflow-hidden">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all duration-500 group-hover:text-blue-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <circle cx="12" cy="12" r="3" strokeWidth={2} />
                       <circle cx="12" cy="12" r="8" strokeWidth={1.5} strokeDasharray="8 4" opacity="0.7" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-2 group-hover:text-blue-200 transition-colors duration-300">AI Integration</h4>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Chatbot conversazionali, automazione documenti, ML personalizzato</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-blue-200 transition-colors duration-300">AI Integration</h4>
+                    <p className="text-white/70 text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">Chatbot, automazione ML</p>
                   </div>
                 </div>
                 
                 {/* Automazione Processi - Duplicate */}
-                <div className="group cursor-pointer p-6 rounded-2xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-emerald-300/20 min-w-[280px]">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-emerald-300/60 group-hover:bg-white/15 relative overflow-hidden">
-                    <svg className="w-8 h-8 text-white transition-all duration-500 group-hover:text-emerald-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-emerald-300/20 w-[140px] sm:w-[180px] max-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-emerald-300/60 group-hover:bg-white/15 relative overflow-hidden">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all duration-500 group-hover:text-emerald-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-2 group-hover:text-emerald-200 transition-colors duration-300">Automazione Processi</h4>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Workflow intelligenti, sistemi IoT, AI Agents autonomi</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-emerald-200 transition-colors duration-300">Automazione</h4>
+                    <p className="text-white/70 text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">Workflow IoT, AI Agents</p>
                   </div>
                 </div>
                 
                 {/* Robotica - Duplicate */}
-                <div className="group cursor-pointer p-6 rounded-2xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-orange-300/20 min-w-[280px]">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-orange-300/60 group-hover:bg-white/15 relative overflow-hidden">
-                    <svg className="w-8 h-8 text-white transition-all duration-500 group-hover:text-orange-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-orange-300/20 w-[140px] sm:w-[180px] max-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-orange-300/60 group-hover:bg-white/15 relative overflow-hidden">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all duration-500 group-hover:text-orange-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-2 group-hover:text-orange-200 transition-colors duration-300">Robotica</h4>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Automazione industriale, robot collaborativi, sistemi meccatronici</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-orange-200 transition-colors duration-300">Robotica</h4>
+                    <p className="text-white/70 text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">Automazione industriale</p>
                   </div>
                 </div>
 
                 {/* App Mobile - Duplicate */}
-                <div className="group cursor-pointer p-6 rounded-2xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-purple-300/20 min-w-[280px]">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-purple-300/60 group-hover:bg-white/15 relative overflow-hidden">
-                    <svg className="w-8 h-8 text-white transition-all duration-500 group-hover:text-purple-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-purple-300/20 w-[140px] sm:w-[180px] max-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-purple-300/60 group-hover:bg-white/15 relative overflow-hidden">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all duration-500 group-hover:text-purple-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-2 group-hover:text-purple-200 transition-colors duration-300">App Mobile</h4>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">iOS e Android native, controllo remoto macchinari</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-purple-200 transition-colors duration-300">App Mobile</h4>
+                    <p className="text-white/70 text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">iOS e Android native</p>
                   </div>
                 </div>
 
                 {/* Consulenza Tecnica - Duplicate */}
-                <div className="group cursor-pointer p-6 rounded-2xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-yellow-300/20 min-w-[280px]">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-yellow-300/60 group-hover:bg-white/15 relative overflow-hidden">
-                    <svg className="w-8 h-8 text-white transition-all duration-500 group-hover:text-yellow-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="group cursor-pointer p-2 sm:p-3 rounded-xl hover:bg-white/5 transition-all duration-500 border border-transparent hover:border-yellow-300/20 w-[140px] sm:w-[180px] max-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 transition-all duration-700 group-hover:scale-110 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-yellow-300/60 group-hover:bg-white/15 relative overflow-hidden">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all duration-500 group-hover:text-yellow-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-2 group-hover:text-yellow-200 transition-colors duration-300">Consulenza Tecnica</h4>
-                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Analisi architetturali, team augmentation, mentoring</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-yellow-200 transition-colors duration-300">Consulenza</h4>
+                    <p className="text-white/70 text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">Analisi e mentoring</p>
                   </div>
                 </div>
               </div>
