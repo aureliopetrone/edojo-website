@@ -4,7 +4,7 @@ import HeroSection from "~/app/_components/hero-section";
 import AboutSection from "~/app/_components/about-section";
 import ClientsSection from "~/app/_components/clients-section";
 import TeamSection from "~/app/_components/team-section";
-import ProcessSection from "~/app/_components/process-section";
+
 import ContactSection from "~/app/_components/contact-section";
 import Footer from "~/app/_components/footer";
 import { companyInfo } from "~/config/company-info";
