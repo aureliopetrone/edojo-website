@@ -281,7 +281,7 @@ async function sendLeadToCRM(data: {
     });
 
     if (!response.ok) {
-      const errorData: { error: string } = await response.json().catch(() => ({ error: 'Unknown error' }));
+      const errorData: { error: string } = await response.json().catch(() => ({ error: 'Unknown error' })) as { error: string };
       throw new Error(`CRM API Error (${response.status}): ${JSON.stringify(errorData)}`);
     }
 
