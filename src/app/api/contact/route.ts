@@ -253,8 +253,8 @@ async function sendLeadToCRM(data: {
 
     // Estrai nome e cognome dal campo name
     const nameParts = data.name.trim().split(' ');
-    const firstName = nameParts[0] || '';
-    const lastName = nameParts.slice(1).join(' ') || firstName; // Se non c'è cognome, usa il nome
+    const firstName = nameParts[0] ?? '';
+    const lastName = nameParts.slice(1).join(' ') ?? firstName; // Se non c'è cognome, usa il nome
 
     // Prepara i dati per il CRM
     const leadData = {
@@ -281,11 +281,11 @@ async function sendLeadToCRM(data: {
     });
 
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+      const errorData: { error: string } = await response.json().catch(() => ({ error: 'Unknown error' }));
       throw new Error(`CRM API Error (${response.status}): ${JSON.stringify(errorData)}`);
     }
 
-    const result = await response.json();
+    const result: { success: boolean; message: string; lead?: unknown } = await response.json() as { success: boolean; message: string; lead?: unknown };
     console.log("CRM Response:", result);
 
   } catch (error) {

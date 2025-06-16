@@ -14,7 +14,7 @@ export default function StructuredData({
   title, 
   description, 
   url,
-  services,
+  services: _services,
   breadcrumbs 
 }: StructuredDataProps) {
   const getStructuredData = () => {
@@ -36,7 +36,7 @@ export default function StructuredData({
           "address": {
             "@type": "PostalAddress",
             "streetAddress": companyInfo.address.street,
-            "addressLocality": companyInfo.address.city.split(' ')[0], // Solofra
+            "addressLocality": companyInfo.address.city.split(' ')[0] ?? '', // Solofra
             "addressRegion": "Campania",
             "postalCode": "83029",
             "addressCountry": "IT"
@@ -100,7 +100,7 @@ export default function StructuredData({
             "name": "Italy"
           },
           "serviceType": "Technology Consulting",
-          "url": url || baseUrl
+          "url": url ?? baseUrl
         };
 
       case 'webpage':
@@ -109,7 +109,7 @@ export default function StructuredData({
           "@type": "WebPage",
           "name": title,
           "description": description,
-          "url": url || baseUrl,
+          "url": url ?? baseUrl,
           "isPartOf": {
             "@type": "WebSite",
             "name": "eDojo",
@@ -134,7 +134,7 @@ export default function StructuredData({
             "position": index + 1,
             "name": crumb.name,
             "item": crumb.url
-          })) || []
+          })) ?? []
         };
 
       default:

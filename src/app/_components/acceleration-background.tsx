@@ -105,12 +105,12 @@ export default function AccelerationBackground({ className }: AccelerationBackgr
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw 3D warp speed lines
-      warpLines.forEach((line, index) => {
+      warpLines.forEach((line, _index) => {
         // Calculate perspective projection
         const perspective = 400;
         const projectedX = centerX + (line.x - centerX) * (perspective / line.z);
         const projectedY = centerY + (line.y - centerY) * (perspective / line.z);
-        const projectedLength = line.length * (perspective / line.z);
+        // const projectedLength = line.length * (perspective / line.z); // Unused in current implementation
 
         // Only draw if line is in front and on screen
         if (line.z > 0 && projectedX > -50 && projectedX < canvas.width + 50 && 
@@ -174,7 +174,7 @@ export default function AccelerationBackground({ className }: AccelerationBackgr
       });
 
       // Draw giants (large moving elements) - meno rossi
-      giants.forEach((giant, index) => {
+      giants.forEach((giant, _index) => {
         ctx.save();
         ctx.globalAlpha = giant.opacity;
         

@@ -68,7 +68,7 @@ export default function CopertineFb() {
           {/* Informazioni dimensioni Facebook */}
           <div className="p-4 bg-gray-50 text-center text-gray-600">
             <p>Dimensioni copertina Facebook: 820x461 pixel</p>
-            <p>Rapporto d'aspetto: 1.78:1</p>
+            <p>Rapporto d&apos;aspetto: 1.78:1</p>
           </div>
         </div>
 
@@ -123,7 +123,7 @@ export default function CopertineFb() {
           {/* Informazioni dimensioni LinkedIn */}
           <div className="p-4 bg-gray-50 text-center text-gray-600">
             <p>Dimensioni copertina LinkedIn: 1584x396 pixel</p>
-            <p>Rapporto d'aspetto: 4:1</p>
+            <p>Rapporto d&apos;aspetto: 4:1</p>
           </div>
         </div>
 
@@ -212,7 +212,7 @@ export default function CopertineFb() {
           {/* Informazioni dimensioni Background Box */}
           <div className="p-4 bg-gray-50 text-center text-gray-600">
             <p>Dimensioni background box: 1000x600 pixel</p>
-            <p>Rapporto d'aspetto: 5:3 - Renderizzato con SVG Canvas</p>
+            <p>Rapporto d&apos;aspetto: 5:3 - Renderizzato con SVG Canvas</p>
           </div>
 
           {/* Export Controls */}
