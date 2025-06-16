@@ -1,0 +1,5 @@
+Contact: mailto:info@edojo.it
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: it, en
+Canonical: https://edojo.it/.well-known/security.txt
+Policy: https://edojo.it/privacy-policy 

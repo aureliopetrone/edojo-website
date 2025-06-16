@@ -1,44 +1,53 @@
-# 🚀 Edojo Software House Website
+# 🚀 Edojo CRM
 
-Sito web moderno per la software house specializzata in sviluppo fullstack con tecnologie all'avanguardia.
+Sistema CRM personalizzato per Edojo Software House, basato su nextcrm-app.
+
+## 📋 Informazioni
+
+Questo progetto è un fork privato di [nextcrm-app](https://github.com/pdovhomilja/nextcrm-app) personalizzato per le esigenze specifiche di Edojo Software House.
 
 ## 🛠️ Stack Tecnologico
 
 - **Framework:** Next.js 14 con App Router
-- **Linguaggio:** TypeScript
+- **Linguaggio:** TypeScript  
 - **Styling:** Tailwind CSS
-- **Database:** SQLite con Prisma ORM
+- **Database:** MongoDB con Prisma ORM
 - **Autenticazione:** NextAuth.js
 - **API:** tRPC per type-safe APIs
-- **Deployment:** Vercel (consigliato)
+- **UI Components:** Shadcn/ui
+- **Deployment:** Docker ready
 
-## ✨ Funzionalità
+## ✨ Funzionalità CRM
 
-- 🎨 Design moderno e responsive
-- 🚀 Performance ottimizzate con Next.js
-- 📱 Mobile-first approach
-- 🔒 Sistema di autenticazione integrato
-- 🌐 SEO ottimizzato
-- ⚡ API type-safe con tRPC
+- 👥 Gestione Contatti e Lead
+- 🏢 Gestione Account Aziendali
+- 💼 Gestione Opportunità
+- 📋 Sistema Tasks e Progetti
+- 📄 Gestione Documenti
+- 💰 Gestione Fatture
+- 📊 Dashboard e Reportistica
+- 🔐 Sistema di Autenticazione
+- 👨‍💼 Gestione Utenti e Permessi
 
 ## 🚀 Come iniziare
 
 ### Prerequisiti
 
-- Node.js 18+ 
-- npm o yarn
+- Node.js 18+
+- MongoDB
+- pnpm (raccomandato)
 
 ### Installazione
 
 1. Clona il repository
 ```bash
-git clone <repository-url>
-cd edojo
+git clone https://github.com/aureliopetrone/edojo-crm.git
+cd edojo-crm
 ```
 
 2. Installa le dipendenze
 ```bash
-npm install
+pnpm install
 ```
 
 3. Configura le variabili d'ambiente
@@ -47,72 +56,106 @@ cp .env.example .env
 ```
 
 Compila il file `.env` con le tue credenziali:
-- `AUTH_SECRET`: Genera con `npx auth secret`
-- `AUTH_DISCORD_ID`: ID dell'app Discord (opzionale per development)
-- `AUTH_DISCORD_SECRET`: Secret dell'app Discord (opzionale per development)
+- `DATABASE_URL`: URL di connessione MongoDB
+- `NEXTAUTH_SECRET`: Genera con `openssl rand -base64 32`
+- `NEXTAUTH_URL`: URL dell'applicazione
+- Altri servizi esterni (email, upload, etc.)
+
+### Integrazione CRM (Opzionale)
+
+Per abilitare l'integrazione con il CRM e l'invio automatico dei lead dal form di contatto:
+
+```bash
+# URL del CRM (es. http://localhost:3001 per sviluppo locale)
+CRM_API_URL="http://localhost:3001"
+
+# API Key generata dal CRM per l'importazione leads
+CRM_API_KEY="your_crm_api_key_here"
+```
+
+Quando configurate, tutte le richieste di contatto dal sito web verranno automaticamente inviate come lead al CRM.
 
 4. Inizializza il database
 ```bash
-npm run db:push
+pnpm db:push
 ```
 
 5. Avvia il server di sviluppo
 ```bash
-npm run dev
+pnpm dev
 ```
 
-Il sito sarà disponibile su [http://localhost:3000](http://localhost:3000)
+Il CRM sarà disponibile su [http://localhost:3000](http://localhost:3000)
 
 ## 📁 Struttura del Progetto
 
 ```
-src/
-├── app/
-│   ├── _components/    # Componenti React riutilizzabili
-│   ├── api/           # API routes
-│   ├── layout.tsx     # Layout principale
-│   └── page.tsx       # Homepage
-├── server/            # Configurazione server-side
-├── styles/            # Stili globali
-└── trpc/             # Configurazione tRPC
+├── app/                 # Next.js App Router
+│   ├── [locale]/       # Internazionalizzazione
+│   ├── api/            # API routes
+│   └── components/     # Componenti UI
+├── actions/            # Server Actions
+├── components/         # Componenti riutilizzabili
+├── lib/               # Utilities e configurazioni
+├── prisma/            # Schema database e migrazioni
+├── types/             # Type definitions
+└── store/             # State management
 ```
 
-## 🎨 Sezioni del Sito
+## 🔄 Sincronizzazione con upstream
 
-- **Hero Section:** Presentazione principale con CTA
-- **Tecnologie:** Showcase delle competenze tecniche
-- **Chi Siamo:** Informazioni sulla software house
-- **Servizi:** Dettagli sui servizi offerti
-- **Contatti:** Form di contatto e informazioni
+Per mantenere il fork aggiornato con il progetto originale:
 
-## 🚀 Deployment
+```bash
+# Fetch degli aggiornamenti upstream
+git fetch upstream
 
-### Vercel (Consigliato)
+# Merge degli aggiornamenti nel branch main
+git checkout main
+git merge upstream/main
 
-1. Fai push del codice su GitHub
-2. Connetti il repository a Vercel
-3. Configura le variabili d'ambiente su Vercel
-4. Deploy automatico ad ogni push
+# Push degli aggiornamenti
+git push origin main
+```
 
-### Altri Provider
+## 🐳 Deployment con Docker
 
-Il progetto può essere deployato su qualsiasi provider che supporta Next.js:
-- Netlify
-- Railway
-- AWS
-- Google Cloud
+```bash
+# Build dell'immagine
+docker build -t edojo-crm .
 
-## 📞 Contatti
+# Run del container
+docker run -p 3000:3000 --env-file .env edojo-crm
+```
 
-Per informazioni sui servizi o consulenze:
-- 📧 Email: info@edojo.dev
-- 💼 LinkedIn: [Profilo LinkedIn]
-- 🌐 Portfolio: [Portfolio Website]
+## 📊 Moduli Attivi
+
+- ✅ CRM Core (Contatti, Lead, Account)
+- ✅ Gestione Progetti
+- ✅ Sistema Tasks
+- ✅ Gestione Documenti
+- ✅ Fatturazione
+- ✅ Dashboard
+- ✅ Reportistica
+
+## 🔗 Links Utili
+
+- **Repository Upstream:** [nextcrm-app](https://github.com/pdovhomilja/nextcrm-app)
+- **Documentazione Prisma:** [prisma.io](https://www.prisma.io/)
+- **Next.js Docs:** [nextjs.org](https://nextjs.org/)
+- **Tailwind CSS:** [tailwindcss.com](https://tailwindcss.com/)
+
+## 📞 Supporto
+
+Per supporto tecnico o personalizzazioni:
+- 📧 Email: dev@edojo.it
+- 🐛 Issues: [GitHub Issues](https://github.com/aureliopetrone/edojo-crm/issues)
 
 ## 📄 Licenza
 
-Questo progetto è sviluppato per Edojo Software House.
+Questo progetto è un fork privato per uso esclusivo di Edojo Software House.
+Il progetto originale nextcrm-app è rilasciato sotto licenza MIT.
 
 ---
 
-Sviluppato con ❤️ usando il T3 Stack
+Fork personalizzato di [nextcrm-app](https://github.com/pdovhomilja/nextcrm-app) per Edojo Software House

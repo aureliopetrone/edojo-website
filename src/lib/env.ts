@@ -26,4 +26,6 @@ export const {
   EMAIL_FROM_ADDRESS,
   EMAIL_REPLY_TO,
   RESEND_API_KEY,
+  CRM_API_URL,
+  CRM_API_KEY,
 } = validatedEnv; 

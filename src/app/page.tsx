@@ -7,6 +7,7 @@ import TeamSection from "~/app/_components/team-section";
 
 import ContactSection from "~/app/_components/contact-section";
 import Footer from "~/app/_components/footer";
+import StructuredData from "~/app/_components/structured-data";
 import { companyInfo } from "~/config/company-info";
 import { type Metadata } from "next";
 
@@ -26,6 +27,15 @@ export const metadata: Metadata = {
 export default async function Home() {
   return (
     <HydrateClient>
+      <StructuredData 
+        type="organization"
+      />
+      <StructuredData 
+        type="webpage"
+        title={companyInfo.pageMetadata.home.title}
+        description={companyInfo.pageMetadata.home.description}
+        url={companyInfo.baseUrl}
+      />
       <Header />
       <main className="min-h-screen">
         <HeroSection />

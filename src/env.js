@@ -45,6 +45,10 @@ export const env = createEnv({
     EMAIL_FROM_NAME: z.string(),
     EMAIL_FROM_ADDRESS: z.string().email(),
     EMAIL_REPLY_TO: z.string().email(),
+    
+    // CRM Integration
+    CRM_API_URL: z.string().url().optional(),
+    CRM_API_KEY: z.string().optional(),
   },
 
   /**
@@ -94,6 +98,10 @@ export const env = createEnv({
     EMAIL_FROM_NAME: process.env.EMAIL_FROM_NAME,
     EMAIL_FROM_ADDRESS: process.env.EMAIL_FROM_ADDRESS,
     EMAIL_REPLY_TO: process.env.EMAIL_REPLY_TO,
+    
+    // CRM Integration
+    CRM_API_URL: process.env.CRM_API_URL,
+    CRM_API_KEY: process.env.CRM_API_KEY,
     
     // Analytics
     NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,

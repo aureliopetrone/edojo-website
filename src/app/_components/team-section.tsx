@@ -76,10 +76,10 @@ export default function TeamSection() {
             {/* Descriptive Paragraphs */}
             <div className="text-center mx-auto mb-16">
               <p className="mt-6 text-lg text-white/70">
-                <span className="font-semibold text-white">Competenza ed esperienza</span> al servizio dei nostri clienti per creare soluzioni complete e di qualità.
+                <span className="font-semibold text-white">Competenza, passione ed esperienza</span> per creare soluzioni concrete ed innovative.
               </p>
               <p className="mt-2 text-sm text-white/50">
-                Sviluppo, progetto e design con focus sulla qualità e l&apos;innovazione.
+                Sviluppate e progettate su misura, per i tuoi bisogni reali, per massimizzare il tuo investimento.
               </p>
             </div>
           </FadeInUp>

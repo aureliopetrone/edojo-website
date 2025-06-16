@@ -13,6 +13,8 @@ import {
   COMPANY_ADDRESS_LINE1,
   COMPANY_ADDRESS_LINE2,
   RESEND_API_KEY,
+  CRM_API_URL,
+  CRM_API_KEY,
   validateEnv 
 } from "~/lib/env";
 
@@ -90,6 +92,15 @@ export async function POST(request: NextRequest) {
     await sendContactEmail({ name, email, phone, subject, message });
 
     console.log("✅ Email inviate con successo!");
+
+    // Invia lead al CRM se configurato
+    try {
+      await sendLeadToCRM({ name, email, phone, subject, message });
+      console.log("✅ Lead inviato al CRM con successo!");
+    } catch (crmError) {
+      console.warn("⚠️ Errore nell'invio lead al CRM:", crmError);
+      // Non blocchiamo il processo se il CRM fallisce
+    }
     
     return NextResponse.json(
       { 
@@ -220,5 +231,65 @@ async function sendContactEmail(data: {
     }
     
     throw new Error(`Impossibile inviare l'email: ${error instanceof Error ? error.message : 'Errore sconosciuto'}`);
+  }
+}
+
+// Funzione per inviare lead al CRM
+async function sendLeadToCRM(data: {
+  name: string;
+  email: string;
+  phone?: string;
+  subject: string;
+  message: string;
+}) {
+  // Verifica se l'integrazione CRM è configurata
+  if (!CRM_API_URL || !CRM_API_KEY) {
+    console.log("📋 CRM non configurato - skipping");
+    return;
+  }
+
+  try {
+    console.log("🔗 Tentativo di invio lead al CRM...");
+
+    // Estrai nome e cognome dal campo name
+    const nameParts = data.name.trim().split(' ');
+    const firstName = nameParts[0] || '';
+    const lastName = nameParts.slice(1).join(' ') || firstName; // Se non c'è cognome, usa il nome
+
+    // Prepara i dati per il CRM
+    const leadData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: data.email,
+      phone: data.phone,
+      description: `Messaggio dal sito web:\n\nSoggetto: ${data.subject}\n\nMessaggio:\n${data.message}`,
+      lead_source: "Website",
+      status: "NEW",
+      type: "DEMO"
+    };
+
+    console.log("Dati lead per CRM:", leadData);
+
+    // Invia al CRM
+    const response = await fetch(`${CRM_API_URL}/api/leads/import`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${CRM_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(leadData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+      throw new Error(`CRM API Error (${response.status}): ${JSON.stringify(errorData)}`);
+    }
+
+    const result = await response.json();
+    console.log("CRM Response:", result);
+
+  } catch (error) {
+    console.error("Errore dettagliato nell'invio lead al CRM:", error);
+    throw new Error(`Impossibile inviare lead al CRM: ${error instanceof Error ? error.message : 'Errore sconosciuto'}`);
   }
 } 

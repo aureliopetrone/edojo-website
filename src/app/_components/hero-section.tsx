@@ -48,7 +48,7 @@ export default function HeroSection() {
             
             <FadeInUp delay={400}>
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-medium mt-8 sm:mt-12">
-                Acceleriamo la trasformazione digitale con AI e tecnologie innovative.
+                Acceleriamo la trasformazione digitale costruendo applicazioni web,<br/>automazioni intelligenti e soluzioni AI personalizzate.
               </p>
             </FadeInUp>
 

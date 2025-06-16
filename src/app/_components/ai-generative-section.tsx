@@ -39,11 +39,11 @@ export default function AiGenerativeSection() {
                     <div>
                       <div>
                         <h1 className="text-7xl lg:text-9xl font-black text-white leading-[1.1] tracking-tighter text-center py-4">
-                          <span className="text-gradient-red-purple animate-gradient-shift">
-                            AI Generativa
-                          </span>
                           <span className="block text-white">
-                            per il Business
+                            Welcome
+                          </span>
+                          <span className="text-gradient-red-purple animate-gradient-shift">
+                            AI
                           </span>
                         </h1>
                       </div>
@@ -76,9 +76,11 @@ export default function AiGenerativeSection() {
                 <div className="relative glassmorphism-brand rounded-2xl p-16 shadow-brand hover:shadow-brand-bold transition-all duration-500 group-hover:scale-[1.01]">
                   <div className="w-32 h-1 gradient-red-purple rounded-full mx-auto mb-8"></div>
                   <p className="mt-8 text-lg text-neutral-300">
-                    <span className="font-semibold text-white">Pronto a rivoluzionare il tuo business con l&apos;AI?</span><br />
-                    Scopri come le nostre soluzioni possono ottimizzare i tuoi processi e aumentare la produttività.
+                    <span className="font-semibold text-white">In questa pagina troverai solo alcuni degli esempi di applicazione dell&apos;AI.</span><br />
+                    
+                    Contattaci e parla gratuitamente con noi per scoprire come possiamo aiutarti a sfruttare l&apos;AI per il tuo business.
                   </p>
+        
                   <p className="mt-4 text-sm text-neutral-400">
                     Consulenza personalizzata • Implementazione guidata • Supporto continuativo
                   </p>
@@ -90,11 +92,8 @@ export default function AiGenerativeSection() {
                       size="lg"
                       className="gradient-red-purple hover:shadow-brand-bold text-white px-8 py-3 text-lg font-semibold transition-all duration-300"
                     >
-                      Inizia il tuo Progetto AI
+                      Chiedi direttamente a noi
                     </OrigamiLink>
-                    <p className="text-neutral-400 text-sm">
-                      <span className="font-mono">{/* */} </span>Strategia AI • Sviluppo custom • ROI garantito
-                    </p>
                   </div>
 
                   <div className="w-48 h-1 gradient-purple-red rounded-full mx-auto mt-8"></div>

@@ -1,11 +1,14 @@
 {
-  "name": "eDojo",
+  "name": "eDojo - Tech Lab digitale",
   "short_name": "eDojo",
-  "description": "Trasformiamo idee in realtà digitali",
+  "description": "Accompagniamo le aziende nel percorso di trasformazione digitale con metodologie consolidate e tecnologie innovative",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#dc2626",
   "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "it",
   "icons": [
     {
       "src": "/favicon-16x16.png",

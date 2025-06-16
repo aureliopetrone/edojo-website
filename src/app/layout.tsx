@@ -20,6 +20,17 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   authors: [{ name: "eDojo" }],
   creator: "eDojo",
+  metadataBase: new URL("https://edojo.it"),
+  alternates: {
+    canonical: "https://edojo.it",
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+  },
+  other: {
+    "msapplication-TileColor": "#dc2626",
+    "msapplication-config": "/browserconfig.xml",
+  },
 };
 
 export const viewport: Viewport = {
@@ -33,6 +44,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="it" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://ijpzrzjfythwnd8s.public.blob.vercel-storage.com" />
+      </head>
       <body className="font-sans">
         <TRPCReactProvider>
           {children}

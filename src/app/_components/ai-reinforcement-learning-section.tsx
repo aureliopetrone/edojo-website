@@ -2,7 +2,7 @@ import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from 
 import BrandGeometricBackground from "./brand-geometric-background";
 import ReinforcementLearningAnimation from "./reinforcement-learning-animation";
 
-export default function AiReinforcementLearningSection() {
+export default function AiMachineLearningSection() {
   return (
     <div className="py-32 relative">
       {/* Background */}
@@ -15,18 +15,18 @@ export default function AiReinforcementLearningSection() {
         intensity="subtle"
       />
 
-      <section id="reinforcement-learning" className="relative z-10">
+      <section id="machine-learning" className="relative z-10">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <FadeInUp>
             {/* Hero Typography */}
             <div className="relative mb-24 text-center">
               <div className="relative">
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-[6rem] sm:text-[8rem] lg:text-[12rem] font-black text-purple-800/5 leading-none select-none pointer-events-none">
-                  RL
+                  ML
                 </div>
                 <div className="relative pt-12 lg:pt-16">
                   <JapaneseText variant="title" className="text-4xl sm:text-5xl lg:text-7xl font-black text-neutral-800 leading-[1.1] tracking-tighter text-center py-2">
-                    Reinforcement
+                    Machine
                     <span className="block bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                       Learning
                     </span>
@@ -48,11 +48,11 @@ export default function AiReinforcementLearningSection() {
                   
                   <div className="mt-6 text-center">
                     <JapaneseText variant="body" className="text-lg font-bold text-purple-800 mb-2">
-                      Algoritmo di Equilibrio Dinamico
+                      Algoritmi di Apprendimento Automatico
                     </JapaneseText>
                     <p className="text-sm text-neutral-600 leading-relaxed">
-                      L&apos;agente impara attraverso tentativi ed errori, ottimizzando le decisioni 
-                      per massimizzare la ricompensa nel tempo.
+                      I sistemi imparano dai dati per identificare pattern, fare previsioni 
+                      e prendere decisioni intelligenti.
                     </p>
                   </div>
                 </div>
@@ -63,14 +63,14 @@ export default function AiReinforcementLearningSection() {
                 <div className="space-y-8">
                   <div>
                     <JapaneseText variant="title" className="text-3xl font-black text-neutral-900 leading-[1.1] mb-6">
-                      <span className="block">Apprendimento per</span>
+                      <span className="block">Apprendimento dai</span>
                       <span className="block bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent italic">
-                        Ricompensa
+                        Dati
                       </span>
                     </JapaneseText>
                     <p className="text-neutral-600 leading-relaxed text-lg">
-                      Il Reinforcement Learning permette ai sistemi di imparare comportamenti ottimali 
-                      attraverso l&apos;interazione con l&apos;ambiente, senza bisogno di esempi pre-etichettati.
+                      Il Machine Learning permette ai computer di imparare e migliorare automaticamente 
+                      attraverso l&apos;esperienza, senza essere esplicitamente programmati per ogni compito.
                     </p>
                   </div>
 
@@ -78,14 +78,14 @@ export default function AiReinforcementLearningSection() {
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-bold text-neutral-900 text-lg mb-2">Ottimizzazione Autonoma</h4>
+                        <h4 className="font-bold text-neutral-900 text-lg mb-2">Analisi Predittiva</h4>
                         <p className="text-neutral-600 leading-relaxed">
-                          L&apos;algoritmo trova automaticamente le strategie migliori attraverso l&apos;esplorazione 
-                          e lo sfruttamento delle conoscenze acquisite.
+                          Algoritmi che analizzano dati storici per identificare pattern 
+                          e prevedere tendenze future con alta precisione.
                         </p>
                       </div>
                     </div>
@@ -93,14 +93,14 @@ export default function AiReinforcementLearningSection() {
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-bold text-neutral-900 text-lg mb-2">Adattamento Continuo</h4>
+                        <h4 className="font-bold text-neutral-900 text-lg mb-2">Classificazione Intelligente</h4>
                         <p className="text-neutral-600 leading-relaxed">
-                          Il sistema si adatta dinamicamente ai cambiamenti dell&apos;ambiente, 
-                          migliorando costantemente le proprie performance.
+                          Sistemi che categorizzano automaticamente dati complessi, 
+                          dal riconoscimento di immagini all&apos;analisi del sentiment.
                         </p>
                       </div>
                     </div>
@@ -108,14 +108,14 @@ export default function AiReinforcementLearningSection() {
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-bold text-neutral-900 text-lg mb-2">Decisioni in Tempo Reale</h4>
+                        <h4 className="font-bold text-neutral-900 text-lg mb-2">Ottimizzazione Automatica</h4>
                         <p className="text-neutral-600 leading-relaxed">
-                          Capacità di prendere decisioni ottimali in scenari complessi e dinamici, 
-                          dalla robotica al trading algoritmico.
+                          Algoritmi che trovano soluzioni ottimali per problemi complessi, 
+                          migliorando continuamente le performance del sistema.
                         </p>
                       </div>
                     </div>
@@ -129,7 +129,7 @@ export default function AiReinforcementLearningSection() {
               <JapaneseText variant="title" className="text-3xl font-black text-center text-neutral-900 mb-16">
                 <span className="block">Applicazioni</span>
                 <span className="block bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent italic">
-                  Innovative
+                  Pratiche
                 </span>
               </JapaneseText>
 
@@ -137,36 +137,37 @@ export default function AiReinforcementLearningSection() {
                 <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-8 border border-purple-200/50 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <h4 className="font-bold text-neutral-900 text-xl mb-3">Trading Algoritmico</h4>
+                  <h4 className="font-bold text-neutral-900 text-xl mb-3">Analisi Dati Aziendali</h4>
                   <p className="text-neutral-600 leading-relaxed">
-                    Strategie di trading che si adattano alle condizioni di mercato in tempo reale.
+                    Trasformazione di grandi volumi di dati in insights strategici per il business.
                   </p>
                 </div>
 
                 <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-8 border border-blue-200/50 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
                   </div>
-                  <h4 className="font-bold text-neutral-900 text-xl mb-3">Controllo Robotico</h4>
+                  <h4 className="font-bold text-neutral-900 text-xl mb-3">Computer Vision</h4>
                   <p className="text-neutral-600 leading-relaxed">
-                    Robot che imparano movimenti complessi e si adattano a nuovi ambienti.
+                    Riconoscimento e analisi automatica di immagini e video per applicazioni industriali.
                   </p>
                 </div>
 
                 <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-8 border border-cyan-200/50 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a1 1 0 01-1-1V9a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V5a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
                   </div>
-                  <h4 className="font-bold text-neutral-900 text-xl mb-3">Ottimizzazione Risorse</h4>
+                  <h4 className="font-bold text-neutral-900 text-xl mb-3">Elaborazione Linguaggio</h4>
                   <p className="text-neutral-600 leading-relaxed">
-                    Gestione intelligente di energia, logistica e allocazione di risorse aziendali.
+                    Comprensione e generazione automatica di testo per chatbot e assistenti virtuali.
                   </p>
                 </div>
               </div>
