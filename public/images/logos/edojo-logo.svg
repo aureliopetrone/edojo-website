@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
-  <path d="M213.48,205.17v801.64h400.82s376.38-14.66,376.38-400.82-388.6-400.82-388.6-400.82H213.48Z"/>
-  <circle cx="1466.51" cy="605.99" r="391.05"/>
-  <g>
-    <path d="M579.05,1060.58v400.82s-388.6,43.99-388.6,381.27h388.6s415.07-14.66,415.07-391.05-415.07-391.05-415.07-391.05Z"/>
-    <circle cx="602.08" cy="1451.63" r="391.05"/>
-  </g>
-  <circle cx="1466.51" cy="1451.63" r="391.05"/>
+  <defs>
+    <!-- Gradiente principale del brand: dal rosso (#e60012) al viola (#8b5cf6) -->
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e60012"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    
+    <!-- Gradiente inverso per variazione -->
+    <linearGradient id="brandGradientReverse" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#e60012"/>
+    </linearGradient>
+  </defs>
+  
+  <path fill="url(#brandGradient)" d="M213.48,205.17v801.64h400.82s376.38-14.66,376.38-400.82-388.6-400.82-388.6-400.82H213.48Z"/>
+  <circle fill="url(#brandGradientReverse)" cx="1466.51" cy="605.99" r="391.05"/>
+  <path fill="url(#brandGradient)" d="M579.05,1060.58v400.82s-388.6,43.99-388.6,381.27h388.6s415.07-14.66,415.07-391.05-415.07-391.05-415.07-391.05Z M211.03,1451.63 A391.05,391.05 0 1,0 993.13,1451.63 A391.05,391.05 0 1,0 211.03,1451.63 Z"/>
+  <circle fill="url(#brandGradient)" cx="1466.51" cy="1451.63" r="391.05"/>
 </svg>
