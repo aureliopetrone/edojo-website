@@ -1,4 +1,4 @@
-import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
+import { FadeInUp } from "./japanese-animations";
 import BrandGeometricBackground from "./brand-geometric-background";
 
 export default function TeamSection() {

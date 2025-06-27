@@ -7,12 +7,9 @@ import {
   Globe, 
   Database, 
   Brain, 
-  Cpu, 
   Cloud, 
-  Shield, 
   Zap, 
   TestTube,
-  Layers,
   Code2,
   Rocket
 } from "lucide-react";

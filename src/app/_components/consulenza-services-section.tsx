@@ -10,8 +10,6 @@ import {
   Monitor, 
   Database, 
   Shield,
-  Wrench,
-  TrendingUp,
   Clock,
   Award,
   Target 

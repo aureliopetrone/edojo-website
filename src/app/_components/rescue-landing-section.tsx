@@ -1,5 +1,5 @@
 import OrigamiLink from "./origami-link";
-import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
+import { FadeInUp, SlideInLeft, SlideInRight } from "./japanese-animations";
 import BrandGeometricBackground from "./brand-geometric-background";
 
 export default function RescueLandingSection() {

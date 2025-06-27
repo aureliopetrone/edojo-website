@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const clients = [
   { name: "Skilla", logo: "/images/logos/skilla-logo.png" },
@@ -86,9 +87,11 @@ export default function ClientsSection() {
                   key={index}
                   className="w-8 md:w-12 lg:w-16 h-6 md:h-8 lg:h-12 flex items-center justify-center"
                 >
-                  <img
+                  <Image
                     src={client.logo}
-                    alt=""
+                    alt={client.name}
+                    width={64}
+                    height={48}
                     className="w-full h-full object-contain filter grayscale"
                   />
                 </div>

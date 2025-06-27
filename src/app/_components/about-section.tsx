@@ -1,8 +1,7 @@
 'use client';
 
-import { FadeInUp, SlideInLeft, SlideInRight, StaggeredAnimation, JapaneseLine, JapaneseText } from "./japanese-animations";
 import BrandGeometricBackground from "./brand-geometric-background";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 
 export default function AboutSection() {
   const marqueeRef = useRef<HTMLDivElement>(null);

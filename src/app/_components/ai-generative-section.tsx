@@ -1,5 +1,5 @@
 import OrigamiLink from "./origami-link";
-import { FadeInUp, JapaneseLine, JapaneseText } from "./japanese-animations";
+import { FadeInUp } from "./japanese-animations";
 import BrandGeometricBackground from "./brand-geometric-background";
 import AiChatDemo from "./ai-chat-demo";
 

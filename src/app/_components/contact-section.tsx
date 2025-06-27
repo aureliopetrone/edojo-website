@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ContactForm from "./contact-form";
-import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine, JapaneseText } from "./japanese-animations";
+import { FadeInUp, SlideInLeft, SlideInRight, JapaneseLine } from "./japanese-animations";
 import BrandGeometricBackground from "./brand-geometric-background";
 import { companyInfo } from "~/config/company-info";
 

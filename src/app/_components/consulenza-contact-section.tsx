@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MessageCircle, Clock, CheckCircle, Users, Briefcase, Calendar } from "lucide-react";
+import { Mail, Phone, MessageCircle, Clock } from "lucide-react";
 import { companyInfo } from "~/config/company-info";
 
 export default function ConsulenzaContactSection() {
