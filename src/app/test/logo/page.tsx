@@ -83,7 +83,7 @@ export default function LogoTestPage() {
       canvas.height = selectedSize;
       
       // Carica l'SVG in un'immagine
-      const img = new Image();
+      const img = document.createElement('img');
       img.onload = function() {
         // Applica lo sfondo selezionato
         if (selectedBackground === 'white' || (selectedFormat === 'ico' && selectedBackground === 'transparent')) {
@@ -188,7 +188,7 @@ export default function LogoTestPage() {
           canvas.width = size;
           canvas.height = size;
           
-          const img = new Image();
+          const img = document.createElement('img');
           img.onload = function() {
             // Applica lo sfondo selezionato
             if (selectedBackground === 'white' || selectedBackground === 'transparent') {
@@ -272,10 +272,11 @@ export default function LogoTestPage() {
                <h3 className="font-semibold mb-4">{label}</h3>
                <div className="flex justify-center items-center min-h-[200px] mb-4">
                  <div className="relative" style={{ width: `${size}px`, height: `${size}px` }}>
-                   <img 
+                   <Image 
                      src="/images/logos/edojo-logo.svg" 
                      alt="Edojo Logo" 
-                     className="w-full h-full object-contain"
+                     fill
+                     className="object-contain"
                    />
                  </div>
                </div>
@@ -296,10 +297,11 @@ export default function LogoTestPage() {
              ].map(({ bg, name }) => (
                <div key={name} className={`${bg} rounded-xl p-8 flex justify-center items-center min-h-[150px]`}>
                  <div className="relative w-32 h-32">
-                   <img 
+                   <Image 
                      src="/images/logos/edojo-logo.svg" 
                      alt="Edojo Logo" 
-                     className="w-full h-full object-contain"
+                     fill
+                     className="object-contain"
                    />
                  </div>
                </div>
@@ -314,10 +316,11 @@ export default function LogoTestPage() {
                      {/* Navbar example */}
            <div className="bg-white/10 backdrop-blur-xl rounded-lg p-6 flex items-center gap-4 mb-8">
              <div className="relative w-10 h-10">
-               <img 
+               <Image 
                  src="/images/logos/edojo-logo.svg" 
                  alt="Edojo Logo" 
-                 className="w-full h-full object-contain"
+                 fill
+                 className="object-contain"
                />
              </div>
              <div className="text-xl font-semibold">edojo</div>
@@ -332,10 +335,11 @@ export default function LogoTestPage() {
                      {/* Hero example */}
            <div className="mb-8">
              <div className="relative w-40 h-40 mx-auto mb-6">
-               <img 
+               <Image 
                  src="/images/logos/edojo-logo.svg" 
                  alt="Edojo Logo" 
-                 className="w-full h-full object-contain"
+                 fill
+                 className="object-contain"
                />
              </div>
              <h2 className="text-4xl font-black mb-4">edojo</h2>
